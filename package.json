@@ -31,8 +31,5 @@
   },
   "devDependencies": {
     "vite": "^8.3.1"
-  },
-  "dependencies": {
-    "@mmci/onemode": "file:mmci-onemode-0.1.0.tgz"
   }
 }
