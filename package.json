@@ -12,9 +12,7 @@
       "import": "./src/js/onemode.js"
     },
     "./css": "./src/css/onemode.css",
-    "./js": "./src/js/onemode.js",
-    "./css/*": "./src/css/*",
-    "./js/*": "./src/js/*"
+    "./js": "./src/js/onemode.js"
   },
   "files": [
     "src",
