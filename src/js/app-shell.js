@@ -14,8 +14,6 @@ const shell = document.querySelector(".om-app-shell");
 
 const sidebarToggle = document.querySelector(".om-sidebar-toggle");
 
-const sidebar = document.querySelector("#om-main-sidebar");
-
 const pageTitle = document.querySelector("#om-page-title");
 
 const pageDescription = document.querySelector("#om-page-description");

@@ -2,6 +2,11 @@
    OneMode — Application Shell
    ========================================================= */
 
+
+/* =========================================================
+   Shell
+   ========================================================= */
+
 .om-app-shell {
     min-height: 100vh;
 
@@ -18,13 +23,10 @@
 }
 
 
-/* Sidebar Column */
-.om-app-shell-sidebar {
-    min-width: 0;
-}
+/* =========================================================
+   Main Application
+   ========================================================= */
 
-
-/* Main Application */
 .om-app-shell-main {
     min-width: 0;
     min-height: 100vh;
@@ -34,15 +36,19 @@
 }
 
 
-/* Main Content */
+/* =========================================================
+   Main Content
+   ========================================================= */
+
 .om-app-shell-content {
     flex: 1;
+
     min-width: 0;
 }
 
 
 /* =========================================================
-   Desktop Collapsed Sidebar
+   Tablet — Collapsed Sidebar
    ========================================================= */
 
 .om-app-shell.om-sidebar-collapsed {
@@ -62,38 +68,9 @@
         display: block;
     }
 
-    .om-app-shell-sidebar {
-        min-width: 0;
-    }
 
     .om-app-shell-main {
         min-height: 100vh;
     }
 
-    /*
-     * The sidebar becomes a fixed drawer.
-     * The sidebar column itself no longer participates
-     * in the page layout.
-     */
-    .om-app-shell-sidebar {
-        position: fixed;
-        inset: 0 auto 0 0;
-
-        z-index: 1100;
-
-        width: 16rem;
-
-        transform: translateX(-100%);
-
-        transition:
-            transform var(--om-transition-normal);
-    }
-
-    /*
-     * Open mobile drawer.
-     */
-    .om-app-shell.om-sidebar-mobile-open
-    .om-app-shell-sidebar {
-        transform: translateX(0);
-    }
 }

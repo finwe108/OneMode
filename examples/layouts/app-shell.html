@@ -32,657 +32,652 @@
 
     <aside
         id="om-main-sidebar"
-        class="om-app-shell-sidebar"
+        class="om-sidebar"
     >
 
+        <!-- Brand -->
+        <a href="/" class="om-sidebar-brand">
 
-        <div class="om-sidebar">
+            <span class="om-sidebar-brand-icon">
+                <i class="bi bi-grid-1x2 om-icon"></i>
+            </span>
 
-            <!-- Brand -->
-            <a href="/" class="om-sidebar-brand">
+            <span class="om-sidebar-brand-text">
 
-                <span class="om-sidebar-brand-icon">
-                    <i class="bi bi-grid-1x2 om-icon"></i>
+                <span class="om-sidebar-brand-name">
+                    OneMode
                 </span>
 
-                <span class="om-sidebar-brand-text">
-
-                    <span class="om-sidebar-brand-name">
-                        OneMode
-                    </span>
-
-                    <span class="om-sidebar-brand-description">
-                        EkaMod SES
-                    </span>
-
+                <span class="om-sidebar-brand-description">
+                    EkaMod SES
                 </span>
 
-            </a>
+            </span>
+
+        </a>
 
 
-            <!-- =================================================
-                 Navigation
-                 ================================================= -->
+        <!-- =================================================
+                Navigation
+                ================================================= -->
 
-            <nav
-                class="om-sidebar-nav"
-                aria-label="Main navigation"
-            >
+        <nav
+            class="om-sidebar-nav"
+            aria-label="Main navigation"
+        >
 
-                <!-- Main -->
-                <div class="om-nav-group">
+            <!-- Main -->
+            <div class="om-nav-group">
 
-                    <div class="om-nav-group-label">
-                        Main
-                    </div>
-
-                    <ul class="om-nav-list">
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#dashboard"
-                                class="om-nav-link"
-                                data-om-nav="dashboard"
-                                data-om-nav-label="Dashboard"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-speedometer2 om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Dashboard
-                                </span>
-                            </a>
-
-                        </li>
-
-                    </ul>
-
+                <div class="om-nav-group-label">
+                    Main
                 </div>
 
+                <ul class="om-nav-list">
 
-                <!-- Academic -->
-                <div class="om-nav-group">
+                    <li class="om-nav-item">
 
-                    <div class="om-nav-group-label">
-                        Academic
-                    </div>
-
-                    <ul class="om-nav-list">
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#students"
-                                class="om-nav-link"
-                                data-om-nav="students"
-                                data-om-nav-label="Students"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-people om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Students
-                                </span>
-                            </a>
-
-                        </li>
-
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#enrollment"
-                                class="om-nav-link om-nav-link-active"
-                                data-om-nav="enrollment"
-                                data-om-nav-label="Enrollment"
-                                aria-current="page"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-person-plus om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Enrollment
-                                </span>
-                            </a>
-
-                        </li>
-
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#class-schedule"
-                                class="om-nav-link"
-                                data-om-nav="class-schedule"
-                                data-om-nav-label="Class Schedule"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-calendar3 om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Class Schedule
-                                </span>
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Finance -->
-                <div class="om-nav-group">
-
-                    <div class="om-nav-group-label">
-                        Finance
-                    </div>
-
-                    <ul class="om-nav-list">
-
-                        <!-- Finance -->
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#finance"
-                                class="om-nav-link"
-                                data-om-nav="finance"
-                                data-om-nav-label="Finance"
-                            >
-
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-wallet2 om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Finance
-                                </span>
-
-                            </a>
-
-                        </li>
-
-
-                        <!-- Cashiering -->
-                        <li
-                            class="om-nav-item om-nav-item-expanded"
-                            data-om-nav-parent
+                        <a
+                            href="#dashboard"
+                            class="om-nav-link"
+                            data-om-nav="dashboard"
+                            data-om-nav-label="Dashboard"
                         >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-speedometer2 om-icon"></i>
+                            </span>
 
-                            <button
-                                type="button"
-                                class="om-nav-link"
-                                data-om-nav-toggle
-                                aria-expanded="true"
-                                aria-controls="om-nav-cashiering"
-                            >
+                            <span class="om-nav-link-text">
+                                Dashboard
+                            </span>
+                        </a>
 
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-cash-stack om-icon"></i>
-                                </span>
+                    </li>
 
-                                <span class="om-nav-link-text">
-                                    Cashiering
-                                </span>
-
-                                <span
-                                    class="om-nav-link-arrow"
-                                    aria-hidden="true"
-                                >
-                                    <i class="bi bi-chevron-down"></i>
-                                </span>
-
-                            </button>
-
-
-                            <ul
-                                id="om-nav-cashiering"
-                                class="om-nav-sublist"
-                            >
-
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="#cashiering-dashboard"
-                                        class="om-nav-link"
-                                        data-om-nav="cashiering-dashboard"
-                                        data-om-nav-label="Cashiering"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-grid om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Overview
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="#cashiering-payments"
-                                        class="om-nav-link"
-                                        data-om-nav="cashiering-payments"
-                                        data-om-nav-label="Payments"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-receipt om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Payments
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="#cashiering-receipts"
-                                        class="om-nav-link"
-                                        data-om-nav="cashiering-receipts"
-                                        data-om-nav-label="Receipts"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-file-earmark-text om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Receipts
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="#cashiering-collections"
-                                        class="om-nav-link"
-                                        data-om-nav="cashiering-collections"
-                                        data-om-nav-label="Daily Collections"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-cash-coin om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Daily Collections
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-
-                        <!-- Accounting -->
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#accounting"
-                                class="om-nav-link"
-                                data-om-nav="accounting"
-                                data-om-nav-label="Accounting"
-                            >
-
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-calculator om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Accounting
-                                </span>
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Administration -->
-                <div class="om-nav-group">
-
-                    <div class="om-nav-group-label">
-                        Administration
-                    </div>
-
-                    <ul class="om-nav-list">
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#reports"
-                                class="om-nav-link"
-                                data-om-nav="reports"
-                                data-om-nav-label="Reports"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-bar-chart-line om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Reports
-                                </span>
-                            </a>
-
-                        </li>
-
-
-                        <li class="om-nav-item">
-
-                            <a
-                                href="#administration"
-                                class="om-nav-link"
-                                data-om-nav="administration"
-                                data-om-nav-label="Administration"
-                            >
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-shield-lock om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Administration
-                                </span>
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Components -->
-                <div class="om-nav-group">
-
-                    <div class="om-nav-group-label">
-                        Components
-                    </div>
-
-                    <ul class="om-nav-list">
-
-                        <!-- Components parent -->
-                        <li
-                            class="om-nav-item om-nav-item-expanded"
-                            data-om-nav-parent
-                        >
-
-                            <button
-                                type="button"
-                                class="om-nav-link"
-                                data-om-nav-toggle
-                                aria-expanded="true"
-                                aria-controls="om-nav-components"
-                            >
-
-                                <span class="om-nav-link-icon">
-                                    <i class="bi bi-puzzle om-icon"></i>
-                                </span>
-
-                                <span class="om-nav-link-text">
-                                    Components
-                                </span>
-
-                                <span
-                                    class="om-nav-link-arrow"
-                                    aria-hidden="true"
-                                >
-                                    <i class="bi bi-chevron-down"></i>
-                                </span>
-
-                            </button>
-
-
-                            <ul
-                                id="om-nav-components"
-                                class="om-nav-sublist"
-                            >
-
-                                <!-- Dropdown -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/dropdown.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-menu-button-wide om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Dropdown
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Icons -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/icon.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-grid-3x3-gap om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Icons
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Modal -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/modal.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-window om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Modal
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Pagination -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/pagination.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-layout-three-columns om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Pagination
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- State -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/state.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-info-circle om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            State
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Table -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/table.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-table om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Table
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Tabs -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/tabs.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-segmented-nav om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Tabs
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Toast -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/toast.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-chat-square-text om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Toast
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-
-                                <!-- Tooltip -->
-                                <li class="om-nav-item">
-
-                                    <a
-                                        href="/examples/components/tooltip.html"
-                                        class="om-nav-link"
-                                    >
-
-                                        <span class="om-nav-link-icon">
-                                            <i class="bi bi-chat-square-dots om-icon"></i>
-                                        </span>
-
-                                        <span class="om-nav-link-text">
-                                            Tooltip
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-
-            </nav>
-
-
-            <!-- Sidebar Footer -->
-            <div class="om-sidebar-footer">
-
-                <a
-                    href="#settings"
-                    class="om-nav-link"
-                    data-om-nav="settings"
-                    data-om-nav-label="Settings"
-                >
-                    <span class="om-nav-link-icon">
-                        <i class="bi bi-gear om-icon"></i>
-                    </span>
-
-                    <span class="om-nav-link-text">
-                        Settings
-                    </span>
-                </a>
+                </ul>
 
             </div>
+
+
+            <!-- Academic -->
+            <div class="om-nav-group">
+
+                <div class="om-nav-group-label">
+                    Academic
+                </div>
+
+                <ul class="om-nav-list">
+
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#students"
+                            class="om-nav-link"
+                            data-om-nav="students"
+                            data-om-nav-label="Students"
+                        >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-people om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Students
+                            </span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#enrollment"
+                            class="om-nav-link om-nav-link-active"
+                            data-om-nav="enrollment"
+                            data-om-nav-label="Enrollment"
+                            aria-current="page"
+                        >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-person-plus om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Enrollment
+                            </span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#class-schedule"
+                            class="om-nav-link"
+                            data-om-nav="class-schedule"
+                            data-om-nav-label="Class Schedule"
+                        >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-calendar3 om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Class Schedule
+                            </span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Finance -->
+            <div class="om-nav-group">
+
+                <div class="om-nav-group-label">
+                    Finance
+                </div>
+
+                <ul class="om-nav-list">
+
+                    <!-- Finance -->
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#finance"
+                            class="om-nav-link"
+                            data-om-nav="finance"
+                            data-om-nav-label="Finance"
+                        >
+
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-wallet2 om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Finance
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Cashiering -->
+                    <li
+                        class="om-nav-item om-nav-item-expanded"
+                        data-om-nav-parent
+                    >
+
+                        <button
+                            type="button"
+                            class="om-nav-link"
+                            data-om-nav-toggle
+                            aria-expanded="true"
+                            aria-controls="om-nav-cashiering"
+                        >
+
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-cash-stack om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Cashiering
+                            </span>
+
+                            <span
+                                class="om-nav-link-arrow"
+                                aria-hidden="true"
+                            >
+                                <i class="bi bi-chevron-down"></i>
+                            </span>
+
+                        </button>
+
+
+                        <ul
+                            id="om-nav-cashiering"
+                            class="om-nav-sublist"
+                        >
+
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="#cashiering-dashboard"
+                                    class="om-nav-link"
+                                    data-om-nav="cashiering-dashboard"
+                                    data-om-nav-label="Cashiering"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-grid om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Overview
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="#cashiering-payments"
+                                    class="om-nav-link"
+                                    data-om-nav="cashiering-payments"
+                                    data-om-nav-label="Payments"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-receipt om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Payments
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="#cashiering-receipts"
+                                    class="om-nav-link"
+                                    data-om-nav="cashiering-receipts"
+                                    data-om-nav-label="Receipts"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-file-earmark-text om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Receipts
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="#cashiering-collections"
+                                    class="om-nav-link"
+                                    data-om-nav="cashiering-collections"
+                                    data-om-nav-label="Daily Collections"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-cash-coin om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Daily Collections
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- Accounting -->
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#accounting"
+                            class="om-nav-link"
+                            data-om-nav="accounting"
+                            data-om-nav-label="Accounting"
+                        >
+
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-calculator om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Accounting
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Administration -->
+            <div class="om-nav-group">
+
+                <div class="om-nav-group-label">
+                    Administration
+                </div>
+
+                <ul class="om-nav-list">
+
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#reports"
+                            class="om-nav-link"
+                            data-om-nav="reports"
+                            data-om-nav-label="Reports"
+                        >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-bar-chart-line om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Reports
+                            </span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="om-nav-item">
+
+                        <a
+                            href="#administration"
+                            class="om-nav-link"
+                            data-om-nav="administration"
+                            data-om-nav-label="Administration"
+                        >
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-shield-lock om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Administration
+                            </span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Components -->
+            <div class="om-nav-group">
+
+                <div class="om-nav-group-label">
+                    Components
+                </div>
+
+                <ul class="om-nav-list">
+
+                    <!-- Components parent -->
+                    <li
+                        class="om-nav-item om-nav-item-expanded"
+                        data-om-nav-parent
+                    >
+
+                        <button
+                            type="button"
+                            class="om-nav-link"
+                            data-om-nav-toggle
+                            aria-expanded="true"
+                            aria-controls="om-nav-components"
+                        >
+
+                            <span class="om-nav-link-icon">
+                                <i class="bi bi-puzzle om-icon"></i>
+                            </span>
+
+                            <span class="om-nav-link-text">
+                                Components
+                            </span>
+
+                            <span
+                                class="om-nav-link-arrow"
+                                aria-hidden="true"
+                            >
+                                <i class="bi bi-chevron-down"></i>
+                            </span>
+
+                        </button>
+
+
+                        <ul
+                            id="om-nav-components"
+                            class="om-nav-sublist"
+                        >
+
+                            <!-- Dropdown -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/dropdown.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-menu-button-wide om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Dropdown
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Icons -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/icon.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-grid-3x3-gap om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Icons
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Modal -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/modal.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-window om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Modal
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Pagination -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/pagination.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-layout-three-columns om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Pagination
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- State -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/state.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-info-circle om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        State
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Table -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/table.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-table om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Table
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Tabs -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/tabs.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-segmented-nav om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Tabs
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Toast -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/toast.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-chat-square-text om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Toast
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Tooltip -->
+                            <li class="om-nav-item">
+
+                                <a
+                                    href="/examples/components/tooltip.html"
+                                    class="om-nav-link"
+                                >
+
+                                    <span class="om-nav-link-icon">
+                                        <i class="bi bi-chat-square-dots om-icon"></i>
+                                    </span>
+
+                                    <span class="om-nav-link-text">
+                                        Tooltip
+                                    </span>
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+        </nav>
+
+
+        <!-- Sidebar Footer -->
+        <div class="om-sidebar-footer">
+
+            <a
+                href="#settings"
+                class="om-nav-link"
+                data-om-nav="settings"
+                data-om-nav-label="Settings"
+            >
+                <span class="om-nav-link-icon">
+                    <i class="bi bi-gear om-icon"></i>
+                </span>
+
+                <span class="om-nav-link-text">
+                    Settings
+                </span>
+            </a>
 
         </div>
 

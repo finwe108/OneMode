@@ -2,6 +2,11 @@
    OneMode — Sidebar
    ========================================================= */
 
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
 .om-sidebar {
     position: sticky;
     top: 0;
@@ -93,7 +98,7 @@
 
 
 /* =========================================================
-   Sidebar Navigation Area
+   Sidebar Navigation
    ========================================================= */
 
 .om-sidebar-nav {
@@ -119,7 +124,7 @@
 
 
 /* =========================================================
-   Desktop Collapsed State
+   Collapsed Sidebar
    ========================================================= */
 
 .om-sidebar-collapsed .om-sidebar-brand {
@@ -133,12 +138,6 @@
 }
 
 
-/*
- * Navigation itself controls the
- * collapsed navigation appearance.
- */
-
-
 /* =========================================================
    Mobile Sidebar
    ========================================================= */
@@ -146,20 +145,38 @@
 @media (max-width: 768px) {
 
     /*
-     * Mobile sidebar is a normal full-height drawer.
+     * Mobile sidebar becomes an off-canvas drawer.
      */
-    .om-app-shell-sidebar .om-sidebar {
-        position: relative;
+    .om-sidebar {
+        position: fixed;
+
+        inset: 0 auto 0 0;
+
+        z-index: 1100;
 
         width: 16rem;
         height: 100vh;
 
+        transform: translateX(-100%);
+
         box-shadow: var(--om-shadow-lg);
+
+        transition:
+            transform var(--om-transition-normal);
     }
 
 
     /*
-     * Mobile always displays the complete navigation.
+     * Open mobile drawer.
+     */
+    .om-app-shell.om-sidebar-mobile-open
+    .om-sidebar {
+        transform: translateX(0);
+    }
+
+
+    /*
+     * Mobile always uses the complete sidebar.
      */
     .om-app-shell.om-sidebar-collapsed
     .om-sidebar-brand {
@@ -201,14 +218,14 @@
 
 
 /*
- * Overlay becomes active when drawer opens.
+ * Overlay becomes active when mobile drawer opens.
  */
-.om-app-shell.om-sidebar-mobile-open
-~ .om-sidebar-overlay,
 .om-app-shell.om-sidebar-mobile-open
 .om-sidebar-overlay {
     opacity: 1;
+
     visibility: visible;
+
     pointer-events: auto;
 }
 
@@ -219,7 +236,6 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .om-app-shell-sidebar,
     .om-sidebar,
     .om-sidebar-overlay {
         transition: none;
