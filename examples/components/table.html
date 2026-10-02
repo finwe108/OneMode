@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Table</title>
+
+    <link
+        rel="stylesheet"
+        href="/src/css/onemode.css"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+</head>
+
+
+<body>
+
+    <section class="om-page">
+
+
+        <!-- =====================================================
+             Page Header
+             ===================================================== -->
+
+        <div class="om-page-header">
+
+            <div class="om-page-header-content">
+
+                <h1 class="om-page-title">
+                    Fee Schedules
+                </h1>
+
+                <p class="om-page-description">
+                    Manage tuition and other fee schedules
+                    by school year and grade level.
+                </p>
+
+            </div>
+
+
+            <div class="om-page-header-actions">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-primary"
+                >
+                    Add Fee Schedule
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             Data Table Container
+             ===================================================== -->
+
+        <div
+            class="om-data-table"
+            data-om-page-size="2"
+        >
+
+
+            <!-- =================================================
+                 Table Toolbar
+                 ================================================= -->
+
+            <div class="om-table-toolbar">
+
+                <div class="om-table-toolbar-left">
+
+
+                    <!-- Search -->
+
+                    <div
+                        class="om-search"
+                        data-om-table-search
+                    >
+
+                        <i
+                            class="bi bi-search om-search-icon"
+                            aria-hidden="true"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            class="om-form-control"
+                            placeholder="Search fee schedules..."
+                            aria-label="Search fee schedules"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="om-search-clear"
+                            aria-label="Clear search"
+                            hidden
+                        >
+
+                            <i
+                                class="bi bi-x-lg"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Result Summary -->
+
+                    <span
+                        class="om-table-result-summary"
+                        data-om-table-result-summary
+                        aria-live="polite"
+                    ></span>
+
+                </div>
+
+
+                <!-- =================================================
+                     Filters
+                     ================================================= -->
+
+                <div class="om-table-toolbar-right">
+
+                    <div class="om-table-filters">
+
+
+                        <!-- School Year -->
+
+                        <select
+                            class="om-form-control om-form-select"
+                            data-om-table-filter="school-year"
+                            aria-label="Filter by school year"
+                        >
+
+                            <option value="all">
+                                All School Years
+                            </option>
+
+                            <option value="2026–2027">
+                                2026–2027
+                            </option>
+
+                            <option value="2025–2026">
+                                2025–2026
+                            </option>
+
+                        </select>
+
+
+                        <!-- Grade Level -->
+
+                        <select
+                            class="om-form-control om-form-select"
+                            data-om-table-filter="grade-level"
+                            aria-label="Filter by grade level"
+                        >
+
+                            <option value="all">
+                                All Grade Levels
+                            </option>
+
+                            <option value="Grade 7">
+                                Grade 7
+                            </option>
+
+                            <option value="Grade 8">
+                                Grade 8
+                            </option>
+
+                            <option value="Grade 9">
+                                Grade 9
+                            </option>
+
+                            <option value="Grade 10">
+                                Grade 10
+                            </option>
+
+                        </select>
+
+
+                        <!-- Status -->
+
+                        <select
+                            class="om-form-control om-form-select"
+                            data-om-table-filter="status"
+                            aria-label="Filter by status"
+                        >
+
+                            <option value="all">
+                                All Statuses
+                            </option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Draft">
+                                Draft
+                            </option>
+
+                            <option value="Inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 Table Card
+                 ===================================================== -->
+
+            <div class="om-card">
+
+
+                <!-- =================================================
+                     Table
+                     ================================================= -->
+
+                <div class="om-table-wrapper">
+
+                    <table class="om-table">
+
+
+                        <!-- =============================================
+                             Table Head
+                             ============================================= -->
+
+                        <thead>
+
+                            <tr>
+
+
+                                <!-- Schedule Name -->
+
+                                <th
+                                    class="om-sortable"
+                                    data-om-sort="schedule-name"
+                                    data-om-sort-type="text"
+                                    aria-sort="none"
+                                >
+
+                                    <span class="om-sort">
+
+                                        <span class="om-sort-label">
+                                            Schedule Name
+                                        </span>
+
+                                        <span
+                                            class="om-sort-indicator"
+                                            aria-hidden="true"
+                                        >
+                                            ↕
+                                        </span>
+
+                                    </span>
+
+                                </th>
+
+
+                                <!-- School Year -->
+
+                                <th>
+                                    School Year
+                                </th>
+
+
+                                <!-- Grade Level -->
+
+                                <th>
+                                    Grade Level
+                                </th>
+
+
+                                <!-- Amount -->
+
+                                <th
+                                    class="om-sortable om-table-right"
+                                    data-om-sort="amount"
+                                    data-om-sort-type="number"
+                                    aria-sort="none"
+                                >
+
+                                    <span class="om-sort">
+
+                                        <span class="om-sort-label">
+                                            Amount
+                                        </span>
+
+                                        <span
+                                            class="om-sort-indicator"
+                                            aria-hidden="true"
+                                        >
+                                            ↕
+                                        </span>
+
+                                    </span>
+
+                                </th>
+
+
+                                <!-- Status -->
+
+                                <th>
+                                    Status
+                                </th>
+
+
+                                <!-- Actions -->
+
+                                <th class="om-table-actions">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!-- =============================================
+                             Table Body
+                             ============================================= -->
+
+                        <tbody>
+
+
+                            <!-- =========================================
+                                 Row 1
+                                 ========================================= -->
+
+                            <tr>
+
+                                <td
+                                    data-om-table-column="schedule-name"
+                                >
+
+                                    <strong>
+                                        Grade 7 Tuition
+                                    </strong>
+
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="school-year"
+                                >
+                                    2026–2027
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="grade-level"
+                                >
+                                    Grade 7
+                                </td>
+
+
+                                <td
+                                    class="om-table-number"
+                                    data-om-table-column="amount"
+                                >
+                                    ₱35,000.00
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="status"
+                                >
+
+                                    <span
+                                        class="om-badge om-badge-success"
+                                    >
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td class="om-table-actions">
+
+                                    <div
+                                        class="om-table-actions-inner"
+                                    >
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            View
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- =========================================
+                                 Row 2
+                                 ========================================= -->
+
+                            <tr>
+
+                                <td
+                                    data-om-table-column="schedule-name"
+                                >
+
+                                    <strong>
+                                        Grade 8 Tuition
+                                    </strong>
+
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="school-year"
+                                >
+                                    2026–2027
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="grade-level"
+                                >
+                                    Grade 8
+                                </td>
+
+
+                                <td
+                                    class="om-table-number"
+                                    data-om-table-column="amount"
+                                >
+                                    ₱36,000.00
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="status"
+                                >
+
+                                    <span
+                                        class="om-badge om-badge-success"
+                                    >
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td class="om-table-actions">
+
+                                    <div
+                                        class="om-table-actions-inner"
+                                    >
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            View
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- =========================================
+                                 Row 3
+                                 ========================================= -->
+
+                            <tr>
+
+                                <td
+                                    data-om-table-column="schedule-name"
+                                >
+
+                                    <strong>
+                                        Grade 9 Tuition
+                                    </strong>
+
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="school-year"
+                                >
+                                    2026–2027
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="grade-level"
+                                >
+                                    Grade 9
+                                </td>
+
+
+                                <td
+                                    class="om-table-number"
+                                    data-om-table-column="amount"
+                                >
+                                    ₱37,000.00
+                                </td>
+
+
+                                <td
+                                    data-om-table-column="status"
+                                >
+
+                                    <span
+                                        class="om-badge om-badge-warning"
+                                    >
+                                        Draft
+                                    </span>
+
+                                </td>
+
+
+                                <td class="om-table-actions">
+
+                                    <div
+                                        class="om-table-actions-inner"
+                                    >
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="om-btn om-btn-ghost om-btn-sm"
+                                        >
+                                            View
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- =================================================
+                         Empty State
+                         ================================================= -->
+
+                    <!--
+                        table.js creates the empty state dynamically
+                        when search/filter results contain no rows.
+                    -->
+
+
+                </div>
+
+
+                <!-- =================================================
+                     Pagination
+                     ================================================= -->
+
+                <div
+                    class="om-pagination"
+                    data-om-table-pagination
+                    aria-label="Fee schedule pagination"
+                >
+
+                    <div
+                        class="om-pagination-summary"
+                        data-om-pagination-summary
+                        aria-live="polite"
+                    ></div>
+
+
+                    <nav
+                        aria-label="Pagination"
+                    >
+
+                        <ul
+                            class="om-pagination-list"
+                            data-om-pagination-list
+                        ></ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         OneMode JavaScript
+         ========================================================= -->
+
+    <script src="/src/js/form.js"></script>
+
+    <script src="/src/js/table.js"></script>
+
+    <!--
+        Generic pagination.js can remain available for standalone
+        pagination components.
+
+        table.js uses [data-om-table-pagination], so it will not
+        conflict with the generic [data-om-pagination] component.
+    -->
+
+    <script src="/src/js/pagination.js"></script>
+
+</body>
+
+</html>

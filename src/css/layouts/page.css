@@ -1,0 +1,296 @@
+/* =========================================================
+   OneMode — Page Layout
+   ========================================================= */
+
+.om-page {
+    width: 100%;
+    max-width: var(--om-content-max-width);
+
+    margin: 0 auto;
+    padding: var(--om-space-8) var(--om-space-6);
+}
+
+
+/* ---------------------------------------------------------
+   Page Header
+   --------------------------------------------------------- */
+
+.om-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: var(--om-space-6);
+
+    margin-bottom: var(--om-space-8);
+}
+
+.om-page-header-content {
+    min-width: 0;
+}
+
+.om-page-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-3xl);
+    font-weight: var(--om-font-weight-bold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-page-description {
+    max-width: 720px;
+
+    margin: var(--om-space-3) 0 0;
+
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-md);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-page-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-3);
+
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   Page Content
+   --------------------------------------------------------- */
+
+.om-page-content {
+    min-width: 0;
+}
+
+/* ---------------------------------------------------------
+   Page Sections
+   --------------------------------------------------------- */
+
+.om-page-section {
+    margin-bottom: var(--om-space-8);
+}
+
+.om-page-section:last-child {
+    margin-bottom: 0;
+}
+
+.om-page-section-header {
+    margin-bottom: var(--om-space-4);
+}
+
+.om-page-section-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-lg);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-page-section-description {
+    margin: var(--om-space-2) 0 0;
+
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-sm);
+}
+
+
+/* ---------------------------------------------------------
+   Content Grid
+   --------------------------------------------------------- */
+
+.om-page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    gap: var(--om-space-6);
+}
+
+.om-page-grid-full {
+    grid-column: span 12;
+}
+
+.om-page-grid-half {
+    grid-column: span 6;
+}
+
+.om-page-grid-third {
+    grid-column: span 4;
+}
+
+/* ---------------------------------------------------------
+   Grid Spans
+   --------------------------------------------------------- */
+
+.om-page-grid-full {
+    grid-column: span 12;
+}
+
+.om-page-grid-half {
+    grid-column: span 6;
+}
+
+.om-page-grid-third {
+    grid-column: span 4;
+}
+
+.om-page-grid-quarter {
+    grid-column: span 3;
+}
+
+.om-page-grid-two-thirds {
+    grid-column: span 8;
+}
+
+
+/* ---------------------------------------------------------
+   Page Stack
+   --------------------------------------------------------- */
+
+.om-page-stack {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--om-space-6);
+}
+
+
+/* ---------------------------------------------------------
+   Page Actions
+   --------------------------------------------------------- */
+
+.om-page-actions {
+    display: flex;
+    align-items: center;
+
+    gap: var(--om-space-3);
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------------------------------------------------------
+   Page Divider
+   --------------------------------------------------------- */
+
+.om-page-divider {
+    width: 100%;
+    height: 1px;
+
+    margin:
+        var(--om-space-6)
+        0;
+
+    border: 0;
+
+    background: var(--om-color-border);
+}
+
+
+/* ---------------------------------------------------------
+   Page Loading
+   --------------------------------------------------------- */
+
+.om-page-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 16rem;
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-sm);
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .om-page {
+        padding:
+            var(--om-space-6)
+            var(--om-space-6);
+    }
+
+    .om-page-grid {
+        gap: var(--om-space-4);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .om-page {
+        padding:
+            var(--om-space-5)
+            var(--om-space-4);
+    }
+
+    .om-page-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: var(--om-space-4);
+    }
+
+    .om-page-header-actions {
+        width: 100%;
+    }
+
+    .om-page-header-actions .om-btn {
+        flex: 1;
+    }
+
+    .om-page-title {
+        font-size: var(--om-font-size-xl);
+    }
+
+    .om-page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .om-page-grid-full,
+    .om-page-grid-half,
+    .om-page-grid-third,
+    .om-page-grid-quarter,
+    .om-page-grid-two-thirds {
+        grid-column: span 1;
+    }
+
+    .om-page-section-header {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .om-page-section-actions {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .om-page {
+        padding:
+            var(--om-space-4)
+            var(--om-space-3);
+    }
+
+    .om-page-header-actions {
+        flex-direction: column;
+    }
+
+    .om-page-header-actions .om-btn {
+        width: 100%;
+    }
+}

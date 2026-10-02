@@ -1,0 +1,407 @@
+/* =========================================================
+   Display
+   ========================================================= */
+
+.om-hidden {
+    display: none !important;
+}
+
+.om-block {
+    display: block !important;
+}
+
+.om-inline {
+    display: inline !important;
+}
+
+.om-inline-block {
+    display: inline-block !important;
+}
+
+.om-flex {
+    display: flex !important;
+}
+
+.om-inline-flex {
+    display: inline-flex !important;
+}
+
+.om-grid {
+    display: grid !important;
+}
+
+/* =========================================================
+   Flex
+   ========================================================= */
+
+.om-flex-row {
+    flex-direction: row !important;
+}
+
+.om-flex-column {
+    flex-direction: column !important;
+}
+
+.om-items-start {
+    align-items: flex-start !important;
+}
+
+.om-items-center {
+    align-items: center !important;
+}
+
+.om-items-end {
+    align-items: flex-end !important;
+}
+
+.om-justify-start {
+    justify-content: flex-start !important;
+}
+
+.om-justify-center {
+    justify-content: center !important;
+}
+
+.om-justify-end {
+    justify-content: flex-end !important;
+}
+
+.om-justify-between {
+    justify-content: space-between !important;
+}
+
+.om-flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.om-flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+/* =========================================================
+   Gap
+   ========================================================= */
+
+.om-gap-1 {
+    gap: var(--om-space-1) !important;
+}
+
+.om-gap-2 {
+    gap: var(--om-space-2) !important;
+}
+
+.om-gap-3 {
+    gap: var(--om-space-3) !important;
+}
+
+.om-gap-4 {
+    gap: var(--om-space-4) !important;
+}
+
+.om-gap-5 {
+    gap: var(--om-space-5) !important;
+}
+
+.om-gap-6 {
+    gap: var(--om-space-6) !important;
+}
+
+.om-gap-8 {
+    gap: var(--om-space-8) !important;
+}
+
+/* =========================================================
+   Width
+   ========================================================= */
+
+.om-w-full {
+    width: 100% !important;
+}
+
+.om-w-auto {
+    width: auto !important;
+}
+
+.om-max-w-full {
+    max-width: 100% !important;
+}
+
+/* =========================================================
+   Margin
+   ========================================================= */
+
+.om-m-0 {
+    margin: 0 !important;
+}
+
+.om-mt-0 {
+    margin-top: 0 !important;
+}
+
+.om-mt-2 {
+    margin-top: var(--om-space-2) !important;
+}
+
+.om-mt-4 {
+    margin-top: var(--om-space-4) !important;
+}
+
+.om-mt-6 {
+    margin-top: var(--om-space-6) !important;
+}
+
+.om-mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.om-mb-2 {
+    margin-bottom: var(--om-space-2) !important;
+}
+
+.om-mb-4 {
+    margin-bottom: var(--om-space-4) !important;
+}
+
+.om-mb-6 {
+    margin-bottom: var(--om-space-6) !important;
+}
+
+.om-ml-auto {
+    margin-left: auto !important;
+}
+
+.om-mr-auto {
+    margin-right: auto !important;
+}
+
+/* =========================================================
+   Padding
+   ========================================================= */
+
+.om-p-0 {
+    padding: 0 !important;
+}
+
+.om-p-2 {
+    padding: var(--om-space-2) !important;
+}
+
+.om-p-3 {
+    padding: var(--om-space-3) !important;
+}
+
+.om-p-4 {
+    padding: var(--om-space-4) !important;
+}
+
+.om-p-5 {
+    padding: var(--om-space-5) !important;
+}
+
+.om-p-6 {
+    padding: var(--om-space-6) !important;
+}
+
+.om-p-8 {
+    padding: var(--om-space-8) !important;
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+
+.om-text-xs {
+    font-size: var(--om-font-size-xs) !important;
+}
+
+.om-text-sm {
+    font-size: var(--om-font-size-sm) !important;
+}
+
+.om-text-md {
+    font-size: var(--om-font-size-md) !important;
+}
+
+.om-text-lg {
+    font-size: var(--om-font-size-lg) !important;
+}
+
+.om-text-xl {
+    font-size: var(--om-font-size-xl) !important;
+}
+
+.om-text-2xl {
+    font-size: var(--om-font-size-2xl) !important;
+}
+
+.om-font-normal {
+    font-weight: var(--om-font-weight-normal) !important;
+}
+
+.om-font-medium {
+    font-weight: var(--om-font-weight-medium) !important;
+}
+
+.om-font-semibold {
+    font-weight: var(--om-font-weight-semibold) !important;
+}
+
+.om-font-bold {
+    font-weight: var(--om-font-weight-bold) !important;
+}
+
+.om-text-left {
+    text-align: left !important;
+}
+
+.om-text-center {
+    text-align: center !important;
+}
+
+.om-text-right {
+    text-align: right !important;
+}
+
+.om-text-muted {
+    color: var(--om-color-text-muted) !important;
+}
+
+.om-text-secondary {
+    color: var(--om-color-text-secondary) !important;
+}
+
+.om-text-primary {
+    color: var(--om-color-primary) !important;
+}
+
+.om-text-success {
+    color: var(--om-color-success) !important;
+}
+
+.om-text-warning {
+    color: var(--om-color-warning) !important;
+}
+
+.om-text-danger {
+    color: var(--om-color-danger) !important;
+}
+
+/* =========================================================
+   Background
+   ========================================================= */
+
+.om-bg-surface {
+    background: var(--om-color-surface) !important;
+}
+
+.om-bg-primary {
+    background: var(--om-color-primary) !important;
+}
+
+.om-bg-success {
+    background: var(--om-color-success-bg) !important;
+}
+
+.om-bg-warning {
+    background: var(--om-color-warning-bg) !important;
+}
+
+.om-bg-danger {
+    background: var(--om-color-danger-bg) !important;
+}
+
+.om-bg-info {
+    background: var(--om-color-info-bg) !important;
+}
+
+/* =========================================================
+   Border
+   ========================================================= */
+
+.om-border {
+    border: 1px solid var(--om-color-border) !important;
+}
+
+.om-border-strong {
+    border: 1px solid var(--om-color-border-strong) !important;
+}
+
+.om-border-0 {
+    border: 0 !important;
+}
+
+.om-rounded-sm {
+    border-radius: var(--om-radius-sm) !important;
+}
+
+.om-rounded {
+    border-radius: var(--om-radius-md) !important;
+}
+
+.om-rounded-lg {
+    border-radius: var(--om-radius-lg) !important;
+}
+
+.om-rounded-xl {
+    border-radius: var(--om-radius-xl) !important;
+}
+
+/* =========================================================
+   Position
+   ========================================================= */
+
+.om-relative {
+    position: relative !important;
+}
+
+.om-absolute {
+    position: absolute !important;
+}
+
+.om-fixed {
+    position: fixed !important;
+}
+
+/* =========================================================
+   Overflow
+   ========================================================= */
+
+.om-overflow-hidden {
+    overflow: hidden !important;
+}
+
+.om-overflow-auto {
+    overflow: auto !important;
+}
+
+.om-overflow-x-auto {
+    overflow-x: auto !important;
+}
+
+/* =========================================================
+   Visibility
+   ========================================================= */
+
+.om-visible {
+    visibility: visible !important;
+}
+
+.om-invisible {
+    visibility: hidden !important;
+}
+
+/* =========================================================
+   Screen-reader utility
+   ========================================================= */
+
+.om-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

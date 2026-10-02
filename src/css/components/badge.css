@@ -1,0 +1,72 @@
+.om-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 1.5rem;
+    padding: 0 var(--om-space-2);
+
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-full);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   Success
+   ========================================================= */
+
+.om-badge-success {
+    color: var(--om-color-success-text);
+    background: var(--om-color-success-bg);
+    border-color: var(--om-color-success-border);
+}
+
+
+/* =========================================================
+   Warning
+   ========================================================= */
+
+.om-badge-warning {
+    color: var(--om-color-warning-text);
+    background: var(--om-color-warning-bg);
+    border-color: var(--om-color-warning-border);
+}
+
+
+/* =========================================================
+   Danger
+   ========================================================= */
+
+.om-badge-danger {
+    color: var(--om-color-danger-text);
+    background: var(--om-color-danger-bg);
+    border-color: var(--om-color-danger-border);
+}
+
+
+/* =========================================================
+   Info
+   ========================================================= */
+
+.om-badge-info {
+    color: var(--om-color-info-text);
+    background: var(--om-color-info-bg);
+    border-color: var(--om-color-info-border);
+}
+
+
+/* =========================================================
+   Neutral
+   ========================================================= */
+
+.om-badge-neutral {
+    color: var(--om-color-text-secondary);
+    background: var(--om-color-surface-muted);
+    border-color: var(--om-color-border);
+}

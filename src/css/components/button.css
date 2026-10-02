@@ -1,0 +1,176 @@
+.om-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--om-space-2);
+
+    min-height: 2.5rem;
+    padding: 0 var(--om-space-4);
+
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-md);
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--om-transition-fast),
+        border-color var(--om-transition-fast),
+        color var(--om-transition-fast),
+        box-shadow var(--om-transition-fast);
+}
+
+.om-btn:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   Primary
+   ========================================================= */
+
+.om-btn-primary {
+    color: var(--om-color-text-inverse);
+    background: var(--om-color-primary);
+    border-color: var(--om-color-primary);
+}
+
+.om-btn-primary:hover:not(:disabled) {
+    background: var(--om-color-primary-hover);
+    border-color: var(--om-color-primary-hover);
+}
+
+.om-btn-primary:active:not(:disabled) {
+    background: var(--om-color-primary-active);
+    border-color: var(--om-color-primary-active);
+}
+
+
+/* =========================================================
+   Secondary
+   ========================================================= */
+
+.om-btn-secondary {
+    color: var(--om-color-text);
+    background: var(--om-color-surface);
+    border-color: var(--om-color-border-strong);
+}
+
+.om-btn-secondary:hover:not(:disabled) {
+    background: var(--om-color-surface-hover);
+}
+
+
+/* =========================================================
+   Outline
+   ========================================================= */
+
+.om-btn-outline {
+    color: var(--om-color-primary);
+    background: transparent;
+    border-color: var(--om-color-primary);
+}
+
+.om-btn-outline:hover:not(:disabled) {
+    color: var(--om-color-text-inverse);
+    background: var(--om-color-primary);
+}
+
+
+/* =========================================================
+   Ghost
+   ========================================================= */
+
+.om-btn-ghost {
+    color: var(--om-color-text-secondary);
+    background: transparent;
+    border-color: transparent;
+}
+
+.om-btn-ghost:hover:not(:disabled) {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+
+/* =========================================================
+   Danger
+   ========================================================= */
+
+.om-btn-danger {
+    color: var(--om-color-text-inverse);
+    background: var(--om-color-danger);
+    border-color: var(--om-color-danger);
+}
+
+.om-btn-danger:hover:not(:disabled) {
+    background: var(--om-color-danger-text);
+    border-color: var(--om-color-danger-text);
+}
+
+
+/* =========================================================
+   Success
+   ========================================================= */
+
+.om-btn-success {
+    color: var(--om-color-text-inverse);
+    background: var(--om-color-success);
+    border-color: var(--om-color-success);
+}
+
+.om-btn-success:hover:not(:disabled) {
+    background: var(--om-color-success-text);
+    border-color: var(--om-color-success-text);
+}
+
+
+/* =========================================================
+   Sizes
+   ========================================================= */
+
+.om-btn-sm {
+    min-height: 2rem;
+    padding: 0 var(--om-space-3);
+    font-size: var(--om-font-size-xs);
+}
+
+.om-btn-lg {
+    min-height: 3rem;
+    padding: 0 var(--om-space-5);
+    font-size: var(--om-font-size-md);
+}
+
+/* ---------------------------------------------------------
+   Light
+   --------------------------------------------------------- */
+
+.om-btn-light {
+    background: var(--om-color-surface);
+    color: var(--om-color-primary-text);
+    border-color: var(--om-color-surface);
+}
+
+.om-btn-light:hover {
+    background: var(--om-color-surface-hover);
+    border-color: var(--om-color-surface-hover);
+}
+
+.om-btn-light:active {
+    background: var(--om-color-surface-active);
+    border-color: var(--om-color-surface-active);
+}
+
+.om-btn-light:focus-visible {
+    outline: 2px solid var(--om-color-text-inverse);
+    outline-offset: 2px;
+}

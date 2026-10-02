@@ -1,0 +1,320 @@
+/* =========================================================
+   OneMode — Pagination
+   ========================================================= */
+
+.om-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--om-space-4);
+    width: 100%;
+    padding-top: var(--om-space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Pagination summary
+   --------------------------------------------------------- */
+
+.om-pagination-summary {
+    flex-shrink: 0;
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-normal);
+}
+
+.om-pagination-summary strong {
+    color: var(--om-color-text);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+
+/* ---------------------------------------------------------
+   Pagination navigation
+   --------------------------------------------------------- */
+
+.om-pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-1);
+}
+
+.om-pagination-list {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* ---------------------------------------------------------
+   Pagination button
+   --------------------------------------------------------- */
+
+.om-pagination-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding:
+        0
+        var(--om-space-2);
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-md);
+    background: transparent;
+    color: var(--om-color-text-secondary);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color var(--om-transition-fast),
+        border-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-pagination-item:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-pagination-item:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 1px;
+}
+
+.om-pagination-item-active {
+    border-color: var(--om-color-primary);
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+}
+
+.om-pagination-item-active:hover {
+    border-color: var(--om-color-primary-hover);
+    background: var(--om-color-primary-hover);
+    color: var(--om-color-text-inverse);
+}
+
+.om-pagination-item:disabled,
+.om-pagination-item-disabled {
+    background: transparent;
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   Previous / Next / First / Last
+   --------------------------------------------------------- */
+
+.om-pagination-item-icon {
+    width: 2.25rem;
+    padding: 0;
+}
+
+.om-pagination-item-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Ellipsis
+   --------------------------------------------------------- */
+
+.om-pagination-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-sm);
+    user-select: none;
+}
+
+
+/* ---------------------------------------------------------
+   Page size
+   --------------------------------------------------------- */
+
+.om-pagination-page-size {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-2);
+    flex-shrink: 0;
+}
+
+.om-pagination-page-size-label {
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    white-space: nowrap;
+}
+
+.om-pagination-page-size-select {
+    min-height: 2.25rem;
+    padding:
+        0
+        2rem
+        0
+        var(--om-space-3);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+    background-color: var(--om-color-surface);
+    background-image: none;
+    color: var(--om-color-text);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    cursor: pointer;
+}
+
+.om-pagination-page-size-select:hover {
+    border-color: var(--om-color-border-strong);
+}
+
+.om-pagination-page-size-select:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 1px;
+}
+
+
+/* ---------------------------------------------------------
+   Pagination controls
+   --------------------------------------------------------- */
+
+.om-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-3);
+}
+
+.om-pagination-controls-start,
+.om-pagination-controls-end {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-3);
+}
+
+
+/* ---------------------------------------------------------
+   Compact
+   --------------------------------------------------------- */
+
+.om-pagination-compact {
+    padding-top: var(--om-space-3);
+}
+
+.om-pagination-compact .om-pagination-item {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: var(--om-font-size-xs);
+}
+
+.om-pagination-compact .om-pagination-item-icon {
+    width: 2rem;
+}
+
+.om-pagination-compact .om-pagination-ellipsis {
+    width: 2rem;
+    height: 2rem;
+    font-size: var(--om-font-size-xs);
+}
+
+
+/* ---------------------------------------------------------
+   Border-top variant
+   --------------------------------------------------------- */
+
+.om-pagination-bordered {
+    margin-top: 0;
+    padding:
+        var(--om-space-4)
+        0 0;
+    border-top: 1px solid var(--om-color-border);
+}
+
+
+/* ---------------------------------------------------------
+   Centered pagination
+   --------------------------------------------------------- */
+
+.om-pagination-centered {
+    justify-content: center;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-pagination {
+        flex-wrap: wrap;
+    }
+
+    .om-pagination-summary {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .om-pagination-nav {
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+
+    .om-pagination-page-size {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .om-pagination-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .om-pagination-list {
+        gap: 0;
+    }
+
+    .om-pagination-item {
+        min-width: 2rem;
+        height: 2rem;
+    }
+
+    .om-pagination-item-label-text {
+        display: none;
+    }
+
+    .om-pagination-item-icon {
+        width: 2rem;
+    }
+
+    .om-pagination-ellipsis {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-pagination-item {
+        transition: none;
+    }
+}

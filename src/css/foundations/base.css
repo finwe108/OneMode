@@ -1,0 +1,128 @@
+/* =========================================================
+   OneMode — Base
+   ========================================================= */
+
+html {
+    background: var(--om-color-background);
+}
+
+body {
+    font-family: var(--om-font-family);
+    font-size: var(--om-font-size-md);
+    line-height: var(--om-line-height-normal);
+
+    color: var(--om-color-text);
+    background: var(--om-color-background);
+
+    transition:
+        background-color var(--om-transition-normal),
+        color var(--om-transition-normal);
+}
+
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+
+    color: var(--om-color-text);
+
+    line-height: var(--om-line-height-tight);
+}
+
+
+/* =========================================================
+   Text
+   ========================================================= */
+
+p {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   Form Controls
+   ========================================================= */
+
+button,
+input,
+select,
+textarea {
+    color: var(--om-color-text);
+}
+
+
+/* =========================================================
+   Placeholder
+   ========================================================= */
+
+::placeholder {
+    color: var(--om-color-text-muted);
+    opacity: 1;
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+a {
+    color: var(--om-color-primary);
+}
+
+a:hover {
+    color: var(--om-color-primary-hover);
+}
+
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+::selection {
+    color: var(--om-color-text-inverse);
+    background: var(--om-color-primary);
+}
+
+
+/* =========================================================
+   Theme Transition
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    transition-property:
+        background-color,
+        border-color,
+        color,
+        box-shadow;
+    transition-duration: var(--om-transition-normal);
+    transition-timing-function: ease;
+}
+
+
+/*
+ * Avoid applying transitions to elements that already define
+ * their own transition behavior.
+ */
+
+button,
+input,
+select,
+textarea,
+a {
+    transition-property:
+        background-color,
+        border-color,
+        color,
+        box-shadow,
+        opacity;
+}

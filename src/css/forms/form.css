@@ -1,0 +1,779 @@
+/* =========================================================
+   OneMode — Forms
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Form
+   --------------------------------------------------------- */
+
+.om-form {
+    width: 100%;
+}
+
+.om-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-2);
+}
+
+.om-form-group + .om-form-group {
+    margin-top: var(--om-space-5);
+}
+
+
+/* ---------------------------------------------------------
+   Form label
+   --------------------------------------------------------- */
+
+.om-form-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-1);
+    margin: 0;
+    color: var(--om-color-text);
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    line-height: var(--om-line-height-normal);
+}
+
+.om-form-label-required {
+    color: var(--om-color-danger);
+}
+
+.om-form-label-optional {
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-normal);
+}
+
+
+/* ---------------------------------------------------------
+   Help text
+   --------------------------------------------------------- */
+
+.om-form-help {
+    margin: 0;
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+    line-height: var(--om-line-height-relaxed);
+}
+
+
+/* ---------------------------------------------------------
+   Shared control
+   --------------------------------------------------------- */
+
+.om-form-control {
+    display: block;
+    width: 100%;
+    min-height: 2.5rem;
+    padding:
+        0
+        var(--om-space-3);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+    outline: 0;
+    background: var(--om-color-surface);
+    color: var(--om-color-text);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    line-height: 1.5;
+    transition:
+        border-color var(--om-transition-fast),
+        box-shadow var(--om-transition-fast),
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-form-control::placeholder {
+    color: var(--om-color-text-muted);
+}
+
+.om-form-control:hover {
+    border-color: var(--om-color-border-strong);
+}
+
+.om-form-control:focus {
+    border-color: var(--om-color-primary);
+    box-shadow: 0 0 0 3px var(--om-color-primary-soft);
+}
+
+.om-form-control:disabled,
+.om-form-control[readonly] {
+    background: var(--om-color-surface-disabled);
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.om-form-control[readonly] {
+    cursor: default;
+}
+
+
+/* ---------------------------------------------------------
+   Input
+   --------------------------------------------------------- */
+
+.om-form-input {
+    height: 2.5rem;
+}
+
+.om-form-input-sm {
+    min-height: 2rem;
+    height: 2rem;
+    padding:
+        0
+        var(--om-space-2);
+    font-size: var(--om-font-size-xs);
+}
+
+.om-form-input-lg {
+    min-height: 3rem;
+    height: 3rem;
+    padding:
+        0
+        var(--om-space-4);
+    font-size: var(--om-font-size-md);
+}
+
+
+/* ---------------------------------------------------------
+   Textarea
+   --------------------------------------------------------- */
+
+.om-form-textarea {
+    min-height: 7rem;
+    padding:
+        var(--om-space-3);
+    resize: vertical;
+}
+
+.om-form-textarea-sm {
+    min-height: 5rem;
+}
+
+.om-form-textarea-lg {
+    min-height: 10rem;
+}
+
+
+/* ---------------------------------------------------------
+   Select
+   --------------------------------------------------------- */
+
+.om-form-select {
+    appearance: none;
+    height: 2.5rem;
+    padding:
+        0
+        2.5rem
+        0
+        var(--om-space-3);
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            var(--om-color-text-muted) 50%
+        ),
+        linear-gradient(
+            135deg,
+            var(--om-color-text-muted) 50%,
+            transparent 50%
+        );
+    background-position:
+        calc(100% - 1rem) 1rem,
+        calc(100% - 0.7rem) 1rem;
+    background-size:
+        0.3rem 0.3rem,
+        0.3rem 0.3rem;
+    background-repeat: no-repeat;
+}
+
+.om-form-select-sm {
+    height: 2rem;
+    font-size: var(--om-font-size-xs);
+}
+
+.om-form-select-lg {
+    height: 3rem;
+    font-size: var(--om-font-size-md);
+}
+
+
+/* ---------------------------------------------------------
+   Checkbox / Radio
+   --------------------------------------------------------- */
+
+.om-form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--om-space-2);
+    min-height: 1.5rem;
+}
+
+.om-form-check-input {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    margin-top: 0.125rem;
+    border: 1px solid var(--om-color-border-strong);
+    background: var(--om-color-surface);
+    accent-color: var(--om-color-primary);
+    cursor: pointer;
+}
+
+.om-form-check-input:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-form-check-input:disabled {
+    cursor: not-allowed;
+}
+
+.om-form-check-label {
+    color: var(--om-color-text);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-normal);
+    cursor: pointer;
+}
+
+.om-form-check-input:disabled + .om-form-check-label {
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.om-form-check-description {
+    display: block;
+    margin-top: 0.125rem;
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+    line-height: var(--om-line-height-relaxed);
+}
+
+
+/* ---------------------------------------------------------
+   Checkbox group / Radio group
+   --------------------------------------------------------- */
+
+.om-form-check-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-3);
+}
+
+.om-form-check-group-inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--om-space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Switch
+   --------------------------------------------------------- */
+
+.om-form-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-3);
+}
+
+.om-form-switch-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.om-form-switch-control {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 2.75rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    border-radius: var(--om-radius-full);
+    background: var(--om-color-border-strong);
+    cursor: pointer;
+    transition:
+        background-color var(--om-transition-fast);
+}
+
+.om-form-switch-control::after {
+    content: "";
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: var(--om-color-surface);
+    box-shadow: var(--om-shadow-sm);
+    transition:
+        transform var(--om-transition-fast);
+}
+
+.om-form-switch-input:checked + .om-form-switch-control {
+    background: var(--om-color-primary);
+}
+
+.om-form-switch-input:checked + .om-form-switch-control::after {
+    transform: translateX(1.25rem);
+}
+
+.om-form-switch-input:focus-visible + .om-form-switch-control {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-form-switch-input:disabled + .om-form-switch-control {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.om-form-switch-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.om-form-switch-label {
+    color: var(--om-color-text);
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+}
+
+.om-form-switch-description {
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+}
+
+
+/* ---------------------------------------------------------
+   Input group
+   --------------------------------------------------------- */
+
+.om-input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.om-input-group .om-form-control {
+    min-width: 0;
+    border-radius: 0;
+}
+
+.om-input-group .om-form-control:first-child {
+    border-radius:
+        var(--om-radius-md)
+        0
+        0
+        var(--om-radius-md);
+}
+
+.om-input-group .om-form-control:last-child {
+    border-radius:
+        0
+        var(--om-radius-md)
+        var(--om-radius-md)
+        0;
+}
+
+.om-input-group > .om-input-group-addon:first-child {
+    border-radius:
+        var(--om-radius-md)
+        0
+        0
+        var(--om-radius-md);
+}
+
+.om-input-group > .om-input-group-addon:last-child {
+    border-radius:
+        0
+        var(--om-radius-md)
+        var(--om-radius-md)
+        0;
+}
+
+.om-input-group-addon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    padding:
+        0
+        var(--om-space-3);
+    border: 1px solid var(--om-color-border);
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    white-space: nowrap;
+}
+
+.om-input-group:focus-within .om-input-group-addon {
+    border-color: var(--om-color-primary);
+}
+
+
+/* ---------------------------------------------------------
+   Search input
+   --------------------------------------------------------- */
+
+.om-search {
+    position: relative;
+    width: 100%;
+}
+
+.om-search .om-search-icon {
+    position: absolute;
+    top: 50%;
+    left: var(--om-space-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--om-color-text-muted);
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.om-search .om-form-control {
+    padding-left: 2.5rem;
+}
+
+.om-search-clear {
+    position: absolute;
+    top: 50%;
+    right: var(--om-space-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: var(--om-radius-md);
+    background: transparent;
+    color: var(--om-color-text-muted);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.om-search-clear:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-search-clear:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 1px;
+}
+
+
+/* ---------------------------------------------------------
+   File input
+   --------------------------------------------------------- */
+
+.om-form-file {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-2);
+}
+
+.om-form-file-input {
+    display: block;
+    width: 100%;
+    min-height: 2.5rem;
+    padding: var(--om-space-1);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+    background: var(--om-color-surface);
+    color: var(--om-color-text-secondary);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+}
+
+.om-form-file-input::file-selector-button {
+    margin-right: var(--om-space-3);
+    padding:
+        var(--om-space-2)
+        var(--om-space-3);
+    border: 0;
+    border-radius: var(--om-radius-sm);
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   Validation
+   --------------------------------------------------------- */
+
+.om-form-control.is-valid {
+    border-color: var(--om-color-success);
+}
+
+.om-form-control.is-valid:focus {
+    box-shadow:
+        0 0 0 3px var(--om-color-success-bg);
+}
+
+.om-form-control.is-invalid {
+    border-color: var(--om-color-danger);
+}
+
+.om-form-control.is-invalid:focus {
+    box-shadow:
+        0 0 0 3px var(--om-color-danger-bg);
+}
+
+.om-form-feedback {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--om-space-2);
+    font-size: var(--om-font-size-xs);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-form-feedback-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.om-form-feedback-valid {
+    color: var(--om-color-success-text);
+}
+
+.om-form-feedback-invalid {
+    color: var(--om-color-danger-text);
+}
+
+.om-form-feedback-warning {
+    color: var(--om-color-warning-text);
+}
+
+
+/* ---------------------------------------------------------
+   Form row / grid
+   --------------------------------------------------------- */
+
+.om-form-row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--om-space-5);
+}
+
+.om-form-col-full {
+    grid-column: span 12;
+}
+
+.om-form-col-half {
+    grid-column: span 6;
+}
+
+.om-form-col-third {
+    grid-column: span 4;
+}
+
+.om-form-col-quarter {
+    grid-column: span 3;
+}
+
+.om-form-col-two-thirds {
+    grid-column: span 8;
+}
+
+
+/* ---------------------------------------------------------
+   Form section
+   --------------------------------------------------------- */
+
+.om-form-section {
+    padding: 0;
+}
+
+.om-form-section + .om-form-section {
+    margin-top: var(--om-space-8);
+    padding-top: var(--om-space-8);
+    border-top: 1px solid var(--om-color-border);
+}
+
+.om-form-section-header {
+    margin-bottom: var(--om-space-5);
+}
+
+.om-form-section-title {
+    margin: 0;
+    color: var(--om-color-text);
+    font-size: var(--om-font-size-lg);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-form-section-description {
+    max-width: 720px;
+    margin: var(--om-space-1) 0 0;
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+
+/* ---------------------------------------------------------
+   Form actions
+   --------------------------------------------------------- */
+
+.om-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--om-space-3);
+    margin-top: var(--om-space-6);
+    padding-top: var(--om-space-5);
+    border-top: 1px solid var(--om-color-border);
+}
+
+.om-form-actions-start {
+    justify-content: flex-start;
+}
+
+.om-form-actions-between {
+    justify-content: space-between;
+}
+
+
+/* ---------------------------------------------------------
+   Horizontal form
+   --------------------------------------------------------- */
+
+.om-form-horizontal .om-form-group {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--om-space-4);
+}
+
+.om-form-horizontal .om-form-label {
+    min-height: 2.5rem;
+    align-items: center;
+}
+
+.om-form-horizontal .om-form-help,
+.om-form-horizontal .om-form-feedback {
+    grid-column: 2;
+}
+
+
+/* ---------------------------------------------------------
+   Inline form
+   --------------------------------------------------------- */
+
+.om-form-inline {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--om-space-4);
+}
+
+.om-form-inline .om-form-group {
+    flex: 1 1 12rem;
+    min-width: 0;
+}
+
+.om-form-inline .om-form-actions {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Form disabled state
+   --------------------------------------------------------- */
+
+.om-form-disabled {
+    opacity: 0.65;
+}
+
+.om-form-disabled input,
+.om-form-disabled select,
+.om-form-disabled textarea,
+.om-form-disabled button {
+    cursor: not-allowed;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-form-row {
+        grid-template-columns: 1fr;
+        gap: var(--om-space-4);
+    }
+
+    .om-form-col-full,
+    .om-form-col-half,
+    .om-form-col-third,
+    .om-form-col-quarter,
+    .om-form-col-two-thirds {
+        grid-column: span 1;
+    }
+
+    .om-form-horizontal .om-form-group {
+        grid-template-columns: 1fr;
+        gap: var(--om-space-2);
+    }
+
+    .om-form-horizontal .om-form-label {
+        min-height: auto;
+    }
+
+    .om-form-horizontal .om-form-help,
+    .om-form-horizontal .om-form-feedback {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .om-form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .om-form-actions .om-btn {
+        width: 100%;
+    }
+
+    .om-form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .om-form-inline .om-form-group {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-form-control,
+    .om-form-switch-control,
+    .om-form-switch-control::after,
+    .om-search-clear {
+        transition: none;
+    }
+}

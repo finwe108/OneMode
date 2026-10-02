@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Toast / Notification</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- OneMode -->
+    <link
+        rel="stylesheet"
+        href="/src/css/onemode.css"
+    >
+
+</head>
+
+<body>
+
+<main class="om-page om-showcase">
+
+    <!-- =====================================================
+         Header
+         ===================================================== -->
+
+    <header class="om-showcase-header">
+
+        <div>
+
+            <div class="om-showcase-label">
+                OneMode Design System
+            </div>
+
+            <h1 class="om-showcase-title">
+                Toast / Notification
+            </h1>
+
+            <p class="om-showcase-description">
+                Temporary feedback for successful operations,
+                warnings, errors, and informational messages.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         Semantic Toasts
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Semantic Notifications
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Use semantic notification types consistently
+                throughout the system.
+            </p>
+
+        </div>
+
+
+        <div class="om-page-actions">
+
+            <button
+                type="button"
+                class="om-btn om-btn-success"
+                id="show-success"
+            >
+                <i class="bi bi-check-lg"></i>
+                Success
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-outline"
+                id="show-info"
+            >
+                <i class="bi bi-info-lg"></i>
+                Info
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-outline"
+                id="show-warning"
+            >
+                <i class="bi bi-exclamation-lg"></i>
+                Warning
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-danger"
+                id="show-danger"
+            >
+                <i class="bi bi-x-lg"></i>
+                Danger
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Rich Toast
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Rich Notification
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Notifications may include a title and action.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="om-btn om-btn-primary"
+            id="show-rich"
+        >
+            <i class="bi bi-bell"></i>
+            Show Notification
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         Positions
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Positions
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Toast containers support all four corners and
+                centered top/bottom positions.
+            </p>
+
+        </div>
+
+
+        <div class="om-page-actions">
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                id="show-top-left"
+            >
+                Top Left
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                id="show-top-right"
+            >
+                Top Right
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                id="show-bottom-left"
+            >
+                Bottom Left
+            </button>
+
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                id="show-bottom-right"
+            >
+                Bottom Right
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="/src/js/theme.js"></script>
+<script type="module" src="/src/js/toast.js"></script>
+
+<script>
+
+    document
+        .getElementById("show-success")
+        .addEventListener("click", () => {
+
+            OneModeToast.success(
+                "Payment saved successfully."
+            );
+
+        });
+
+
+    document
+        .getElementById("show-info")
+        .addEventListener("click", () => {
+
+            OneModeToast.info(
+                "The cashier session is currently open."
+            );
+
+        });
+
+
+    document
+        .getElementById("show-warning")
+        .addEventListener("click", () => {
+
+            OneModeToast.warning(
+                "The cashier session has not been closed."
+            );
+
+        });
+
+
+    document
+        .getElementById("show-danger")
+        .addEventListener("click", () => {
+
+            OneModeToast.danger(
+                "The payment could not be saved."
+            );
+
+        });
+
+
+    document
+        .getElementById("show-rich")
+        .addEventListener("click", () => {
+
+            OneModeToast.show({
+
+                title: "Payment Saved",
+
+                message:
+                    "Receipt #OR-2026-00125 was created successfully.",
+
+                type: "success",
+
+                duration: 7000,
+
+                action: {
+
+                    label: "View Receipt",
+
+                    onClick: () => {
+                        console.log(
+                            "View receipt clicked."
+                        );
+                    }
+
+                }
+
+            });
+
+        });
+
+
+    document
+        .getElementById("show-top-left")
+        .addEventListener("click", () => {
+
+            OneModeToast.info(
+                "Top-left notification.",
+                {
+                    position: "top-left"
+                }
+            );
+
+        });
+
+
+    document
+        .getElementById("show-top-right")
+        .addEventListener("click", () => {
+
+            OneModeToast.info(
+                "Top-right notification.",
+                {
+                    position: "top-right"
+                }
+            );
+
+        });
+
+
+    document
+        .getElementById("show-bottom-left")
+        .addEventListener("click", () => {
+
+            OneModeToast.info(
+                "Bottom-left notification.",
+                {
+                    position: "bottom-left"
+                }
+            );
+
+        });
+
+
+    document
+        .getElementById("show-bottom-right")
+        .addEventListener("click", () => {
+
+            OneModeToast.info(
+                "Bottom-right notification.",
+                {
+                    position: "bottom-right"
+                }
+            );
+
+        });
+
+</script>
+
+</body>
+</html>

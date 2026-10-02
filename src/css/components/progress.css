@@ -1,0 +1,182 @@
+/* =========================================================
+   OneMode — Progress
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Base
+   --------------------------------------------------------- */
+
+.om-progress {
+    --om-progress-color: var(--om-color-primary);
+    --om-progress-stripe-color: color-mix(
+        in srgb,
+        var(--om-progress-color) 20%,
+        transparent
+    );
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-2);
+    width: 100%;
+}
+
+.om-progress-track {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    overflow: hidden;
+    background: var(--om-color-surface-muted);
+    border-radius: var(--om-radius-full);
+}
+
+.om-progress-bar {
+    display: block;
+    width: 0;
+    height: 100%;
+    min-width: 0;
+    background: var(--om-progress-color);
+    border-radius: inherit;
+    transition: width var(--om-transition-normal);
+}
+
+/* ---------------------------------------------------------
+   Header / Label
+   --------------------------------------------------------- */
+
+.om-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--om-space-3);
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-normal);
+}
+
+.om-progress-label {
+    min-width: 0;
+    color: var(--om-color-text);
+    font-weight: var(--om-font-weight-medium);
+}
+
+.om-progress-value {
+    flex: 0 0 auto;
+    color: var(--om-color-text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------
+   Sizes
+   --------------------------------------------------------- */
+
+.om-progress-sm .om-progress-track {
+    height: 0.25rem;
+}
+
+.om-progress-lg .om-progress-track {
+    height: 0.75rem;
+}
+
+/* ---------------------------------------------------------
+   Semantic variants
+   --------------------------------------------------------- */
+
+.om-progress-success {
+    --om-progress-color: var(--om-color-success);
+}
+
+.om-progress-warning {
+    --om-progress-color: var(--om-color-warning);
+}
+
+.om-progress-danger {
+    --om-progress-color: var(--om-color-danger);
+}
+
+/* ---------------------------------------------------------
+   Indeterminate
+   --------------------------------------------------------- */
+
+.om-progress-indeterminate .om-progress-bar {
+    width: 40%;
+    max-width: 40%;
+    animation: om-progress-indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes om-progress-indeterminate {
+    0% {
+        transform: translateX(-125%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+/* ---------------------------------------------------------
+   Striped
+   --------------------------------------------------------- */
+
+.om-progress-striped .om-progress-bar {
+    background-image: linear-gradient(
+        45deg,
+        var(--om-progress-stripe-color) 25%,
+        transparent 25%,
+        transparent 50%,
+        var(--om-progress-stripe-color) 50%,
+        var(--om-progress-stripe-color) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+}
+
+/* ---------------------------------------------------------
+   Indeterminate + striped
+   --------------------------------------------------------- */
+
+.om-progress-indeterminate.om-progress-striped .om-progress-bar {
+    animation:
+        om-progress-indeterminate 1.5s ease-in-out infinite,
+        om-progress-stripes 0.75s linear infinite;
+}
+
+@keyframes om-progress-stripes {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 1rem 0;
+    }
+}
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-progress-bar {
+        transition: none;
+    }
+
+    .om-progress-indeterminate .om-progress-bar {
+        animation: none;
+        width: 50%;
+        transform: none;
+    }
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .om-progress-header {
+        font-size: var(--om-font-size-xs);
+    }
+}

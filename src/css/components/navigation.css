@@ -1,0 +1,346 @@
+/* =========================================================
+   OneMode — Navigation
+   ========================================================= */
+
+/* Navigation Group */
+.om-nav-group {
+    margin-bottom: var(--om-space-6);
+}
+
+.om-nav-group:last-child {
+    margin-bottom: 0;
+}
+
+.om-nav-group-label {
+    display: flex;
+    align-items: center;
+    min-height: 2rem;
+    margin:
+        0
+        var(--om-space-3)
+        var(--om-space-2);
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* Navigation List */
+.om-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-1);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.om-nav-item {
+    position: relative;
+}
+
+
+/* Navigation Link */
+.om-nav-link {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 2.5rem;
+
+    gap: var(--om-space-3);
+
+    padding: 0 var(--om-space-3);
+
+    border: 0;
+    border-radius: var(--om-radius-md);
+
+    background: transparent;
+
+    color: var(--om-color-text-secondary);
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-nav-link:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-nav-link:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: -2px;
+}
+
+
+/* Navigation Icon */
+.om-nav-link-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.25rem;
+
+    flex-shrink: 0;
+
+    color: var(--om-color-text-secondary);
+
+    transition:
+        color var(--om-transition-fast);
+}
+
+.om-nav-link:hover .om-nav-link-icon {
+    color: var(--om-color-text);
+}
+
+
+/* Navigation Text */
+.om-nav-link-text {
+    min-width: 0;
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Active Navigation */
+.om-nav-link-active {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-nav-link-active .om-nav-link-icon {
+    color: var(--om-color-primary-text);
+}
+
+.om-nav-link-active:hover {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-nav-link-active:hover .om-nav-link-icon {
+    color: var(--om-color-primary-text);
+}
+
+
+/* Badge */
+.om-nav-link-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 1.25rem;
+    height: 1.25rem;
+
+    padding: 0 var(--om-space-1);
+
+    border-radius: var(--om-radius-full);
+
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-nav-link-active .om-nav-link-badge {
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+}
+
+
+/* Expand / Collapse Arrow */
+.om-nav-link-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+
+    transition:
+        transform var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-nav-link:hover .om-nav-link-arrow {
+    color: var(--om-color-text);
+}
+
+
+/* Expanded Parent */
+.om-nav-item-expanded > .om-nav-link .om-nav-link-arrow {
+    transform: rotate(180deg);
+}
+
+.om-nav-item-expanded > .om-nav-link {
+    color: var(--om-color-text);
+}
+
+
+/* Sub Navigation */
+.om-nav-sublist {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--om-space-1);
+
+    margin:
+        var(--om-space-1)
+        0
+        0
+        1.25rem;
+
+    padding:
+        0
+        0
+        0
+        var(--om-space-3);
+
+    border-left: 1px solid var(--om-color-border);
+
+    list-style: none;
+
+    overflow: hidden;
+
+    max-height: 0;
+
+    opacity: 0;
+
+    transition:
+        max-height var(--om-transition-normal),
+        opacity var(--om-transition-fast);
+}
+
+
+/* Expanded Sub Navigation */
+.om-nav-item-expanded > .om-nav-sublist {
+    max-height: 30rem;
+    opacity: 1;
+}
+
+
+/* Sub Navigation Links */
+.om-nav-sublist .om-nav-link {
+    min-height: 2.25rem;
+
+    font-size: var(--om-font-size-sm);
+}
+
+
+/* =========================================================
+   Collapsed Sidebar
+   ========================================================= */
+
+.om-sidebar-collapsed .om-nav-group-label {
+    display: none;
+}
+
+.om-sidebar-collapsed .om-nav-link {
+    justify-content: center;
+    padding: 0;
+}
+
+.om-sidebar-collapsed .om-nav-link-text,
+.om-sidebar-collapsed .om-nav-link-badge,
+.om-sidebar-collapsed .om-nav-link-arrow {
+    display: none;
+}
+
+.om-sidebar-collapsed .om-nav-link-icon {
+    width: auto;
+}
+
+
+/*
+ * When sidebar is collapsed, nested navigation is hidden.
+ * The parent icon remains available.
+ */
+.om-sidebar-collapsed .om-nav-sublist {
+    display: none;
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /*
+     * Mobile navigation always uses the expanded sidebar layout.
+     */
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-group-label {
+        display: flex;
+    }
+
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-link {
+        justify-content: flex-start;
+        padding: 0 var(--om-space-3);
+    }
+
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-link-text,
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-link-badge,
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-link-arrow {
+        display: inline-flex;
+    }
+
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-link-icon {
+        width: 1.25rem;
+    }
+
+    .om-app-shell.om-sidebar-collapsed
+    .om-nav-sublist {
+        display: flex;
+    }
+
+    .om-nav-sublist {
+        margin-left: 0.75rem;
+    }
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .om-nav-link,
+    .om-nav-link-icon,
+    .om-nav-link-arrow,
+    .om-nav-sublist {
+        transition: none;
+    }
+}

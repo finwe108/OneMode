@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMode — Fee Schedule Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../src/css/onemode.css">
+</head>
+<body>
+<div class="om-app-shell">
+    <aside id="om-main-sidebar" class="om-app-shell-sidebar">
+        <div class="om-sidebar">
+            <div class="om-sidebar-brand">
+                <div class="om-sidebar-brand-mark">O</div>
+                <div class="om-sidebar-brand-copy">
+                    <strong>OneMode</strong><span>EkaMod SES</span>
+                </div>
+            </div>
+            <nav class="om-sidebar-nav" aria-label="Primary navigation">
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Main</div>
+                    <ul class="om-nav-list">
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-grid-1x2" aria-hidden="true"></i><span>Dashboard</span></a></li>
+                    </ul>
+                </div>
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Finance</div>
+                    <ul class="om-nav-list">
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-wallet2" aria-hidden="true"></i><span>Finance</span></a></li>
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-cash-stack" aria-hidden="true"></i><span>Cashiering</span></a></li>
+                        <li><a href="#" class="om-nav-link om-is-active" aria-current="page"><i class="bi bi-calendar2-check" aria-hidden="true"></i><span>Fee Schedules</span></a></li>
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-calculator" aria-hidden="true"></i><span>Accounting</span></a></li>
+                    </ul>
+                </div>
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Administration</div>
+                    <ul class="om-nav-list">
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-person-gear" aria-hidden="true"></i><span>Users</span></a></li>
+                        <li><a href="#" class="om-nav-link"><i class="bi bi-gear" aria-hidden="true"></i><span>Settings</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </aside>
+    <div class="om-sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="om-app-shell-main">
+        <header class="om-app-header">
+            <div class="om-app-header-left">
+                <button type="button" class="om-sidebar-toggle om-icon-action" aria-controls="om-main-sidebar" aria-expanded="true" aria-label="Collapse navigation">
+                    <i class="bi bi-layout-sidebar-inset" aria-hidden="true"></i>
+                </button>
+                <div class="om-app-header-context"><span class="om-app-header-context-label">Finance</span></div>
+            </div>
+            <div class="om-app-header-actions">
+                <button type="button" class="om-icon-action" aria-label="Notifications"><i class="bi bi-bell" aria-hidden="true"></i></button>
+                <button type="button" class="om-icon-action" aria-label="Account"><i class="bi bi-person-circle" aria-hidden="true"></i></button>
+            </div>
+        </header>
+
+        <main class="om-app-shell-content">
+            <div class="om-page">
+                <nav class="om-breadcrumb" aria-label="Breadcrumb">
+                    <ol class="om-breadcrumb-list">
+                        <li class="om-breadcrumb-item"><a href="#" class="om-breadcrumb-link">Finance</a></li>
+                        <li class="om-breadcrumb-item"><a href="#" class="om-breadcrumb-link">Fee Schedules</a></li>
+                        <li class="om-breadcrumb-item om-breadcrumb-current" aria-current="page">Grade 7 Tuition</li>
+                    </ol>
+                </nav>
+
+                <header class="om-page-header">
+                    <div>
+                        <h1 class="om-page-title">Grade 7 Tuition</h1>
+                        <p class="om-page-description">Standard tuition fee assigned to Grade 7 for the 2026–2027 school year.</p>
+                    </div>
+                    <div class="om-page-header-actions">
+                        <span class="om-badge om-badge-success"><i class="bi bi-check-circle" aria-hidden="true"></i> Active</span>
+                        <a href="#" class="om-btn om-btn-primary"><i class="bi bi-pencil" aria-hidden="true"></i> Edit</a>
+                        <button type="button" class="om-btn om-btn-ghost" aria-label="More actions"><i class="bi bi-three-dots" aria-hidden="true"></i></button>
+                    </div>
+                </header>
+
+                <div class="om-page-content">
+                    <section class="om-page-section">
+                        <div class="om-page-section-title"><div><h2>Summary</h2><p>Key information for this fee schedule.</p></div></div>
+                        <div class="om-page-grid">
+                            <div class="om-card"><div class="om-card-body"><div class="om-text-sm om-text-muted">Fee Type</div><div class="om-text-lg om-font-medium">Tuition</div></div></div>
+                            <div class="om-card"><div class="om-card-body"><div class="om-text-sm om-text-muted">Amount</div><div class="om-text-lg om-font-medium">₱35,000.00</div></div></div>
+                            <div class="om-card"><div class="om-card-body"><div class="om-text-sm om-text-muted">School Year</div><div class="om-text-lg om-font-medium">2026–2027</div></div></div>
+                            <div class="om-card"><div class="om-card-body"><div class="om-text-sm om-text-muted">Status</div><div class="om-text-lg om-font-medium">Active</div></div></div>
+                        </div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-page-section-title"><div><h2>Applicability</h2><p>Grade levels currently covered by this reusable fee schedule.</p></div></div>
+                        <div class="om-card">
+                            <div class="om-card-body">
+                                <div class="om-page-actions">
+                                    <span class="om-badge om-badge-primary">Grade 7</span>
+                                </div>
+                                <div class="om-alert om-alert-info">
+                                    <i class="bi bi-info-circle om-alert-icon" aria-hidden="true"></i>
+                                    <div class="om-alert-content">
+                                        <div class="om-alert-title">Reusable fee schedule</div>
+                                        <div class="om-alert-message">This schedule can be assigned to multiple grade levels when the same fee and amount apply.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-page-section-title"><div><h2>Description</h2><p>Additional context maintained for this fee schedule.</p></div></div>
+                        <div class="om-card"><div class="om-card-body"><p>Standard tuition charge for the 2026–2027 school year. This fee is applied to eligible Grade 7 students according to the school's configured fee schedule.</p></div></div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-page-section-title"><div><h2>Record Information</h2><p>Administrative metadata for this record.</p></div></div>
+                        <div class="om-card">
+                            <div class="om-table-wrapper">
+                                <table class="om-table">
+                                    <tbody>
+                                        <tr><th scope="row">Schedule ID</th><td>FS-2026-0007</td></tr>
+                                        <tr><th scope="row">Created</th><td>June 12, 2026 at 9:24 AM</td></tr>
+                                        <tr><th scope="row">Last updated</th><td>June 18, 2026 at 2:41 PM</td></tr>
+                                        <tr><th scope="row">Last updated by</th><td>Finance Administrator</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-card">
+                            <div class="om-card-body">
+                                <div class="om-page-actions">
+                                    <div>
+                                        <h2 class="om-card-title">Need to change this schedule?</h2>
+                                        <p class="om-card-text">Edit the fee schedule to update its amount, applicability, description, or status.</p>
+                                    </div>
+                                    <a href="#" class="om-btn om-btn-primary"><i class="bi bi-pencil" aria-hidden="true"></i> Edit Fee Schedule</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script type="module" src="../../src/js/theme.js"></script>
+<script type="module" src="../../src/js/app-shell.js"></script>
+</body>
+</html>

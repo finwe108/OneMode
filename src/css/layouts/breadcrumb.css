@@ -1,0 +1,61 @@
+/* =========================================================
+   OneMode — Breadcrumb
+   ========================================================= */
+
+.om-breadcrumb {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    margin-bottom: var(--om-space-4);
+}
+
+.om-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--om-space-2);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.om-breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-2);
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-sm);
+}
+
+.om-breadcrumb-item + .om-breadcrumb-item::before {
+    content: "/";
+
+    color: var(--om-color-text-muted);
+}
+
+.om-breadcrumb-link {
+    color: var(--om-color-text-secondary);
+    text-decoration: none;
+}
+
+.om-breadcrumb-link:hover {
+    color: var(--om-color-primary-text);
+    text-decoration: underline;
+}
+
+.om-breadcrumb-current {
+    color: var(--om-color-text);
+
+    font-weight: var(--om-font-weight-medium);
+}
+
+.om-breadcrumb-link:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}

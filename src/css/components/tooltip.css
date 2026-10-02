@@ -1,0 +1,284 @@
+/* =========================================================
+   OneMode — Tooltip / Popover
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Shared trigger
+   --------------------------------------------------------- */
+
+[data-om-tooltip],
+[data-om-popover] {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   Tooltip
+   --------------------------------------------------------- */
+
+.om-tooltip {
+    position: fixed;
+    z-index: 1400;
+    max-width: 18rem;
+    padding:
+        var(--om-space-2)
+        var(--om-space-3);
+    border: 1px solid var(--om-color-border-strong);
+    border-radius: var(--om-radius-md);
+    background: var(--om-color-text);
+    color: var(--om-color-text-inverse);
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-medium);
+    line-height: var(--om-line-height-normal);
+    text-align: left;
+    box-shadow: var(--om-shadow-md);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.25rem);
+    transition:
+        opacity var(--om-transition-fast),
+        visibility var(--om-transition-fast),
+        transform var(--om-transition-fast);
+}
+
+.om-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.om-tooltip::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--om-color-text);
+    border-right: 1px solid var(--om-color-border-strong);
+    border-bottom: 1px solid var(--om-color-border-strong);
+    transform: rotate(45deg);
+}
+
+/* Tooltip placement */
+
+.om-tooltip-top::after {
+    left: 50%;
+    bottom: -0.3rem;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.om-tooltip-bottom {
+    transform: translateY(-0.25rem);
+}
+
+.om-tooltip-bottom.is-visible {
+    transform: translateY(0);
+}
+
+.om-tooltip-bottom::after {
+    left: 50%;
+    top: -0.3rem;
+    transform: translateX(-50%) rotate(225deg);
+}
+
+.om-tooltip-start::after {
+    top: 50%;
+    right: -0.3rem;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.om-tooltip-end::after {
+    top: 50%;
+    left: -0.3rem;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+
+/* ---------------------------------------------------------
+   Popover
+   --------------------------------------------------------- */
+
+.om-popover {
+    position: fixed;
+    z-index: 1350;
+    width: min(22rem, calc(100vw - 2rem));
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-lg);
+    background: var(--om-color-surface);
+    color: var(--om-color-text);
+    box-shadow: var(--om-shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.25rem);
+    transition:
+        opacity var(--om-transition-fast),
+        visibility var(--om-transition-fast),
+        transform var(--om-transition-fast);
+}
+
+.om-popover.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.om-popover-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--om-space-3);
+    padding:
+        var(--om-space-4)
+        var(--om-space-4)
+        var(--om-space-3);
+}
+
+.om-popover-heading {
+    min-width: 0;
+}
+
+.om-popover-title {
+    margin: 0;
+    color: var(--om-color-text);
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-popover-description {
+    margin: var(--om-space-1) 0 0;
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-popover-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--om-radius-md);
+    background: transparent;
+    color: var(--om-color-text-muted);
+    cursor: pointer;
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-popover-close:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-popover-close:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-popover-body {
+    padding:
+        0
+        var(--om-space-4)
+        var(--om-space-4);
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-popover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--om-space-2);
+    padding:
+        var(--om-space-3)
+        var(--om-space-4);
+    border-top: 1px solid var(--om-color-border);
+}
+
+.om-popover-divider {
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background: var(--om-color-border);
+}
+
+
+/* ---------------------------------------------------------
+   Popover variants
+   --------------------------------------------------------- */
+
+.om-popover-sm {
+    width: min(18rem, calc(100vw - 2rem));
+}
+
+.om-popover-lg {
+    width: min(30rem, calc(100vw - 2rem));
+}
+
+.om-popover-danger {
+    border-color: var(--om-color-danger-border);
+}
+
+.om-popover-success {
+    border-color: var(--om-color-success-border);
+}
+
+.om-popover-warning {
+    border-color: var(--om-color-warning-border);
+}
+
+.om-popover-info {
+    border-color: var(--om-color-info-border);
+}
+
+
+/* ---------------------------------------------------------
+   Responsive behavior
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+    .om-tooltip {
+        max-width: calc(100vw - 2rem);
+    }
+
+    .om-popover {
+        width: calc(100vw - 2rem);
+    }
+
+    .om-popover-header {
+        padding:
+            var(--om-space-3)
+            var(--om-space-3)
+            var(--om-space-2);
+    }
+
+    .om-popover-body {
+        padding:
+            0
+            var(--om-space-3)
+            var(--om-space-3);
+    }
+
+    .om-popover-footer {
+        padding:
+            var(--om-space-3);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-tooltip,
+    .om-popover {
+        transition: none;
+    }
+}

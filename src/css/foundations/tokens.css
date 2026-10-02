@@ -1,0 +1,409 @@
+:root {
+    /* =========================================================
+       Colors — Brand / Primary
+       ========================================================= */
+
+    --om-color-primary: #2563eb;
+    --om-color-primary-hover: #1d4ed8;
+    --om-color-primary-active: #1e40af;
+    --om-color-primary-soft: #eff6ff;
+    --om-color-primary-border: #bfdbfe;
+    --om-color-primary-text: #1d4ed8;
+
+
+    /* =========================================================
+       Colors — Semantic
+       ========================================================= */
+
+    --om-color-success: #16a34a;
+    --om-color-success-bg: #f0fdf4;
+    --om-color-success-border: #bbf7d0;
+    --om-color-success-text: #166534;
+
+    --om-color-warning: #d97706;
+    --om-color-warning-bg: #fffbeb;
+    --om-color-warning-border: #fde68a;
+    --om-color-warning-text: #92400e;
+
+    --om-color-danger: #dc2626;
+    --om-color-danger-bg: #fef2f2;
+    --om-color-danger-border: #fecaca;
+    --om-color-danger-text: #991b1b;
+
+    --om-color-info: #0891b2;
+    --om-color-info-bg: #ecfeff;
+    --om-color-info-border: #a5f3fc;
+    --om-color-info-text: #155e75;
+
+
+    /* =========================================================
+       Colors — Application Surfaces
+       ========================================================= */
+
+    --om-color-background: #f8fafc;
+    --om-color-surface: #ffffff;
+    --om-color-surface-muted: #f1f5f9;
+    --om-color-surface-hover: #f8fafc;
+    --om-color-surface-active: #f1f5f9;
+    --om-color-surface-disabled: #f1f5f9;
+
+
+    /* =========================================================
+       Colors — Borders
+       ========================================================= */
+
+    --om-color-border: #e2e8f0;
+    --om-color-border-strong: #cbd5e1;
+    --om-color-border-subtle: #f1f5f9;
+
+
+    /* =========================================================
+       Colors — Text
+       ========================================================= */
+
+    --om-color-text: #0f172a;
+    --om-color-text-secondary: #334155;
+    --om-color-text-muted: #64748b;
+    --om-color-text-disabled: #94a3b8;
+    --om-color-text-inverse: #ffffff;
+
+
+    /* =========================================================
+       Colors — Overlays
+       ========================================================= */
+
+    --om-color-overlay: rgba(15, 23, 42, 0.5);
+
+
+    /* =========================================================
+       Typography
+       ========================================================= */
+
+    --om-font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --om-font-size-xs: 0.75rem;
+    --om-font-size-sm: 0.875rem;
+    --om-font-size-md: 1rem;
+    --om-font-size-lg: 1.125rem;
+    --om-font-size-xl: 1.5rem;
+    --om-font-size-2xl: 1.875rem;
+    --om-font-size-3xl: 2.25rem;
+
+    --om-font-weight-normal: 400;
+    --om-font-weight-medium: 500;
+    --om-font-weight-semibold: 600;
+    --om-font-weight-bold: 700;
+
+    --om-line-height-tight: 1.25;
+    --om-line-height-normal: 1.5;
+    --om-line-height-relaxed: 1.625;
+
+
+    /* =========================================================
+       Spacing
+       ========================================================= */
+
+    --om-space-1: 0.25rem;
+    --om-space-2: 0.5rem;
+    --om-space-3: 0.75rem;
+    --om-space-4: 1rem;
+    --om-space-5: 1.25rem;
+    --om-space-6: 1.5rem;
+    --om-space-8: 2rem;
+    --om-space-10: 2.5rem;
+    --om-space-12: 3rem;
+    --om-space-16: 4rem;
+
+
+    /* =========================================================
+       Borders / Radius
+       ========================================================= */
+
+    --om-radius-sm: 0.375rem;
+    --om-radius-md: 0.5rem;
+    --om-radius-lg: 0.75rem;
+    --om-radius-xl: 1rem;
+    --om-radius-full: 999px;
+
+
+    /* =========================================================
+       Shadows
+       ========================================================= */
+
+    --om-shadow-sm:
+        0 1px 2px rgba(15, 23, 42, 0.05);
+
+    --om-shadow-md:
+        0 4px 12px rgba(15, 23, 42, 0.08);
+
+    --om-shadow-lg:
+        0 10px 25px rgba(15, 23, 42, 0.12);
+
+
+    /* =========================================================
+       Focus
+       ========================================================= */
+
+    --om-focus-ring:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+
+    --om-focus-ring-danger:
+        0 0 0 3px rgba(220, 38, 38, 0.12);
+
+    --om-focus-ring-success:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+
+
+    /* =========================================================
+       Motion
+       ========================================================= */
+
+    --om-transition-fast: 150ms ease;
+    --om-transition-normal: 200ms ease;
+
+
+    /* =========================================================
+       Layout
+       ========================================================= */
+
+    --om-content-max-width: 1440px;
+}
+
+
+/* =============================================================
+   Dark Theme
+   ============================================================= */
+
+[data-om-theme="dark"] {
+    /* ---------------------------------------------------------
+       Brand / Primary
+       --------------------------------------------------------- */
+
+    --om-color-primary: #60a5fa;
+    --om-color-primary-hover: #93c5fd;
+    --om-color-primary-active: #bfdbfe;
+    --om-color-primary-soft: #172554;
+    --om-color-primary-border: #1d4ed8;
+    --om-color-primary-text: #93c5fd;
+
+
+    /* ---------------------------------------------------------
+       Semantic
+       --------------------------------------------------------- */
+
+    --om-color-success: #4ade80;
+    --om-color-success-bg: #052e16;
+    --om-color-success-border: #166534;
+    --om-color-success-text: #86efac;
+
+    --om-color-warning: #f59e0b;
+    --om-color-warning-bg: #451a03;
+    --om-color-warning-border: #92400e;
+    --om-color-warning-text: #fcd34d;
+
+    --om-color-danger: #f87171;
+    --om-color-danger-bg: #450a0a;
+    --om-color-danger-border: #991b1b;
+    --om-color-danger-text: #fca5a5;
+
+    --om-color-info: #22d3ee;
+    --om-color-info-bg: #083344;
+    --om-color-info-border: #155e75;
+    --om-color-info-text: #67e8f9;
+
+
+    /* ---------------------------------------------------------
+       Application Surfaces
+       --------------------------------------------------------- */
+
+    --om-color-background: #0f172a;
+    --om-color-surface: #1e293b;
+    --om-color-surface-muted: #334155;
+    --om-color-surface-hover: #273449;
+    --om-color-surface-active: #334155;
+    --om-color-surface-disabled: #334155;
+
+
+    /* ---------------------------------------------------------
+       Borders
+       --------------------------------------------------------- */
+
+    --om-color-border: #334155;
+    --om-color-border-strong: #475569;
+    --om-color-border-subtle: #1e293b;
+
+
+    /* ---------------------------------------------------------
+       Text
+       --------------------------------------------------------- */
+
+    --om-color-text: #f8fafc;
+    --om-color-text-secondary: #cbd5e1;
+    --om-color-text-muted: #94a3b8;
+    --om-color-text-disabled: #64748b;
+    --om-color-text-inverse: #0f172a;
+
+
+    /* ---------------------------------------------------------
+       Overlays
+       --------------------------------------------------------- */
+
+    --om-color-overlay: rgba(2, 6, 23, 0.7);
+
+
+    /* ---------------------------------------------------------
+       Shadows
+       --------------------------------------------------------- */
+
+    --om-shadow-sm:
+        0 1px 2px rgba(0, 0, 0, 0.25);
+
+    --om-shadow-md:
+        0 4px 12px rgba(0, 0, 0, 0.3);
+
+    --om-shadow-lg:
+        0 10px 25px rgba(0, 0, 0, 0.4);
+
+
+    /* ---------------------------------------------------------
+       Focus
+       --------------------------------------------------------- */
+
+    --om-focus-ring:
+        0 0 0 3px rgba(96, 165, 250, 0.2);
+
+    --om-focus-ring-danger:
+        0 0 0 3px rgba(248, 113, 113, 0.2);
+
+    --om-focus-ring-success:
+        0 0 0 3px rgba(74, 222, 128, 0.2);
+}
+
+
+/* =============================================================
+   System Theme
+   ============================================================= */
+
+/*
+ * Used when no explicit OneMode theme is selected.
+ *
+ * Example:
+ *
+ * <html data-om-theme="system">
+ *
+ * The system preference determines the actual appearance.
+ */
+
+@media (prefers-color-scheme: dark) {
+    [data-om-theme="system"] {
+        /* -----------------------------------------------------
+           Brand / Primary
+           ----------------------------------------------------- */
+
+        --om-color-primary: #60a5fa;
+        --om-color-primary-hover: #93c5fd;
+        --om-color-primary-active: #bfdbfe;
+        --om-color-primary-soft: #172554;
+        --om-color-primary-border: #1d4ed8;
+        --om-color-primary-text: #93c5fd;
+
+
+        /* -----------------------------------------------------
+           Semantic
+           ----------------------------------------------------- */
+
+        --om-color-success: #4ade80;
+        --om-color-success-bg: #052e16;
+        --om-color-success-border: #166534;
+        --om-color-success-text: #86efac;
+
+        --om-color-warning: #f59e0b;
+        --om-color-warning-bg: #451a03;
+        --om-color-warning-border: #92400e;
+        --om-color-warning-text: #fcd34d;
+
+        --om-color-danger: #f87171;
+        --om-color-danger-bg: #450a0a;
+        --om-color-danger-border: #991b1b;
+        --om-color-danger-text: #fca5a5;
+
+        --om-color-info: #22d3ee;
+        --om-color-info-bg: #083344;
+        --om-color-info-border: #155e75;
+        --om-color-info-text: #67e8f9;
+
+
+        /* -----------------------------------------------------
+           Application Surfaces
+           ----------------------------------------------------- */
+
+        --om-color-background: #0f172a;
+        --om-color-surface: #1e293b;
+        --om-color-surface-muted: #334155;
+        --om-color-surface-hover: #273449;
+        --om-color-surface-active: #334155;
+        --om-color-surface-disabled: #334155;
+
+
+        /* -----------------------------------------------------
+           Borders
+           ----------------------------------------------------- */
+
+        --om-color-border: #334155;
+        --om-color-border-strong: #475569;
+        --om-color-border-subtle: #1e293b;
+
+
+        /* -----------------------------------------------------
+           Text
+           ----------------------------------------------------- */
+
+        --om-color-text: #f8fafc;
+        --om-color-text-secondary: #cbd5e1;
+        --om-color-text-muted: #94a3b8;
+        --om-color-text-disabled: #64748b;
+        --om-color-text-inverse: #0f172a;
+
+
+        /* -----------------------------------------------------
+           Overlay
+           ----------------------------------------------------- */
+
+        --om-color-overlay: rgba(2, 6, 23, 0.7);
+
+
+        /* -----------------------------------------------------
+           Shadows
+           ----------------------------------------------------- */
+
+        --om-shadow-sm:
+            0 1px 2px rgba(0, 0, 0, 0.25);
+
+        --om-shadow-md:
+            0 4px 12px rgba(0, 0, 0, 0.3);
+
+        --om-shadow-lg:
+            0 10px 25px rgba(0, 0, 0, 0.4);
+
+
+        /* -----------------------------------------------------
+           Focus
+           ----------------------------------------------------- */
+
+        --om-focus-ring:
+            0 0 0 3px rgba(96, 165, 250, 0.2);
+
+        --om-focus-ring-danger:
+            0 0 0 3px rgba(248, 113, 113, 0.2);
+
+        --om-focus-ring-success:
+            0 0 0 3px rgba(74, 222, 128, 0.2);
+    }
+}

@@ -1,0 +1,270 @@
+/* =========================================================
+   OneMode — Date & Time Controls
+   Native HTML date/time inputs
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Base Date / Time Controls
+   --------------------------------------------------------- */
+
+.om-form-control[type="date"],
+.om-form-control[type="time"],
+.om-form-control[type="datetime-local"],
+.om-form-control[type="month"],
+.om-form-control[type="week"] {
+    min-width: 0;
+    appearance: auto;
+}
+
+
+/* ---------------------------------------------------------
+   Date / Time Input Widths
+   --------------------------------------------------------- */
+
+.om-form-date {
+    width: 100%;
+}
+
+.om-form-date-sm {
+    max-width: 12rem;
+}
+
+.om-form-date-md {
+    max-width: 16rem;
+}
+
+.om-form-date-lg {
+    max-width: 20rem;
+}
+
+.om-form-time {
+    width: 100%;
+}
+
+.om-form-time-sm {
+    max-width: 10rem;
+}
+
+.om-form-time-md {
+    max-width: 12rem;
+}
+
+.om-form-time-lg {
+    max-width: 16rem;
+}
+
+
+/* ---------------------------------------------------------
+   Native Picker Indicator
+   --------------------------------------------------------- */
+
+.om-form-control[type="date"]::-webkit-calendar-picker-indicator,
+.om-form-control[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.om-form-control[type="month"]::-webkit-calendar-picker-indicator,
+.om-form-control[type="week"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+    transition:
+        opacity var(--om-transition-fast);
+}
+
+.om-form-control[type="date"]:hover::-webkit-calendar-picker-indicator,
+.om-form-control[type="datetime-local"]:hover::-webkit-calendar-picker-indicator,
+.om-form-control[type="month"]:hover::-webkit-calendar-picker-indicator,
+.om-form-control[type="week"]:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
+.om-form-control[type="date"]:disabled::-webkit-calendar-picker-indicator,
+.om-form-control[type="datetime-local"]:disabled::-webkit-calendar-picker-indicator,
+.om-form-control[type="month"]:disabled::-webkit-calendar-picker-indicator,
+.om-form-control[type="week"]:disabled::-webkit-calendar-picker-indicator {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+
+/* ---------------------------------------------------------
+   Time Picker Indicator
+   --------------------------------------------------------- */
+
+.om-form-control[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+    transition:
+        opacity var(--om-transition-fast);
+}
+
+.om-form-control[type="time"]:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
+.om-form-control[type="time"]:disabled::-webkit-calendar-picker-indicator {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+
+/* ---------------------------------------------------------
+   Date / Time States
+   --------------------------------------------------------- */
+
+.om-form-control[type="date"].is-valid,
+.om-form-control[type="time"].is-valid,
+.om-form-control[type="datetime-local"].is-valid,
+.om-form-control[type="month"].is-valid,
+.om-form-control[type="week"].is-valid {
+    border-color: var(--om-color-success);
+}
+
+.om-form-control[type="date"].is-invalid,
+.om-form-control[type="time"].is-invalid,
+.om-form-control[type="datetime-local"].is-invalid,
+.om-form-control[type="month"].is-invalid,
+.om-form-control[type="week"].is-invalid {
+    border-color: var(--om-color-danger);
+}
+
+
+/* ---------------------------------------------------------
+   Date / Time Groups
+   --------------------------------------------------------- */
+
+.om-date-time-group {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: var(--om-space-4);
+}
+
+.om-date-time-group-3 {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: var(--om-space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Date Range
+   Native controls only.
+   This is not the future custom date-range picker.
+   --------------------------------------------------------- */
+
+.om-date-range {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: var(--om-space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Date / Time Input with Supporting Text
+   --------------------------------------------------------- */
+
+.om-date-time-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-2);
+}
+
+.om-date-time-label {
+    color: var(--om-color-text-secondary);
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-medium);
+}
+
+
+/* ---------------------------------------------------------
+   Readonly Date / Time Controls
+   --------------------------------------------------------- */
+
+.om-form-control[type="date"][readonly],
+.om-form-control[type="time"][readonly],
+.om-form-control[type="datetime-local"][readonly],
+.om-form-control[type="month"][readonly],
+.om-form-control[type="week"][readonly] {
+    background: var(--om-color-surface-muted);
+    cursor: default;
+}
+
+
+/* ---------------------------------------------------------
+   Disabled Date / Time Controls
+   --------------------------------------------------------- */
+
+.om-form-control[type="date"]:disabled,
+.om-form-control[type="time"]:disabled,
+.om-form-control[type="datetime-local"]:disabled,
+.om-form-control[type="month"]:disabled,
+.om-form-control[type="week"]:disabled {
+    background: var(--om-color-surface-disabled);
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+}
+
+
+/* ---------------------------------------------------------
+   Small Controls
+   --------------------------------------------------------- */
+
+.om-form-control.om-form-control-date-sm,
+.om-form-control.om-form-control-time-sm {
+    min-height: 2.25rem;
+    padding:
+        var(--om-space-2)
+        var(--om-space-3);
+    font-size: var(--om-font-size-sm);
+}
+
+
+/* ---------------------------------------------------------
+   Large Controls
+   --------------------------------------------------------- */
+
+.om-form-control.om-form-control-date-lg,
+.om-form-control.om-form-control-time-lg {
+    min-height: 3rem;
+    padding:
+        var(--om-space-3)
+        var(--om-space-4);
+    font-size: var(--om-font-size-md);
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-date-time-group,
+    .om-date-time-group-3,
+    .om-date-range {
+        grid-template-columns: 1fr;
+    }
+
+    .om-form-date-sm,
+    .om-form-date-md,
+    .om-form-date-lg,
+    .om-form-time-sm,
+    .om-form-time-md,
+    .om-form-time-lg {
+        max-width: none;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced Motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-form-control[type="date"]::-webkit-calendar-picker-indicator,
+    .om-form-control[type="time"]::-webkit-calendar-picker-indicator,
+    .om-form-control[type="datetime-local"]::-webkit-calendar-picker-indicator,
+    .om-form-control[type="month"]::-webkit-calendar-picker-indicator,
+    .om-form-control[type="week"]::-webkit-calendar-picker-indicator {
+        transition: none;
+    }
+}

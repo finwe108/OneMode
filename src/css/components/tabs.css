@@ -1,0 +1,367 @@
+/* =========================================================
+   OneMode — Tabs / Segmented Navigation
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tabs
+   --------------------------------------------------------- */
+
+.om-tabs {
+    width: 100%;
+}
+
+.om-tabs-list {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-1);
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--om-color-border);
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.om-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--om-space-2);
+    min-height: 2.75rem;
+    padding:
+        0
+        var(--om-space-3);
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    border-radius:
+        var(--om-radius-md)
+        var(--om-radius-md)
+        0
+        0;
+    background: transparent;
+    color: var(--om-color-text-secondary);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color var(--om-transition-fast),
+        border-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-tab:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-tab:focus-visible {
+    z-index: 1;
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: -2px;
+}
+
+.om-tab-active {
+    border-bottom-color: var(--om-color-primary);
+    color: var(--om-color-primary-text);
+}
+
+.om-tab-active:hover {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-tab:disabled,
+.om-tab.om-tab-disabled {
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+    background: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   Tab icon
+   --------------------------------------------------------- */
+
+.om-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: var(--om-font-size-md);
+}
+
+
+/* ---------------------------------------------------------
+   Tab badge
+   --------------------------------------------------------- */
+
+.om-tab-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding:
+        0
+        var(--om-space-1);
+    border-radius: var(--om-radius-full);
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-tab-active .om-tab-badge {
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+}
+
+
+/* ---------------------------------------------------------
+   Tab panels
+   --------------------------------------------------------- */
+
+.om-tab-panel {
+    padding-top: var(--om-space-6);
+}
+
+.om-tab-panel[hidden] {
+    display: none;
+}
+
+.om-tab-panel:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   Filled tabs
+   --------------------------------------------------------- */
+
+.om-tabs-filled .om-tabs-list {
+    padding: var(--om-space-1);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+    background: var(--om-color-surface-muted);
+}
+
+.om-tabs-filled .om-tab {
+    min-height: 2.5rem;
+    margin: 0;
+    border: 0;
+    border-radius: var(--om-radius-sm);
+}
+
+.om-tabs-filled .om-tab:hover {
+    background: var(--om-color-surface-hover);
+}
+
+.om-tabs-filled .om-tab-active {
+    background: var(--om-color-surface);
+    color: var(--om-color-primary-text);
+    box-shadow: var(--om-shadow-sm);
+}
+
+.om-tabs-filled .om-tab-active:hover {
+    background: var(--om-color-surface);
+}
+
+
+/* ---------------------------------------------------------
+   Pills
+   --------------------------------------------------------- */
+
+.om-tabs-pills .om-tabs-list {
+    border-bottom: 0;
+    gap: var(--om-space-2);
+}
+
+.om-tabs-pills .om-tab {
+    min-height: 2.5rem;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-full);
+}
+
+.om-tabs-pills .om-tab-active {
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+}
+
+.om-tabs-pills .om-tab-active:hover {
+    background: var(--om-color-primary-hover);
+    color: var(--om-color-text-inverse);
+}
+
+.om-tabs-pills .om-tab-active .om-tab-badge {
+    background: rgb(255 255 255 / 20%);
+    color: var(--om-color-text-inverse);
+}
+
+
+/* ---------------------------------------------------------
+   Segmented navigation
+   --------------------------------------------------------- */
+
+.om-segmented {
+    display: inline-flex;
+    align-items: stretch;
+    gap: var(--om-space-1);
+    max-width: 100%;
+    padding: var(--om-space-1);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+    background: var(--om-color-surface-muted);
+}
+
+.om-segmented-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--om-space-2);
+    min-height: 2.25rem;
+    padding:
+        0
+        var(--om-space-3);
+    border: 0;
+    border-radius: var(--om-radius-sm);
+    background: transparent;
+    color: var(--om-color-text-secondary);
+    font-family: inherit;
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast),
+        box-shadow var(--om-transition-fast);
+}
+
+.om-segmented-item:hover {
+    color: var(--om-color-text);
+    background: var(--om-color-surface-hover);
+}
+
+.om-segmented-item:focus-visible {
+    z-index: 1;
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 1px;
+}
+
+.om-segmented-item-active {
+    background: var(--om-color-surface);
+    color: var(--om-color-primary-text);
+    box-shadow: var(--om-shadow-sm);
+}
+
+.om-segmented-item-active:hover {
+    background: var(--om-color-surface);
+    color: var(--om-color-primary-text);
+}
+
+.om-segmented-item:disabled,
+.om-segmented-item.om-segmented-item-disabled {
+    color: var(--om-color-text-disabled);
+    background: transparent;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------
+   Segmented sizes
+   --------------------------------------------------------- */
+
+.om-segmented-sm {
+    padding: 0.125rem;
+}
+
+.om-segmented-sm .om-segmented-item {
+    min-height: 2rem;
+    padding:
+        0
+        var(--om-space-2);
+    font-size: var(--om-font-size-xs);
+}
+
+.om-segmented-lg {
+    padding: var(--om-space-1);
+}
+
+.om-segmented-lg .om-segmented-item {
+    min-height: 2.75rem;
+    padding:
+        0
+        var(--om-space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Full-width segmented navigation
+   --------------------------------------------------------- */
+
+.om-segmented-full {
+    display: flex;
+    width: 100%;
+}
+
+.om-segmented-full .om-segmented-item {
+    flex: 1;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-tabs-list {
+        overflow-x: auto;
+    }
+
+    .om-tab {
+        flex-shrink: 0;
+    }
+
+    .om-segmented {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .om-segmented-item {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .om-tab {
+        min-height: 2.5rem;
+        padding:
+            0
+            var(--om-space-2);
+    }
+
+    .om-tab-panel {
+        padding-top: var(--om-space-4);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-tab,
+    .om-segmented-item {
+        transition: none;
+    }
+}

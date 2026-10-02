@@ -1,0 +1,388 @@
+/* =========================================================
+   OneMode — Modal / Dialog
+   ========================================================= */
+
+.om-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--om-space-6);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity var(--om-transition-normal),
+        visibility var(--om-transition-normal);
+}
+
+.om-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   Backdrop
+   ========================================================= */
+
+.om-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--om-color-overlay);
+}
+
+
+/* =========================================================
+   Dialog
+   ========================================================= */
+
+.om-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 32rem;
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-lg);
+
+    background: var(--om-color-surface);
+    color: var(--om-color-text);
+
+    box-shadow: var(--om-shadow-lg);
+
+    transform: translateY(0.75rem) scale(0.98);
+
+    transition:
+        transform var(--om-transition-normal),
+        background-color var(--om-transition-normal),
+        border-color var(--om-transition-normal);
+}
+
+.om-modal.is-open .om-modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   Sizes
+   ========================================================= */
+
+.om-modal-sm .om-modal-dialog {
+    max-width: 24rem;
+}
+
+.om-modal-lg .om-modal-dialog {
+    max-width: 48rem;
+}
+
+.om-modal-xl .om-modal-dialog {
+    max-width: 64rem;
+}
+
+.om-modal-full .om-modal-dialog {
+    max-width: none;
+    height: calc(100vh - 3rem);
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.om-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--om-space-4);
+
+    padding:
+        var(--om-space-5)
+        var(--om-space-6);
+
+    border-bottom: 1px solid var(--om-color-border);
+}
+
+.om-modal-heading {
+    min-width: 0;
+}
+
+.om-modal-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-lg);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-modal-description {
+    margin:
+        var(--om-space-2)
+        0
+        0;
+
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+
+/* =========================================================
+   Close Button
+   ========================================================= */
+
+.om-modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: var(--om-radius-md);
+
+    background: transparent;
+    color: var(--om-color-text-muted);
+
+    font-family: inherit;
+    font-size: var(--om-font-size-lg);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-modal-close:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-modal-close:active {
+    background: var(--om-color-surface-active);
+}
+
+.om-modal-close:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   Body
+   ========================================================= */
+
+.om-modal-body {
+    min-width: 0;
+    overflow-y: auto;
+
+    padding:
+        var(--om-space-6);
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-modal-body > :first-child {
+    margin-top: 0;
+}
+
+.om-modal-body > :last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.om-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--om-space-3);
+
+    padding:
+        var(--om-space-4)
+        var(--om-space-6);
+
+    border-top: 1px solid var(--om-color-border);
+
+    background: var(--om-color-surface-muted);
+}
+
+
+/* =========================================================
+   Confirmation Modal
+   ========================================================= */
+
+.om-modal-confirmation .om-modal-body {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--om-space-4);
+}
+
+.om-modal-confirmation-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    flex-shrink: 0;
+
+    border-radius: var(--om-radius-full);
+
+    background: var(--om-color-warning-bg);
+    color: var(--om-color-warning);
+}
+
+.om-modal-confirmation-content {
+    min-width: 0;
+}
+
+.om-modal-confirmation-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-md);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-modal-confirmation-message {
+    margin:
+        var(--om-space-2)
+        0
+        0;
+
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+.om-modal-danger .om-modal-confirmation-icon {
+    background: var(--om-color-danger-bg);
+    color: var(--om-color-danger);
+}
+
+
+/* =========================================================
+   Form Modal
+   ========================================================= */
+
+.om-modal-form .om-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--om-space-5);
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .om-modal {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .om-modal-dialog,
+    .om-modal-sm .om-modal-dialog,
+    .om-modal-lg .om-modal-dialog,
+    .om-modal-xl .om-modal-dialog {
+        max-width: none;
+        max-height: calc(100vh - 1rem);
+
+        border-radius:
+            var(--om-radius-lg)
+            var(--om-radius-lg)
+            0
+            0;
+
+        transform: translateY(1rem);
+    }
+
+    .om-modal.is-open .om-modal-dialog {
+        transform: translateY(0);
+    }
+
+    .om-modal-full .om-modal-dialog {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .om-modal-header {
+        padding:
+            var(--om-space-4)
+            var(--om-space-5);
+    }
+
+    .om-modal-body {
+        padding:
+            var(--om-space-5);
+    }
+
+    .om-modal-footer {
+        padding:
+            var(--om-space-4)
+            var(--om-space-5);
+    }
+
+    .om-modal-footer .om-btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .om-modal-footer {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .om-modal-footer .om-btn {
+        width: 100%;
+    }
+
+    .om-modal-confirmation .om-modal-body {
+        gap: var(--om-space-3);
+    }
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .om-modal,
+    .om-modal-dialog,
+    .om-modal-close {
+        transition: none;
+    }
+}

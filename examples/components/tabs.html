@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Tabs / Segmented Navigation</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+
+</head>
+
+<body>
+
+<main class="om-page">
+
+    <!-- =================================================
+         Page Header
+         ================================================= -->
+
+    <div class="om-page-header">
+
+        <div class="om-page-header-content">
+
+            <h1 class="om-page-title">
+                Tabs / Segmented Navigation
+            </h1>
+
+            <p class="om-page-description">
+                Navigation patterns for switching between
+                related views or content sections.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         Standard Tabs
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Standard Tabs
+                </h2>
+
+                <p class="om-page-section-description">
+                    Recommended for larger content sections
+                    within the same page.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div data-om-tabs class="om-tabs">
+
+            <div
+                class="om-tabs-list"
+                role="tablist"
+                aria-label="Student information"
+            >
+
+                <button
+                    type="button"
+                    id="student-overview-tab"
+                    class="om-tab om-tab-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="student-overview-panel"
+                >
+                    <i
+                        class="bi bi-person-vcard om-tab-icon"
+                    ></i>
+
+                    Overview
+                </button>
+
+
+                <button
+                    type="button"
+                    id="student-enrollment-tab"
+                    class="om-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="student-enrollment-panel"
+                    tabindex="-1"
+                >
+                    <i
+                        class="bi bi-person-plus om-tab-icon"
+                    ></i>
+
+                    Enrollment
+                </button>
+
+
+                <button
+                    type="button"
+                    id="student-payments-tab"
+                    class="om-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="student-payments-panel"
+                    tabindex="-1"
+                >
+                    <i
+                        class="bi bi-credit-card om-tab-icon"
+                    ></i>
+
+                    Payments
+
+                    <span class="om-tab-badge">
+                        3
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    id="student-documents-tab"
+                    class="om-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="student-documents-panel"
+                    tabindex="-1"
+                >
+                    <i
+                        class="bi bi-folder2 om-tab-icon"
+                    ></i>
+
+                    Documents
+                </button>
+
+            </div>
+
+
+            <section
+                id="student-overview-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                aria-labelledby="student-overview-tab"
+            >
+
+                <h3 class="om-page-section-title">
+                    Student Overview
+                </h3>
+
+                <p class="om-page-section-description">
+                    Basic student information and current
+                    enrollment status.
+                </p>
+
+            </section>
+
+
+            <section
+                id="student-enrollment-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                aria-labelledby="student-enrollment-tab"
+                hidden
+            >
+
+                <h3 class="om-page-section-title">
+                    Enrollment
+                </h3>
+
+                <p class="om-page-section-description">
+                    Enrollment history, grade level, section,
+                    and academic year information.
+                </p>
+
+            </section>
+
+
+            <section
+                id="student-payments-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                aria-labelledby="student-payments-tab"
+                hidden
+            >
+
+                <h3 class="om-page-section-title">
+                    Payments
+                </h3>
+
+                <p class="om-page-section-description">
+                    Payment history and outstanding balances.
+                </p>
+
+            </section>
+
+
+            <section
+                id="student-documents-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                aria-labelledby="student-documents-tab"
+                hidden
+            >
+
+                <h3 class="om-page-section-title">
+                    Documents
+                </h3>
+
+                <p class="om-page-section-description">
+                    Student-related documents and records.
+                </p>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Filled Tabs
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Filled Tabs
+                </h2>
+
+                <p class="om-page-section-description">
+                    Useful when the tab group needs stronger
+                    visual separation from the page.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            data-om-tabs
+            class="om-tabs om-tabs-filled"
+        >
+
+            <div
+                class="om-tabs-list"
+                role="tablist"
+                aria-label="Cashiering"
+            >
+
+                <button
+                    type="button"
+                    class="om-tab om-tab-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="cashier-session-panel"
+                >
+                    <i class="bi bi-person-workspace"></i>
+                    Session
+                </button>
+
+                <button
+                    type="button"
+                    class="om-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="cashier-payments-panel"
+                    tabindex="-1"
+                >
+                    Payments
+                </button>
+
+                <button
+                    type="button"
+                    class="om-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="cashier-collections-panel"
+                    tabindex="-1"
+                >
+                    Collections
+                </button>
+
+            </div>
+
+
+            <div
+                id="cashier-session-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+            >
+                Current cashier session.
+            </div>
+
+            <div
+                id="cashier-payments-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                hidden
+            >
+                Payments received during the session.
+            </div>
+
+            <div
+                id="cashier-collections-panel"
+                class="om-tab-panel"
+                role="tabpanel"
+                hidden
+            >
+                Collection summary for the session.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Segmented Navigation
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Segmented Navigation
+                </h2>
+
+                <p class="om-page-section-description">
+                    Best for compact choices between a small
+                    number of mutually exclusive views.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-segmented"
+            role="group"
+            aria-label="Payment status"
+        >
+
+            <button
+                type="button"
+                class="om-segmented-item om-segmented-item-active"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="om-segmented-item"
+            >
+                Outstanding
+            </button>
+
+            <button
+                type="button"
+                class="om-segmented-item"
+            >
+                Paid
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Full Width Segmented Navigation
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Full Width
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-segmented om-segmented-full"
+            role="group"
+            aria-label="Collection period"
+        >
+
+            <button
+                type="button"
+                class="om-segmented-item om-segmented-item-active"
+            >
+                Today
+            </button>
+
+            <button
+                type="button"
+                class="om-segmented-item"
+            >
+                This Week
+            </button>
+
+            <button
+                type="button"
+                class="om-segmented-item"
+            >
+                This Month
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Small Segmented Navigation
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div
+            class="om-segmented om-segmented-sm"
+            role="group"
+            aria-label="View mode"
+        >
+
+            <button
+                type="button"
+                class="om-segmented-item om-segmented-item-active"
+                aria-label="List view"
+            >
+                <i class="bi bi-list"></i>
+            </button>
+
+            <button
+                type="button"
+                class="om-segmented-item"
+                aria-label="Grid view"
+            >
+                <i class="bi bi-grid"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    type="module"
+    src="../../src/js/theme.js"
+></script>
+
+<script
+    type="module"
+    src="../../src/js/tabs.js"
+></script>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+/* =========================================================
+   OneMode — Documentation Header
+   ========================================================= */
+
+.om-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 4rem;
+    padding: 0 var(--om-space-6);
+
+    border-bottom: 1px solid var(--om-color-border);
+
+    background: var(--om-color-surface);
+
+    transition:
+        background-color var(--om-transition-normal),
+        border-color var(--om-transition-normal);
+}
+
+
+/* ---------------------------------------------------------
+   Brand
+   --------------------------------------------------------- */
+
+.om-header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-3);
+
+    color: var(--om-color-text);
+    text-decoration: none;
+}
+
+.om-header-brand:hover {
+    color: var(--om-color-primary-text);
+}
+
+.om-header-brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: var(--om-radius-md);
+
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+
+    font-size: var(--om-font-size-sm);
+}
+
+.om-header-brand-name {
+    font-size: var(--om-font-size-md);
+    font-weight: var(--om-font-weight-bold);
+}
+
+.om-header-brand-version {
+    color: var(--om-color-text-muted);
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-medium);
+}
+
+
+/* ---------------------------------------------------------
+   Navigation
+   --------------------------------------------------------- */
+
+.om-header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-1);
+}
+
+.om-header-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-2);
+
+    min-height: 2.5rem;
+    padding: 0 var(--om-space-3);
+
+    border-radius: var(--om-radius-md);
+
+    color: var(--om-color-text-secondary);
+    text-decoration: none;
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-header-link:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-header-link-active {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-header-link-active:hover {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-header-link:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   Right Side
+   --------------------------------------------------------- */
+
+.om-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-header {
+        padding: 0 var(--om-space-4);
+    }
+
+    .om-header-brand-version {
+        display: none;
+    }
+
+    .om-header-link span {
+        display: none;
+    }
+
+    .om-header-link {
+        width: 2.5rem;
+        justify-content: center;
+        padding: 0;
+    }
+}

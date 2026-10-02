@@ -1,0 +1,96 @@
+.om-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--om-space-3);
+
+    width: 100%;
+    padding: var(--om-space-4);
+
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-md);
+
+    font-size: var(--om-font-size-sm);
+}
+
+.om-alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.om-alert-title {
+    margin: 0 0 var(--om-space-1);
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-alert-message {
+    margin: 0;
+    line-height: var(--om-line-height-normal);
+}
+
+.om-alert-close {
+    flex-shrink: 0;
+
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 1rem;
+    line-height: 1;
+
+    opacity: 0.7;
+}
+
+.om-alert-close:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   Success
+   ========================================================= */
+
+.om-alert-success {
+    color: var(--om-color-success-text);
+    background: var(--om-color-success-bg);
+    border-color: var(--om-color-success-border);
+}
+
+
+/* =========================================================
+   Warning
+   ========================================================= */
+
+.om-alert-warning {
+    color: var(--om-color-warning-text);
+    background: var(--om-color-warning-bg);
+    border-color: var(--om-color-warning-border);
+}
+
+
+/* =========================================================
+   Danger
+   ========================================================= */
+
+.om-alert-danger {
+    color: var(--om-color-danger-text);
+    background: var(--om-color-danger-bg);
+    border-color: var(--om-color-danger-border);
+}
+
+
+/* =========================================================
+   Info
+   ========================================================= */
+
+.om-alert-info {
+    color: var(--om-color-info-text);
+    background: var(--om-color-info-bg);
+    border-color: var(--om-color-info-border);
+}

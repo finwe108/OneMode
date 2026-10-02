@@ -1,0 +1,38 @@
+{
+  "name": "@mmci/onemode",
+  "version": "0.1.0",
+  "description": "OneMode UI Design System for MMCI applications",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "main": "./src/js/onemode.js",
+  "module": "./src/js/onemode.js",
+  "exports": {
+    ".": {
+      "import": "./src/js/onemode.js"
+    },
+    "./css": "./src/css/onemode.css",
+    "./js": "./src/js/onemode.js",
+    "./css/*": "./src/css/*",
+    "./js/*": "./src/js/*"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pack": "npm pack",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@mmci/onemode": "file:mmci-onemode-0.1.0.tgz"
+  }
+}

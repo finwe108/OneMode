@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Dropdown / Menu</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- OneMode -->
+    <link
+        rel="stylesheet"
+        href="/src/css/onemode.css"
+    >
+
+</head>
+
+<body>
+
+<main class="om-page om-showcase">
+
+    <!-- =====================================================
+         Header
+         ===================================================== -->
+
+    <header class="om-showcase-header">
+
+        <div>
+
+            <div class="om-showcase-label">
+                OneMode Design System
+            </div>
+
+            <h1 class="om-showcase-title">
+                Dropdown / Menu
+            </h1>
+
+            <p class="om-showcase-description">
+                Contextual actions, user menus, row actions,
+                and compact command menus.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         Basic Dropdown
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Basic Menu
+            </h2>
+
+            <p class="om-showcase-section-description">
+                A standard dropdown with icons and actions.
+            </p>
+
+        </div>
+
+
+        <div class="om-dropdown">
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary om-dropdown-trigger"
+                data-om-dropdown-toggle
+                aria-expanded="false"
+                aria-haspopup="menu"
+            >
+
+                Actions
+
+                <span class="om-dropdown-trigger-arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+            </button>
+
+
+            <ul
+                class="om-dropdown-menu"
+                role="menu"
+            >
+
+                <li>
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-eye"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+                            <span class="om-dropdown-item-label">
+                                View
+                            </span>
+                        </span>
+
+                    </button>
+                </li>
+
+
+                <li>
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-pencil"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+                            <span class="om-dropdown-item-label">
+                                Edit
+                            </span>
+                        </span>
+
+                    </button>
+                </li>
+
+
+                <li>
+                    <hr class="om-dropdown-divider">
+                </li>
+
+
+                <li>
+                    <button
+                        type="button"
+                        class="om-dropdown-item om-dropdown-item-danger"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-trash"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+                            <span class="om-dropdown-item-label">
+                                Delete
+                            </span>
+                        </span>
+
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         User Menu
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                User Menu
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Typical application-header account menu.
+            </p>
+
+        </div>
+
+
+        <div class="om-dropdown">
+
+            <button
+                type="button"
+                class="om-btn om-btn-outline om-dropdown-trigger"
+                data-om-dropdown-toggle
+                aria-expanded="false"
+                aria-haspopup="menu"
+            >
+
+                <i class="bi bi-person-circle"></i>
+
+                John Doe
+
+                <span class="om-dropdown-trigger-arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+            </button>
+
+
+            <ul
+                class="om-dropdown-menu om-dropdown-menu-end"
+                role="menu"
+            >
+
+                <li>
+
+                    <div class="om-dropdown-label">
+                        Account
+                    </div>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-person"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+
+                            <span class="om-dropdown-item-label">
+                                Profile
+                            </span>
+
+                            <span class="om-dropdown-item-description">
+                                View your account
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-gear"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+
+                            <span class="om-dropdown-item-label">
+                                Settings
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+                <li>
+                    <hr class="om-dropdown-divider">
+                </li>
+
+
+                <li>
+
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+
+                            <span class="om-dropdown-item-label">
+                                Sign Out
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Row Actions
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Row Actions
+            </h2>
+
+            <p class="om-showcase-section-description">
+                The three-dot menu is intended for data tables
+                and list views.
+            </p>
+
+        </div>
+
+
+        <div class="om-table-wrapper">
+
+            <table class="om-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Student</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            Maria Santos
+                        </td>
+
+                        <td>
+                            Grade 10
+                        </td>
+
+                        <td>
+                            <span class="om-badge om-badge-success">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="om-dropdown">
+
+                                <button
+                                    type="button"
+                                    class="om-dropdown-icon-trigger"
+                                    data-om-dropdown-toggle
+                                    aria-label="Student actions"
+                                    aria-expanded="false"
+                                    aria-haspopup="menu"
+                                >
+
+                                    <i class="bi bi-three-dots-vertical"></i>
+
+                                </button>
+
+
+                                <ul
+                                    class="om-dropdown-menu om-dropdown-menu-end"
+                                    role="menu"
+                                >
+
+                                    <li>
+
+                                        <button
+                                            type="button"
+                                            class="om-dropdown-item"
+                                            role="menuitem"
+                                        >
+
+                                            <span class="om-dropdown-item-icon">
+                                                <i class="bi bi-eye"></i>
+                                            </span>
+
+                                            <span class="om-dropdown-item-content">
+                                                <span class="om-dropdown-item-label">
+                                                    View Student
+                                                </span>
+                                            </span>
+
+                                        </button>
+
+                                    </li>
+
+
+                                    <li>
+
+                                        <button
+                                            type="button"
+                                            class="om-dropdown-item"
+                                            role="menuitem"
+                                        >
+
+                                            <span class="om-dropdown-item-icon">
+                                                <i class="bi bi-pencil"></i>
+                                            </span>
+
+                                            <span class="om-dropdown-item-content">
+                                                <span class="om-dropdown-item-label">
+                                                    Edit Student
+                                                </span>
+                                            </span>
+
+                                        </button>
+
+                                    </li>
+
+
+                                    <li>
+                                        <hr class="om-dropdown-divider">
+                                    </li>
+
+
+                                    <li>
+
+                                        <button
+                                            type="button"
+                                            class="om-dropdown-item om-dropdown-item-danger"
+                                            role="menuitem"
+                                        >
+
+                                            <span class="om-dropdown-item-icon">
+                                                <i class="bi bi-trash"></i>
+                                            </span>
+
+                                            <span class="om-dropdown-item-content">
+                                                <span class="om-dropdown-item-label">
+                                                    Delete Student
+                                                </span>
+                                            </span>
+
+                                        </button>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Disabled / Shortcut
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Item States
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Menus can communicate disabled actions and
+                keyboard shortcuts.
+            </p>
+
+        </div>
+
+
+        <div class="om-dropdown om-dropdown-compact">
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary om-dropdown-trigger"
+                data-om-dropdown-toggle
+                aria-expanded="false"
+                aria-haspopup="menu"
+            >
+
+                More
+
+                <span class="om-dropdown-trigger-arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+            </button>
+
+
+            <ul
+                class="om-dropdown-menu"
+                role="menu"
+            >
+
+                <li>
+
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-download"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+                            <span class="om-dropdown-item-label">
+                                Download
+                            </span>
+                        </span>
+
+                        <span class="om-dropdown-item-shortcut">
+                            Ctrl+D
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        type="button"
+                        class="om-dropdown-item"
+                        role="menuitem"
+                        disabled
+                    >
+
+                        <span class="om-dropdown-item-icon">
+                            <i class="bi bi-printer"></i>
+                        </span>
+
+                        <span class="om-dropdown-item-content">
+                            <span class="om-dropdown-item-label">
+                                Print
+                            </span>
+                        </span>
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    type="module"
+    src="/src/js/theme.js"
+></script>
+
+<script
+    type="module"
+    src="/src/js/dropdown.js"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMode — UI Design System</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="/src/css/onemode.css">
+</head>
+
+<body>
+
+<main class="om-page om-showcase">
+
+
+    <header class="om-header">
+
+        <!-- Brand -->
+        <a href="/" class="om-header-brand">
+
+            <span class="om-header-brand-icon">
+                <i class="bi bi-grid-1x2"></i>
+            </span>
+
+            <span class="om-header-brand-name">
+                OneMode
+            </span>
+
+            <span class="om-header-brand-version">
+                v0.1
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+        <nav class="om-header-nav" aria-label="OneMode documentation">
+
+            <a href="/" class="om-header-link om-header-link-active">
+                <i class="bi bi-house"></i>
+                <span>Overview</span>
+            </a>
+
+            <a href="/examples/components/icon.html" class="om-header-link">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span>Icons</span>
+            </a>
+
+            <a href="examples/layouts/app-shell.html" class="om-header-link">
+                <i class="bi bi-house-door"></i>
+                <span>App Shell</span>
+            </a>
+
+
+            <a href="examples/components/modal.html" class="om-header-link">
+                <i class="bi bi-book"></i>
+                <span>Modal</span>
+            </a>
+
+            <a href="/examples/components/toast.html" class="om-header-link">
+                <i class="bi bi-journal-text"></i>
+                <span>Toasts</span>
+            </a>
+
+            <a href="/examples/components/dropdown.html" class="om-header-link">
+                <i class="bi bi-plus-lg"></i>
+                <span>Dropdown</span>
+            </a>
+
+            <a href="/examples/components/tooltip.html" class="om-header-link">
+                <i class="bi bi-calendar-minus"></i>
+                <span>Tooltip</span>
+            </a>
+
+            <a href="/examples/components/tabs.html" class="om-header-link">
+                <i class="bi bi-diagram-3"></i>
+                <span>Tabs</span>
+            </a>
+
+            <a href="/examples/components/pagination.html" class="om-header-link">
+                <i class="bi bi-book"></i>
+                <span>Pagination</span>
+            </a>
+
+            <a href="/examples/forms/form-controls.html" class="om-header-link">
+                <i class="bi bi-calendar3"></i>
+                <span>Form Controls</span>
+            </a>
+
+            <a href="/examples/forms/date-time.html" class="om-header-link">
+                <i class="bi bi-calendar3"></i>
+                <span>Date Time</span>
+            </a>
+        </nav>
+
+    </header>    
+
+    <!-- =====================================================
+         OneMode Header
+         ===================================================== -->
+
+    <header class="om-page-header"> 
+        <div> 
+            <h1 class="om-page-title">OneMode</h1> 
+            <p class="om-page-description"> UI Design System for EkaMod School Enterprise System. </p> 
+        </div> 
+        <div class="om-page-actions"> <div class="om-theme-switcher" aria-label="Theme selection"> <span class="om-theme-switcher-label"> Theme </span> <button type="button" class="om-theme-option" data-om-theme-option="light" aria-pressed="false" > Light </button> <button type="button" class="om-theme-option" data-om-theme-option="dark" aria-pressed="false" > Dark </button> <button type="button" class="om-theme-option" data-om-theme-option="system" aria-pressed="false" > System </button> </div> </div> </header>
+
+
+
+    <!-- =====================================================
+        Hero Components
+        ===================================================== -->
+
+    <section class="om-showcase-section">
+        <div class="om-showcase-section-header">
+            <h2 class="om-showcase-section-title">Hero Components</h2>
+
+            <p class="om-showcase-section-description">
+                Large page-level banners for introducing a module,
+                page, or primary workflow with an optional action.
+            </p>
+        </div>
+
+        <div class="om-showcase-stack">
+
+            <!-- Default Hero -->
+            <div>
+                <div class="om-showcase-label">Default</div>
+
+                <div class="om-hero">
+                    <div class="om-hero-content">
+                        <div class="om-hero-eyebrow">
+                            <i class="bi bi-calendar2-check"></i>
+                            Finance Configuration
+                        </div>
+
+                        <h1 class="om-hero-title">
+                            Fee Schedules
+                        </h1>
+
+                        <p class="om-hero-description">
+                            Configure the standard fees charged by school year,
+                            grade level, and fee type.
+                        </p>
+                    </div>
+
+                    <div class="om-hero-actions">
+                        <a href="#" class="om-btn om-btn-light">
+                            <i class="bi bi-plus-lg"></i>
+                            Add Fee Schedule
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compact Hero -->
+            <div>
+                <div class="om-showcase-label">Compact</div>
+
+                <div class="om-hero om-hero-compact">
+                    <div class="om-hero-content">
+                        <div class="om-hero-eyebrow">
+                            <i class="bi bi-people"></i>
+                            Student Management
+                        </div>
+
+                        <h1 class="om-hero-title">
+                            Students
+                        </h1>
+
+                        <p class="om-hero-description">
+                            View and manage student records across the school.
+                        </p>
+                    </div>
+
+                    <div class="om-hero-actions">
+                        <a href="#" class="om-btn om-btn-light">
+                            <i class="bi bi-person-plus"></i>
+                            Add Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================
+         Fee Schedules / Table
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+            <h2 class="om-showcase-section-title">
+                Fee Schedules
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Example data table using OneMode table, filter, badge,
+                button, card, and pagination components.
+            </p>
+        </div>
+
+
+        <div class="om-page-header">
+
+            <div>
+                <h3 class="om-page-title">
+                    Fee Schedules
+                </h3>
+
+                <p class="om-page-description">
+                    Manage tuition and other fee schedules by school year
+                    and grade level.
+                </p>
+            </div>
+
+            <div class="om-page-actions">
+                <button class="om-btn om-btn-primary">
+                    Add Fee Schedule
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Table Toolbar -->
+
+        <div class="om-table-toolbar">
+
+            <div class="om-table-toolbar-left">
+
+                <div class="om-table-search">
+                    <input
+                        type="search"
+                        class="om-input"
+                        placeholder="Search fee schedules..."
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="om-table-toolbar-right">
+
+                <div class="om-filter-group">
+
+                    <select class="om-select om-filter">
+                        <option>All School Years</option>
+                        <option>2026–2027</option>
+                        <option>2025–2026</option>
+                    </select>
+
+                    <select class="om-select om-filter">
+                        <option>All Grade Levels</option>
+                        <option>Grade 7</option>
+                        <option>Grade 8</option>
+                        <option>Grade 9</option>
+                        <option>Grade 10</option>
+                    </select>
+
+                    <select class="om-select om-filter">
+                        <option>All Statuses</option>
+                        <option>Active</option>
+                        <option>Draft</option>
+                        <option>Inactive</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Table -->
+
+        <div class="om-card">
+
+            <div class="om-table-wrapper">
+
+                <table class="om-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Schedule Name</th>
+                            <th>School Year</th>
+                            <th>Grade Level</th>
+                            <th class="om-table-number">
+                                Amount
+                            </th>
+                            <th>Status</th>
+                            <th class="om-table-actions">
+                                Actions
+                            </th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>Grade 7 Tuition</strong>
+                            </td>
+
+                            <td>
+                                2026–2027
+                            </td>
+
+                            <td>
+                                Grade 7
+                            </td>
+
+                            <td class="om-table-number">
+                                ₱35,000.00
+                            </td>
+
+                            <td>
+                                <span class="om-badge om-badge-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="om-table-actions">
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    Edit
+                                </button>
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>Grade 8 Tuition</strong>
+                            </td>
+
+                            <td>
+                                2026–2027
+                            </td>
+
+                            <td>
+                                Grade 8
+                            </td>
+
+                            <td class="om-table-number">
+                                ₱36,000.00
+                            </td>
+
+                            <td>
+                                <span class="om-badge om-badge-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="om-table-actions">
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    Edit
+                                </button>
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>Grade 9 Tuition</strong>
+                            </td>
+
+                            <td>
+                                2026–2027
+                            </td>
+
+                            <td>
+                                Grade 9
+                            </td>
+
+                            <td class="om-table-number">
+                                ₱37,000.00
+                            </td>
+
+                            <td>
+                                <span class="om-badge om-badge-warning">
+                                    Draft
+                                </span>
+                            </td>
+
+                            <td class="om-table-actions">
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    Edit
+                                </button>
+
+                                <button
+                                    class="om-btn om-btn-ghost om-btn-sm"
+                                >
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Pagination -->
+
+            <div class="om-pagination">
+
+                <div class="om-pagination-info">
+                    Showing 1–3 of 15 schedules
+                </div>
+
+                <nav aria-label="Pagination">
+
+                    <ul class="om-pagination-list">
+
+                        <li class="om-pagination-item">
+                            <a
+                                href="#"
+                                class="om-pagination-link om-pagination-disabled"
+                            >
+                                Previous
+                            </a>
+                        </li>
+
+                        <li class="om-pagination-item">
+                            <a
+                                href="#"
+                                class="om-pagination-link om-pagination-active"
+                            >
+                                1
+                            </a>
+                        </li>
+
+                        <li class="om-pagination-item">
+                            <a
+                                href="#"
+                                class="om-pagination-link"
+                            >
+                                2
+                            </a>
+                        </li>
+
+                        <li class="om-pagination-item">
+                            <a
+                                href="#"
+                                class="om-pagination-link"
+                            >
+                                3
+                            </a>
+                        </li>
+
+                        <li class="om-pagination-item">
+                            <a
+                                href="#"
+                                class="om-pagination-link"
+                            >
+                                Next
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Form Components
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Form Components
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Standard form controls for data entry throughout
+                EkaMod SES.
+            </p>
+
+        </div>
+
+
+        <div class="om-card">
+
+            <div class="om-card-header">
+
+                <div>
+                    <strong>Fee Schedule Form</strong>
+                </div>
+
+            </div>
+
+
+            <div class="om-card-body">
+
+                <form class="om-form">
+
+                    <div class="om-form-grid">
+
+                        <!-- Schedule Name -->
+
+                        <div class="om-field">
+
+                            <label
+                                class="om-label"
+                                for="schedule-name"
+                            >
+                                Schedule Name
+
+                                <span class="om-required">
+                                    *
+                                </span>
+                            </label>
+
+                            <input
+                                id="schedule-name"
+                                type="text"
+                                class="om-input"
+                                placeholder="e.g. Grade 7 Tuition"
+                            >
+
+                            <p class="om-help">
+                                Enter a descriptive name for this
+                                fee schedule.
+                            </p>
+
+                        </div>
+
+
+                        <!-- School Year -->
+
+                        <div class="om-field">
+
+                            <label
+                                class="om-label"
+                                for="school-year"
+                            >
+                                School Year
+
+                                <span class="om-required">
+                                    *
+                                </span>
+                            </label>
+
+                            <select
+                                id="school-year"
+                                class="om-select"
+                            >
+
+                                <option value="">
+                                    Select school year
+                                </option>
+
+                                <option>
+                                    2026–2027
+                                </option>
+
+                                <option>
+                                    2025–2026
+                                </option>
+
+                                <option>
+                                    2024–2025
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Grade Level -->
+
+                        <div class="om-field">
+
+                            <label
+                                class="om-label"
+                                for="grade-level"
+                            >
+                                Grade Level
+
+                                <span class="om-required">
+                                    *
+                                </span>
+                            </label>
+
+                            <select
+                                id="grade-level"
+                                class="om-select"
+                            >
+
+                                <option value="">
+                                    Select grade level
+                                </option>
+
+                                <option>
+                                    Grade 7
+                                </option>
+
+                                <option>
+                                    Grade 8
+                                </option>
+
+                                <option>
+                                    Grade 9
+                                </option>
+
+                                <option>
+                                    Grade 10
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Amount -->
+
+                        <div class="om-field">
+
+                            <label
+                                class="om-label"
+                                for="amount"
+                            >
+                                Amount
+
+                                <span class="om-required">
+                                    *
+                                </span>
+                            </label>
+
+                            <input
+                                id="amount"
+                                type="number"
+                                class="om-input"
+                                placeholder="0.00"
+                                step="0.01"
+                            >
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="om-field om-form-grid-full">
+
+                            <label
+                                class="om-label"
+                                for="description"
+                            >
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                class="om-textarea"
+                                placeholder="Optional description..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div
+                        class="om-field"
+                        style="margin-top: var(--om-space-5);"
+                    >
+
+                        <span class="om-label">
+                            Status
+                        </span>
+
+                        <div
+                            class="om-radio-group om-radio-group-inline"
+                        >
+
+                            <label class="om-radio">
+
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="active"
+                                    checked
+                                >
+
+                                Active
+
+                            </label>
+
+
+                            <label class="om-radio">
+
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="draft"
+                                >
+
+                                Draft
+
+                            </label>
+
+
+                            <label class="om-radio">
+
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="inactive"
+                                >
+
+                                Inactive
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Checkbox -->
+
+                    <div
+                        class="om-field"
+                        style="margin-top: var(--om-space-5);"
+                    >
+
+                        <label class="om-check">
+
+                            <input type="checkbox">
+
+                            <span>
+                                Apply this schedule to all applicable
+                                grade levels
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Form Actions -->
+
+                    <div class="om-form-actions">
+
+                        <button
+                            type="button"
+                            class="om-btn om-btn-secondary"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="om-btn om-btn-primary"
+                        >
+                            Save Fee Schedule
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Alerts
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Alerts
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Feedback messages for system actions, warnings,
+                errors, and information.
+            </p>
+
+        </div>
+
+
+        <div class="om-showcase-stack">
+
+            <!-- Success -->
+
+            <div class="om-alert om-alert-success">
+
+                <div class="om-alert-content">
+
+                    <p class="om-alert-title">
+                        Success
+                    </p>
+
+                    <p class="om-alert-message">
+                        The fee schedule was saved successfully.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Info -->
+
+            <div class="om-alert om-alert-info">
+
+                <div class="om-alert-content">
+
+                    <p class="om-alert-title">
+                        Information
+                    </p>
+
+                    <p class="om-alert-message">
+                        Changes will apply to new student assessments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Warning -->
+
+            <div class="om-alert om-alert-warning">
+
+                <div class="om-alert-content">
+
+                    <p class="om-alert-title">
+                        Warning
+                    </p>
+
+                    <p class="om-alert-message">
+                        This fee schedule is currently in draft status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Danger -->
+
+            <div class="om-alert om-alert-danger">
+
+                <div class="om-alert-content">
+
+                    <p class="om-alert-title">
+                        Error
+                    </p>
+
+                    <p class="om-alert-message">
+                        The fee schedule could not be saved.
+                        Please check the required fields.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Validation States
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Validation States
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Consistent visual feedback for valid and invalid
+                form fields.
+            </p>
+
+        </div>
+
+
+        <div class="om-card">
+
+            <div class="om-card-body">
+
+                <div class="om-form-grid">
+
+                    <!-- Valid -->
+
+                    <div class="om-field om-field-valid">
+
+                        <label
+                            class="om-label"
+                            for="valid-example"
+                        >
+                            Valid Field
+                        </label>
+
+                        <input
+                            id="valid-example"
+                            type="text"
+                            class="om-input"
+                            value="Grade 7 Tuition"
+                        >
+
+                        <p
+                            class="om-validation-message
+                                   om-validation-success"
+                        >
+                            Schedule name is available.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Invalid -->
+
+                    <div class="om-field om-field-invalid">
+
+                        <label
+                            class="om-label"
+                            for="invalid-example"
+                        >
+                            Invalid Field
+
+                            <span class="om-required">
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            id="invalid-example"
+                            type="text"
+                            class="om-input"
+                            value=""
+                        >
+
+                        <p
+                            class="om-validation-message
+                                   om-validation-error"
+                        >
+                            Schedule name is required.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Utilities
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Utilities
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Small reusable classes for layout, spacing,
+                typography, and visual states.
+            </p>
+
+        </div>
+
+
+        <div class="om-card">
+
+            <div class="om-card-body">
+
+                <div class="om-showcase-stack">
+
+                    <!-- Typography -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Typography
+                        </div>
+
+                        <div class="om-showcase-row">
+
+                            <span class="om-text-xs">
+                                Extra Small
+                            </span>
+
+                            <span class="om-text-sm">
+                                Small
+                            </span>
+
+                            <span class="om-text-md">
+                                Medium
+                            </span>
+
+                            <span class="om-text-lg">
+                                Large
+                            </span>
+
+                            <span class="om-text-xl">
+                                Extra Large
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Text Colors -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Text Colors
+                        </div>
+
+                        <div class="om-showcase-row">
+
+                            <span class="om-text-primary">
+                                Primary
+                            </span>
+
+                            <span class="om-text-success">
+                                Success
+                            </span>
+
+                            <span class="om-text-warning">
+                                Warning
+                            </span>
+
+                            <span class="om-text-danger">
+                                Danger
+                            </span>
+
+                            <span class="om-text-muted">
+                                Muted
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Font Weights -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Font Weights
+                        </div>
+
+                        <div class="om-showcase-row">
+
+                            <span class="om-font-normal">
+                                Normal
+                            </span>
+
+                            <span class="om-font-medium">
+                                Medium
+                            </span>
+
+                            <span class="om-font-semibold">
+                                Semibold
+                            </span>
+
+                            <span class="om-font-bold">
+                                Bold
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Flex -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Flex Utilities
+                        </div>
+
+                        <div
+                            class="om-flex
+                                   om-items-center
+                                   om-gap-3
+                                   om-flex-wrap"
+                        >
+
+                            <button class="om-btn om-btn-primary">
+                                Primary
+                            </button>
+
+                            <button class="om-btn om-btn-secondary">
+                                Secondary
+                            </button>
+
+                            <button class="om-btn om-btn-outline">
+                                Outline
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Spacing -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Spacing Utilities
+                        </div>
+
+                        <div
+                            class="om-flex
+                                   om-flex-column
+                                   om-gap-2"
+                        >
+
+                            <div class="om-p-2 om-bg-success">
+                                Padding 2
+                            </div>
+
+                            <div class="om-p-4 om-bg-info">
+                                Padding 4
+                            </div>
+
+                            <div class="om-p-6 om-bg-warning">
+                                Padding 6
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Borders -->
+
+                    <div>
+
+                        <div class="om-showcase-label">
+                            Border Utilities
+                        </div>
+
+                        <div
+                            class="om-flex
+                                   om-flex-wrap
+                                   om-gap-3"
+                        >
+
+                            <div
+                                class="om-p-4
+                                       om-border
+                                       om-rounded"
+                            >
+                                Standard Border
+                            </div>
+
+                            <div
+                                class="om-p-4
+                                       om-border-strong
+                                       om-rounded-lg"
+                            >
+                                Strong Border
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+        Icons
+        ===================================================== -->
+
+    <section class="om-showcase-section">
+        <div class="om-showcase-section-header">
+            <h2 class="om-showcase-section-title">Icons</h2>
+
+            <p class="om-showcase-section-description">
+                OneMode standardizes icon sizing, semantic colors,
+                containers, and actions while EkaMod uses Bootstrap Icons
+                as its icon library.
+            </p>
+        </div>
+
+        <div class="om-showcase-stack">
+
+            <!-- Basic Icons -->
+            <div>
+                <div class="om-showcase-label">Basic Icons</div>
+
+                <div class="om-showcase-row">
+
+                    <i class="bi bi-house om-icon om-icon-sm"></i>
+
+                    <i class="bi bi-house om-icon"></i>
+
+                    <i class="bi bi-house om-icon-lg"></i>
+
+                    <i class="bi bi-house om-icon-xl"></i>
+
+                    <i class="bi bi-house om-icon-2xl"></i>
+
+                </div>
+            </div>
+
+
+            <!-- Semantic Colors -->
+            <div>
+                <div class="om-showcase-label">Semantic Colors</div>
+
+                <div class="om-showcase-row">
+
+                    <i class="bi bi-info-circle om-icon om-icon-primary"></i>
+
+                    <i class="bi bi-check-circle om-icon om-icon-success"></i>
+
+                    <i class="bi bi-exclamation-triangle om-icon om-icon-warning"></i>
+
+                    <i class="bi bi-x-circle om-icon om-icon-danger"></i>
+
+                    <i class="bi bi-info-circle om-icon om-icon-info"></i>
+
+                    <i class="bi bi-dash-circle om-icon om-icon-muted"></i>
+
+                </div>
+            </div>
+
+
+            <!-- Icon Containers -->
+            <div>
+                <div class="om-showcase-label">Icon Containers</div>
+
+                <div class="om-showcase-row">
+
+                    <div class="om-icon-circle om-icon-primary">
+                        <i class="bi bi-wallet2 om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-circle om-icon-success">
+                        <i class="bi bi-check-lg om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-warning">
+                        <i class="bi bi-exclamation-triangle om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-danger">
+                        <i class="bi bi-trash om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-info">
+                        <i class="bi bi-info-lg om-icon"></i>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Container Sizes -->
+            <div>
+                <div class="om-showcase-label">Container Sizes</div>
+
+                <div class="om-showcase-row">
+
+                    <div class="om-icon-square om-icon-sm om-icon-primary">
+                        <i class="bi bi-cash-stack om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-primary">
+                        <i class="bi bi-cash-stack om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-lg om-icon-primary">
+                        <i class="bi bi-cash-stack om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-xl om-icon-primary">
+                        <i class="bi bi-cash-stack om-icon"></i>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Icon Actions -->
+            <div>
+                <div class="om-showcase-label">Icon Actions</div>
+
+                <div class="om-showcase-row">
+
+                    <button
+                        type="button"
+                        class="om-icon-action"
+                        aria-label="View"
+                    >
+                        <i class="bi bi-eye om-icon"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="om-icon-action"
+                        aria-label="Edit"
+                    >
+                        <i class="bi bi-pencil om-icon"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="om-icon-action"
+                        aria-label="Download"
+                    >
+                        <i class="bi bi-download om-icon"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="om-icon-action"
+                        aria-label="Delete"
+                    >
+                        <i class="bi bi-trash om-icon"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="om-icon-action"
+                        aria-label="Settings"
+                    >
+                        <i class="bi bi-gear om-icon"></i>
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- SES Examples -->
+            <div>
+                <div class="om-showcase-label">SES Examples</div>
+
+                <div class="om-showcase-row">
+
+                    <div class="om-icon-square om-icon-primary">
+                        <i class="bi bi-wallet2 om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-success">
+                        <i class="bi bi-cash-stack om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-info">
+                        <i class="bi bi-people om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-warning">
+                        <i class="bi bi-calendar3 om-icon"></i>
+                    </div>
+
+                    <div class="om-icon-square om-icon-danger">
+                        <i class="bi bi-shield-lock om-icon"></i>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</main>
+<script type="module" src="/src/js/theme.js"></script>
+</body>
+</html>

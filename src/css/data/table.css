@@ -1,0 +1,636 @@
+/* =========================================================
+   OneMode — Data Table
+   Table structure and table-specific presentation
+   ========================================================= */
+
+
+/* =========================================================
+   Table Wrapper
+   ========================================================= */
+
+.om-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-lg);
+
+    background: var(--om-color-surface);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   Table
+   ========================================================= */
+
+.om-table {
+    width: 100%;
+    min-width: 42rem;
+
+    border-collapse: collapse;
+
+    font-size: var(--om-font-size-sm);
+    color: var(--om-color-text);
+}
+
+
+/* =========================================================
+   Table Header / Cells
+   ========================================================= */
+
+.om-table th,
+.om-table td {
+    padding:
+        var(--om-space-3)
+        var(--om-space-4);
+
+    text-align: left;
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--om-color-border);
+}
+
+.om-table th {
+    color: var(--om-color-text);
+    background: var(--om-color-surface-muted);
+
+    font-weight: var(--om-font-weight-semibold);
+
+    white-space: nowrap;
+}
+
+.om-table td {
+    color: var(--om-color-text);
+}
+
+.om-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   Table Row
+   ========================================================= */
+
+.om-table tbody tr {
+    background: var(--om-color-surface);
+
+    transition:
+        background-color var(--om-transition-fast);
+}
+
+.om-table tbody tr:hover {
+    background: var(--om-color-surface-hover);
+}
+
+.om-table tbody tr.om-row-selected {
+    background: var(--om-color-primary-soft);
+}
+
+.om-table tbody tr.om-row-selected:hover {
+    background: var(--om-color-primary-soft);
+}
+
+
+/* =========================================================
+   Header Alignment
+   ========================================================= */
+
+.om-table th.om-table-center,
+.om-table td.om-table-center {
+    text-align: center;
+}
+
+.om-table th.om-table-right,
+.om-table td.om-table-right {
+    text-align: right;
+}
+
+
+/* =========================================================
+   Numeric / Currency Columns
+   ========================================================= */
+
+.om-table .om-table-number {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.om-table .om-table-currency {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   Status / Badge Cells
+   ========================================================= */
+
+.om-table .om-table-status {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+.om-table .om-table-select {
+    width: 3rem;
+
+    padding-left: var(--om-space-4);
+    padding-right: var(--om-space-2);
+
+    text-align: center;
+}
+
+.om-table .om-table-select .om-form-check-input {
+    margin: 0;
+}
+
+
+/* =========================================================
+   Row Actions
+   ========================================================= */
+
+.om-table .om-table-actions {
+    width: 1%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.om-table-actions-inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--om-space-1);
+}
+
+
+/* =========================================================
+   Sortable Headers
+   ========================================================= */
+
+.om-table th.om-sortable {
+    padding: 0;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.om-table th.om-sortable:hover {
+    background: var(--om-color-surface-hover);
+}
+
+.om-table th.om-sortable:focus-within {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: -2px;
+}
+
+.om-sort {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100%;
+
+    gap: var(--om-space-2);
+
+    padding:
+        var(--om-space-3)
+        var(--om-space-4);
+
+    color: inherit;
+}
+
+.om-sort-label {
+    min-width: 0;
+}
+
+.om-sort-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+
+    transition:
+        color var(--om-transition-fast);
+}
+
+.om-table th.om-sortable:hover .om-sort-indicator {
+    color: var(--om-color-text-secondary);
+}
+
+.om-table th[aria-sort="ascending"] .om-sort-indicator,
+.om-table th[aria-sort="descending"] .om-sort-indicator {
+    color: var(--om-color-primary-text);
+}
+
+
+/* =========================================================
+   Sticky Header
+   ========================================================= */
+
+.om-table-wrapper.om-table-sticky-header {
+    max-height: 40rem;
+    overflow: auto;
+}
+
+.om-table-sticky-header .om-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background: var(--om-color-surface-muted);
+
+    box-shadow:
+        0 1px 0 var(--om-color-border);
+}
+
+
+/* =========================================================
+   Compact Table
+   ========================================================= */
+
+.om-table.om-table-compact th,
+.om-table.om-table-compact td {
+    padding:
+        var(--om-space-2)
+        var(--om-space-3);
+}
+
+.om-table.om-table-compact .om-sort {
+    padding:
+        var(--om-space-2)
+        var(--om-space-3);
+}
+
+
+/* =========================================================
+   Spacious Table
+   ========================================================= */
+
+.om-table.om-table-spacious th,
+.om-table.om-table-spacious td {
+    padding:
+        var(--om-space-4)
+        var(--om-space-5);
+}
+
+.om-table.om-table-spacious .om-sort {
+    padding:
+        var(--om-space-4)
+        var(--om-space-5);
+}
+
+
+/* =========================================================
+   Table Toolbar
+   ========================================================= */
+
+.om-table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--om-space-4);
+
+    margin-bottom: var(--om-space-4);
+
+    flex-wrap: wrap;
+}
+
+.om-table-toolbar-left,
+.om-table-toolbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: var(--om-space-3);
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   Table Toolbar Selection Summary
+   ========================================================= */
+
+.om-table-selection-summary {
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-medium);
+}
+
+
+/* =========================================================
+   Table Toolbar Filters
+   ========================================================= */
+
+.om-table-filters {
+    display: flex;
+    align-items: center;
+
+    gap: var(--om-space-3);
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   Table Footer
+   ========================================================= */
+
+.om-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--om-space-4);
+
+    padding: var(--om-space-4);
+
+    border-top: 1px solid var(--om-color-border);
+
+    background: var(--om-color-surface);
+
+    flex-wrap: wrap;
+}
+
+.om-table-footer-left,
+.om-table-footer-right {
+    display: flex;
+    align-items: center;
+
+    gap: var(--om-space-3);
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   Result Summary
+   ========================================================= */
+
+.om-table-result-summary {
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-sm);
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   Column Width Helpers
+   ========================================================= */
+
+.om-table-col-xs {
+    width: 4rem;
+}
+
+.om-table-col-sm {
+    width: 8rem;
+}
+
+.om-table-col-md {
+    width: 12rem;
+}
+
+.om-table-col-lg {
+    width: 18rem;
+}
+
+.om-table-col-actions {
+    width: 1%;
+}
+
+
+/* =========================================================
+   Text Truncation
+   ========================================================= */
+
+.om-table-cell-truncate {
+    max-width: 20rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+.om-table-link {
+    color: var(--om-color-primary-text);
+
+    font-weight: var(--om-font-weight-medium);
+
+    text-decoration: none;
+}
+
+.om-table-link:hover {
+    color: var(--om-color-primary);
+    text-decoration: underline;
+}
+
+.om-table-link:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+    border-radius: var(--om-radius-sm);
+}
+
+
+/* =========================================================
+   Disabled Row
+   ========================================================= */
+
+.om-table tbody tr.om-row-disabled {
+    color: var(--om-color-text-disabled);
+
+    background: var(--om-color-surface-disabled);
+}
+
+.om-table tbody tr.om-row-disabled:hover {
+    background: var(--om-color-surface-disabled);
+}
+
+.om-table tbody tr.om-row-disabled td {
+    color: var(--om-color-text-disabled);
+}
+
+
+/* =========================================================
+   Loading / Empty Hooks
+   =========================================================
+
+   These classes are intentionally lightweight.
+
+   The actual visual states should use the reusable
+   OneMode State component:
+
+       .om-state-empty
+       .om-state-loading
+       .om-state-error
+
+   These table-specific hooks remain useful when a
+   table implementation needs to identify its state.
+   */
+
+.om-table-empty,
+.om-table-loading,
+.om-table-error {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Table Skeleton
+   ========================================================= */
+
+.om-table-skeleton {
+    pointer-events: none;
+}
+
+.om-table-skeleton-line {
+    display: block;
+
+    width: 100%;
+    height: 0.875rem;
+
+    border-radius: var(--om-radius-sm);
+
+    background: var(--om-color-surface-muted);
+
+    animation: om-table-skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.om-table-skeleton-line-sm {
+    max-width: 6rem;
+}
+
+.om-table-skeleton-line-md {
+    max-width: 12rem;
+}
+
+.om-table-skeleton-line-lg {
+    max-width: 20rem;
+}
+
+@keyframes om-table-skeleton-pulse {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .om-table-toolbar {
+        align-items: stretch;
+    }
+
+    .om-table-toolbar-left,
+    .om-table-toolbar-right {
+        width: 100%;
+    }
+
+    .om-table-toolbar-right {
+        justify-content: flex-start;
+    }
+
+    .om-table-filters {
+        width: 100%;
+    }
+
+    .om-table-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .om-table-footer-left,
+    .om-table-footer-right {
+        width: 100%;
+    }
+
+    .om-table-footer-right {
+        justify-content: center;
+    }
+
+    .om-table-cell-truncate {
+        max-width: 12rem;
+    }
+}
+
+
+/* =========================================================
+   Small Mobile
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .om-table {
+        min-width: 36rem;
+    }
+
+    .om-table th,
+    .om-table td {
+        padding:
+            var(--om-space-3)
+            var(--om-space-3);
+    }
+
+    .om-table .om-table-select {
+        padding-left: var(--om-space-3);
+        padding-right: var(--om-space-2);
+    }
+
+    .om-table .om-sort {
+        padding:
+            var(--om-space-3)
+            var(--om-space-3);
+    }
+
+    .om-table-actions-inner {
+        gap: 0;
+    }
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .om-table tbody tr,
+    .om-sort-indicator {
+        transition: none;
+    }
+
+    .om-table-skeleton-line {
+        animation: none;
+    }
+}

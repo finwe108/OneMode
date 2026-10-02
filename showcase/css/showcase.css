@@ -1,0 +1,173 @@
+/* =========================================================
+   OneMode — Foundation Showcase
+   ========================================================= */
+
+.om-showcase {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   Showcase Sections
+   ========================================================= */
+
+.om-showcase-section {
+    margin-bottom: var(--om-space-12);
+}
+
+.om-showcase-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Section Header
+   ========================================================= */
+
+.om-showcase-section-header {
+    margin-bottom: var(--om-space-5);
+}
+
+.om-showcase-section-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-xl);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-showcase-section-description {
+    margin: var(--om-space-2) 0 0;
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-sm);
+}
+
+
+/* =========================================================
+   Showcase Grid
+   ========================================================= */
+
+.om-showcase-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: var(--om-space-6);
+}
+
+
+/* =========================================================
+   Showcase Stack
+   ========================================================= */
+
+.om-showcase-stack {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--om-space-4);
+}
+
+
+/* =========================================================
+   Showcase Row
+   ========================================================= */
+
+.om-showcase-row {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--om-space-3);
+}
+
+
+/* =========================================================
+   Showcase Label
+   ========================================================= */
+
+.om-showcase-label {
+    margin-bottom: var(--om-space-2);
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   Code Example
+   ========================================================= */
+
+.om-showcase-code {
+    display: block;
+
+    padding: var(--om-space-4);
+
+    overflow-x: auto;
+
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-secondary);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: var(--om-font-size-xs);
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Showcase Preview
+   ========================================================= */
+
+.om-showcase-preview {
+    padding: var(--om-space-5);
+
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-lg);
+
+    background: var(--om-color-surface);
+}
+
+
+/* =========================================================
+   Showcase Divider
+   ========================================================= */
+
+.om-showcase-divider {
+    height: 1px;
+    margin: var(--om-space-6) 0;
+
+    border: 0;
+
+    background: var(--om-color-border);
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .om-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+}

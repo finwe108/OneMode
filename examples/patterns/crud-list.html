@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMode — CRUD List Pattern</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/css/onemode.css">
+</head>
+
+<body>
+<div class="om-app-shell">
+
+    <aside id="om-main-sidebar" class="om-app-shell-sidebar">
+        <div class="om-sidebar">
+            <div class="om-sidebar-brand">
+                <div class="om-sidebar-brand-mark">O</div>
+                <div class="om-sidebar-brand-text">
+                    <strong>OneMode</strong>
+                    <span>EkaMod SES</span>
+                </div>
+            </div>
+
+            <nav class="om-sidebar-nav" aria-label="Primary navigation">
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Main</div>
+                    <ul class="om-nav-list">
+                        <li class="om-nav-item">
+                            <a class="om-nav-link" href="#">
+                                <i class="bi bi-grid om-nav-icon" aria-hidden="true"></i>
+                                <span class="om-nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Finance</div>
+                    <ul class="om-nav-list">
+                        <li class="om-nav-item">
+                            <a class="om-nav-link om-nav-link-active" href="#" aria-current="page">
+                                <i class="bi bi-calendar2-check om-nav-icon" aria-hidden="true"></i>
+                                <span class="om-nav-text">Fee Schedules</span>
+                            </a>
+                        </li>
+                        <li class="om-nav-item">
+                            <a class="om-nav-link" href="#">
+                                <i class="bi bi-receipt om-nav-icon" aria-hidden="true"></i>
+                                <span class="om-nav-text">Fees</span>
+                            </a>
+                        </li>
+                        <li class="om-nav-item">
+                            <a class="om-nav-link" href="#">
+                                <i class="bi bi-cash-stack om-nav-icon" aria-hidden="true"></i>
+                                <span class="om-nav-text">Cashiering</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Administration</div>
+                    <ul class="om-nav-list">
+                        <li class="om-nav-item">
+                            <a class="om-nav-link" href="#">
+                                <i class="bi bi-shield-lock om-nav-icon" aria-hidden="true"></i>
+                                <span class="om-nav-text">Administration</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="om-sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="om-app-shell-main">
+        <header class="om-app-header">
+            <div class="om-app-header-left">
+                <button
+                    id="om-sidebar-toggle"
+                    class="om-icon-action om-app-header-menu"
+                    type="button"
+                    aria-label="Collapse navigation"
+                    aria-expanded="true"
+                    aria-controls="om-main-sidebar"
+                >
+                    <i class="bi bi-list" aria-hidden="true"></i>
+                </button>
+                <div class="om-app-header-context">Finance</div>
+            </div>
+
+            <div class="om-app-header-actions">
+                <button class="om-icon-action" type="button" aria-label="Notifications">
+                    <i class="bi bi-bell" aria-hidden="true"></i>
+                </button>
+                <button class="om-icon-action" type="button" aria-label="Account menu">
+                    <i class="bi bi-person-circle" aria-hidden="true"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="om-app-shell-content">
+            <div class="om-page">
+                <nav class="om-breadcrumb" aria-label="Breadcrumb">
+                    <ol class="om-breadcrumb-list">
+                        <li class="om-breadcrumb-item">
+                            <a class="om-breadcrumb-link" href="#">Finance</a>
+                        </li>
+                        <li class="om-breadcrumb-item om-breadcrumb-current" aria-current="page">
+                            Fee Schedules
+                        </li>
+                    </ol>
+                </nav>
+
+                <header class="om-page-header">
+                    <div>
+                        <h1 class="om-page-title">Fee Schedules</h1>
+                        <p class="om-page-description">
+                            Configure the standard fees charged by school year, grade level, and fee type.
+                        </p>
+                    </div>
+                    <div class="om-page-header-actions">
+                        <a class="om-btn om-btn-primary" href="#">
+                            <i class="bi bi-plus-lg om-icon-leading" aria-hidden="true"></i>
+                            Add Fee Schedule
+                        </a>
+                    </div>
+                </header>
+
+                <section class="om-page-content">
+                    <div
+                        class="om-data-table"
+                        data-om-page-size="5"
+                    >
+                        <div class="om-table-toolbar">
+                            <div class="om-table-toolbar-left">
+                                <div class="om-search" data-om-table-search>
+                                    <i class="bi bi-search om-search-icon" aria-hidden="true"></i>
+                                    <input
+                                        type="search"
+                                        class="om-form-control"
+                                        placeholder="Search fee schedules..."
+                                        aria-label="Search fee schedules"
+                                    >
+                                    <button
+                                        type="button"
+                                        class="om-search-clear"
+                                        aria-label="Clear search"
+                                        hidden
+                                    >
+                                        <i class="bi bi-x-lg" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <span class="om-table-result-summary" data-om-table-result-summary aria-live="polite"></span>
+                            </div>
+
+                            <div class="om-table-toolbar-right">
+                                <div class="om-table-filters">
+                                    <select class="om-form-control om-form-select" data-om-table-filter="school-year" aria-label="Filter by school year">
+                                        <option value="all">All School Years</option>
+                                        <option value="2026–2027">2026–2027</option>
+                                        <option value="2025–2026">2025–2026</option>
+                                    </select>
+                                    <select class="om-form-control om-form-select" data-om-table-filter="grade-level" aria-label="Filter by grade level">
+                                        <option value="all">All Grade Levels</option>
+                                        <option value="Grade 7">Grade 7</option>
+                                        <option value="Grade 8">Grade 8</option>
+                                        <option value="Grade 9">Grade 9</option>
+                                        <option value="Grade 10">Grade 10</option>
+                                    </select>
+                                    <select class="om-form-control om-form-select" data-om-table-filter="status" aria-label="Filter by status">
+                                        <option value="all">All Statuses</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Draft">Draft</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="om-card">
+                            <div class="om-table-wrapper">
+                                <table class="om-table">
+                                    <caption class="om-visually-hidden">Fee schedules</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Schedule</th>
+                                            <th scope="col">School Year</th>
+                                            <th scope="col">Grade Level</th>
+                                            <th scope="col" class="om-table-right">Amount</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="om-table-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-om-table-column="schedule-name">Grade 7 Tuition</td>
+                                            <td data-om-table-column="school-year">2026–2027</td>
+                                            <td data-om-table-column="grade-level">Grade 7</td>
+                                            <td data-om-table-column="amount" class="om-table-right om-table-currency">₱35,000.00</td>
+                                            <td data-om-table-column="status">
+                                                <span class="om-badge om-badge-success">Active</span>
+                                            </td>
+                                            <td class="om-table-actions">
+                                                <div class="om-table-actions-inner">
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-pencil om-icon-leading" aria-hidden="true"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-eye om-icon-leading" aria-hidden="true"></i>
+                                                        View
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-om-table-column="schedule-name">Grade 8 Tuition</td>
+                                            <td data-om-table-column="school-year">2026–2027</td>
+                                            <td data-om-table-column="grade-level">Grade 8</td>
+                                            <td data-om-table-column="amount" class="om-table-right om-table-currency">₱36,000.00</td>
+                                            <td data-om-table-column="status">
+                                                <span class="om-badge om-badge-success">Active</span>
+                                            </td>
+                                            <td class="om-table-actions">
+                                                <div class="om-table-actions-inner">
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-pencil om-icon-leading" aria-hidden="true"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-eye om-icon-leading" aria-hidden="true"></i>
+                                                        View
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-om-table-column="schedule-name">Grade 9 Tuition</td>
+                                            <td data-om-table-column="school-year">2026–2027</td>
+                                            <td data-om-table-column="grade-level">Grade 9</td>
+                                            <td data-om-table-column="amount" class="om-table-right om-table-currency">₱37,000.00</td>
+                                            <td data-om-table-column="status">
+                                                <span class="om-badge om-badge-warning">Draft</span>
+                                            </td>
+                                            <td class="om-table-actions">
+                                                <div class="om-table-actions-inner">
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-pencil om-icon-leading" aria-hidden="true"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-eye om-icon-leading" aria-hidden="true"></i>
+                                                        View
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-om-table-column="schedule-name">Grade 10 Tuition</td>
+                                            <td data-om-table-column="school-year">2025–2026</td>
+                                            <td data-om-table-column="grade-level">Grade 10</td>
+                                            <td data-om-table-column="amount" class="om-table-right om-table-currency">₱38,000.00</td>
+                                            <td data-om-table-column="status">
+                                                <span class="om-badge om-badge-success">Active</span>
+                                            </td>
+                                            <td class="om-table-actions">
+                                                <div class="om-table-actions-inner">
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-pencil om-icon-leading" aria-hidden="true"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="om-btn om-btn-ghost om-btn-sm" href="#">
+                                                        <i class="bi bi-eye om-icon-leading" aria-hidden="true"></i>
+                                                        View
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="om-pagination" data-om-table-pagination aria-label="Fee schedule pagination">
+                                <div class="om-pagination-summary" data-om-pagination-summary></div>
+                                <nav aria-label="Pagination">
+                                    <ul class="om-pagination-list" data-om-pagination-list></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script type="module" src="/src/js/theme.js"></script>
+<script type="module" src="/src/js/app-shell.js"></script>
+<script type="module" src="/src/js/form.js"></script>
+<script type="module" src="/src/js/table.js"></script>
+</body>
+</html>

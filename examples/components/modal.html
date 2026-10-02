@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Modal</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- OneMode -->
+    <link rel="stylesheet" href="/src/css/onemode.css">
+
+</head>
+
+<body>
+
+<main class="om-page om-showcase">
+
+    <!-- =====================================================
+         Header
+         ===================================================== -->
+
+    <header class="om-showcase-header">
+
+        <div>
+
+            <div class="om-showcase-label">
+                OneMode Design System
+            </div>
+
+            <h1 class="om-showcase-title">
+                Modal / Dialog
+            </h1>
+
+            <p class="om-showcase-description">
+                Dialogs provide focused interactions for forms,
+                confirmations, details, and other tasks that
+                temporarily interrupt the current page.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         Basic Modal
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Basic Modal
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Standard dialog with a header, body, and footer.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="om-btn om-btn-primary"
+            data-om-modal-open="basic-modal"
+        >
+            <i class="bi bi-window"></i>
+            Open Modal
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         Confirmation
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Confirmation
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Use confirmation dialogs before destructive or
+                irreversible actions.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="om-btn om-btn-danger"
+            data-om-modal-open="delete-modal"
+        >
+            <i class="bi bi-trash"></i>
+            Delete Record
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         Form Modal
+         ===================================================== -->
+
+    <section class="om-showcase-section">
+
+        <div class="om-showcase-section-header">
+
+            <h2 class="om-showcase-section-title">
+                Form Modal
+            </h2>
+
+            <p class="om-showcase-section-description">
+                Suitable for compact CRUD operations.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="om-btn om-btn-primary"
+            data-om-modal-open="form-modal"
+        >
+            <i class="bi bi-plus-lg"></i>
+            Add Fee
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     Basic Modal
+     ========================================================= -->
+
+<div
+    id="basic-modal"
+    class="om-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="basic-modal-title"
+    aria-describedby="basic-modal-description"
+    aria-hidden="true"
+>
+
+    <div class="om-modal-backdrop"></div>
+
+    <div class="om-modal-dialog">
+
+        <header class="om-modal-header">
+
+            <div class="om-modal-heading">
+
+                <h2
+                    id="basic-modal-title"
+                    class="om-modal-title"
+                >
+                    Student Information
+                </h2>
+
+                <p
+                    id="basic-modal-description"
+                    class="om-modal-description"
+                >
+                    Review the selected student's information.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="om-modal-close"
+                aria-label="Close dialog"
+                data-om-modal-close
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </header>
+
+
+        <div class="om-modal-body">
+
+            <p>
+                This is a standard OneMode modal dialog.
+            </p>
+
+            <p>
+                The body can contain text, cards, tables,
+                forms, or other components.
+            </p>
+
+        </div>
+
+
+        <footer class="om-modal-footer">
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                data-om-modal-close
+            >
+                Close
+            </button>
+
+            <button
+                type="button"
+                class="om-btn om-btn-primary"
+                data-om-modal-close
+            >
+                Continue
+            </button>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     Confirmation Modal
+     ========================================================= -->
+
+<div
+    id="delete-modal"
+    class="om-modal om-modal-confirmation om-modal-danger"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="delete-modal-title"
+    aria-describedby="delete-modal-message"
+    aria-hidden="true"
+>
+
+    <div class="om-modal-backdrop"></div>
+
+    <div class="om-modal-dialog">
+
+        <header class="om-modal-header">
+
+            <div class="om-modal-heading">
+
+                <h2
+                    id="delete-modal-title"
+                    class="om-modal-title"
+                >
+                    Delete Record
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="om-modal-close"
+                aria-label="Close dialog"
+                data-om-modal-close
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </header>
+
+
+        <div class="om-modal-body">
+
+            <div class="om-modal-confirmation-icon">
+
+                <i class="bi bi-exclamation-triangle"></i>
+
+            </div>
+
+
+            <div class="om-modal-confirmation-content">
+
+                <h3 class="om-modal-confirmation-title">
+                    Are you sure?
+                </h3>
+
+                <p
+                    id="delete-modal-message"
+                    class="om-modal-confirmation-message"
+                >
+                    This action cannot be undone. The selected
+                    record will be permanently deleted.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <footer class="om-modal-footer">
+
+            <button
+                type="button"
+                class="om-btn om-btn-secondary"
+                data-om-modal-close
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="om-btn om-btn-danger"
+                data-om-modal-close
+            >
+                Delete
+            </button>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     Form Modal
+     ========================================================= -->
+
+<div
+    id="form-modal"
+    class="om-modal om-modal-form om-modal-lg"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="form-modal-title"
+    aria-describedby="form-modal-description"
+    aria-hidden="true"
+>
+
+    <div class="om-modal-backdrop"></div>
+
+    <div class="om-modal-dialog">
+
+        <header class="om-modal-header">
+
+            <div class="om-modal-heading">
+
+                <h2
+                    id="form-modal-title"
+                    class="om-modal-title"
+                >
+                    Add Fee
+                </h2>
+
+                <p
+                    id="form-modal-description"
+                    class="om-modal-description"
+                >
+                    Create a fee that can be included in
+                    applicable fee schedules.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="om-modal-close"
+                aria-label="Close dialog"
+                data-om-modal-close
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </header>
+
+
+        <form>
+
+            <div class="om-modal-body">
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="fee-name"
+                    >
+                        Fee Name
+                    </label>
+
+                    <input
+                        id="fee-name"
+                        type="text"
+                        class="om-form-input"
+                        placeholder="e.g. Laboratory Fee"
+                        data-om-modal-autofocus
+                    >
+
+                </div>
+
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="fee-amount"
+                    >
+                        Amount
+                    </label>
+
+                    <input
+                        id="fee-amount"
+                        type="number"
+                        class="om-form-input"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                    >
+
+                </div>
+
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="fee-description"
+                    >
+                        Description
+                    </label>
+
+                    <textarea
+                        id="fee-description"
+                        class="om-form-textarea"
+                        rows="4"
+                        placeholder="Optional description"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <footer class="om-modal-footer">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                    data-om-modal-close
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="om-btn om-btn-primary"
+                >
+                    <i class="bi bi-check-lg"></i>
+                    Save Fee
+                </button>
+
+            </footer>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="/src/js/theme.js"></script>
+<script type="module" src="/src/js/modal.js"></script>
+
+</body>
+</html>

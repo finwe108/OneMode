@@ -1,0 +1,184 @@
+/* =========================================================
+   OneMode — Application Header
+   ========================================================= */
+
+.om-app-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+
+    min-height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 var(--om-space-6);
+
+    border-bottom: 1px solid var(--om-color-border);
+
+    background: var(--om-color-surface);
+}
+
+
+/* ---------------------------------------------------------
+   Left Side
+   --------------------------------------------------------- */
+
+.om-app-header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-3);
+
+    min-width: 0;
+}
+
+.om-app-header-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-md);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-app-header-subtitle {
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-sm);
+}
+
+
+/* ---------------------------------------------------------
+   Right Side
+   --------------------------------------------------------- */
+
+.om-app-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-2);
+
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Sidebar Toggle
+   --------------------------------------------------------- */
+
+.om-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-md);
+
+    background: transparent;
+    color: var(--om-color-text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-sidebar-toggle:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-sidebar-toggle:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   User Menu
+   --------------------------------------------------------- */
+
+.om-header-user {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--om-space-3);
+
+    padding: var(--om-space-1) var(--om-space-2);
+
+    border: 0;
+    border-radius: var(--om-radius-md);
+
+    background: transparent;
+    color: var(--om-color-text);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast);
+}
+
+.om-header-user:hover {
+    background: var(--om-color-surface-hover);
+}
+
+.om-header-user:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-header-user-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    border-radius: var(--om-radius-full);
+
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-header-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.om-header-user-name {
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-header-user-role {
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-app-header {
+        padding: 0 var(--om-space-4);
+    }
+
+    .om-header-user-info {
+        display: none;
+    }
+}

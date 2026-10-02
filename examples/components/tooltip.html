@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Tooltip / Popover</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+</head>
+
+<body>
+
+    <main class="om-page">
+
+        <div class="om-page-header">
+            <div class="om-page-header-content">
+                <h1 class="om-page-title">
+                    Tooltip / Popover
+                </h1>
+
+                <p class="om-page-description">
+                    Contextual information for controls,
+                    actions, and supporting details.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- =================================================
+             Tooltips
+             ================================================= -->
+
+        <section class="om-page-section">
+
+            <div class="om-page-section-header">
+                <div class="om-page-section-heading">
+                    <h2 class="om-page-section-title">
+                        Tooltips
+                    </h2>
+
+                    <p class="om-page-section-description">
+                        Use tooltips for short, non-interactive
+                        descriptions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="om-page-actions">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-primary"
+                    data-om-tooltip="Create a new payment"
+                >
+                    <i class="bi bi-plus-lg om-icon om-icon-sm"></i>
+                    New Payment
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-outline"
+                    data-om-tooltip="Search payments"
+                >
+                    <i class="bi bi-search om-icon om-icon-sm"></i>
+                    Search
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-ghost om-btn-icon"
+                    aria-label="More actions"
+                    data-om-tooltip="More actions"
+                >
+                    <i class="bi bi-three-dots"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             Tooltip placements
+             ================================================= -->
+
+        <section class="om-page-section">
+
+            <div class="om-page-section-header">
+                <div class="om-page-section-heading">
+                    <h2 class="om-page-section-title">
+                        Tooltip Placement
+                    </h2>
+                </div>
+            </div>
+
+            <div class="om-page-actions">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                    data-om-tooltip="Tooltip above the control"
+                    data-om-tooltip-placement="top"
+                >
+                    Top
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                    data-om-tooltip="Tooltip below the control"
+                    data-om-tooltip-placement="bottom"
+                >
+                    Bottom
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                    data-om-tooltip="Tooltip to the left"
+                    data-om-tooltip-placement="start"
+                >
+                    Start
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                    data-om-tooltip="Tooltip to the right"
+                    data-om-tooltip-placement="end"
+                >
+                    End
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             Popover
+             ================================================= -->
+
+        <section class="om-page-section">
+
+            <div class="om-page-section-header">
+                <div class="om-page-section-heading">
+                    <h2 class="om-page-section-title">
+                        Popover
+                    </h2>
+
+                    <p class="om-page-section-description">
+                        Use popovers when the user needs more
+                        information or interactive actions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="om-page-actions">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-primary"
+                    data-om-popover="#payment-help"
+                    data-om-popover-placement="bottom"
+                >
+                    <i class="bi bi-info-circle om-icon om-icon-sm"></i>
+                    Payment Information
+                </button>
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-outline"
+                    data-om-popover="#fee-help"
+                    data-om-popover-placement="bottom"
+                >
+                    Fee Details
+                </button>
+
+            </div>
+
+
+            <div
+                id="payment-help"
+                class="om-popover"
+                aria-hidden="true"
+            >
+
+                <div class="om-popover-header">
+
+                    <div class="om-popover-heading">
+
+                        <h3 class="om-popover-title">
+                            Payment Information
+                        </h3>
+
+                        <p class="om-popover-description">
+                            Information about the selected
+                            payment transaction.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="om-popover-close"
+                        aria-label="Close"
+                        data-om-popover-close
+                    >
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+
+                </div>
+
+                <div class="om-popover-body">
+                    Payments received by the cashier are
+                    recorded against the student's outstanding
+                    fees and included in the cashier's daily
+                    collection.
+                </div>
+
+                <div class="om-popover-footer">
+
+                    <button
+                        type="button"
+                        class="om-btn om-btn-sm om-btn-ghost"
+                        data-om-popover-close
+                    >
+                        Close
+                    </button>
+
+                    <button
+                        type="button"
+                        class="om-btn om-btn-sm om-btn-primary"
+                    >
+                        View Payments
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="fee-help"
+                class="om-popover om-popover-sm"
+                aria-hidden="true"
+            >
+
+                <div class="om-popover-header">
+
+                    <div class="om-popover-heading">
+
+                        <h3 class="om-popover-title">
+                            Fee Details
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="om-popover-close"
+                        aria-label="Close"
+                        data-om-popover-close
+                    >
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+
+                </div>
+
+                <div class="om-popover-body">
+                    Tuition, miscellaneous fees, and other
+                    applicable charges may appear here.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             API example
+             ================================================= -->
+
+        <section class="om-page-section">
+
+            <div class="om-page-section-header">
+                <div class="om-page-section-heading">
+                    <h2 class="om-page-section-title">
+                        API Example
+                    </h2>
+                </div>
+            </div>
+
+            <button
+                id="api-tooltip-trigger"
+                type="button"
+                class="om-btn om-btn-success"
+                data-om-tooltip="This tooltip is controlled through the API"
+            >
+                Show Tooltip
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="../../src/js/theme.js"></script>
+    <script type="module" src="../../src/js/tooltip.js"></script>
+
+    <script>
+        const trigger = document.querySelector(
+            "#api-tooltip-trigger"
+        );
+
+        trigger.addEventListener("click", () => {
+            OneModeTooltip.show(trigger);
+        });
+    </script>
+
+</body>
+</html>

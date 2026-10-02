@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — States</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+</head>
+
+<body>
+
+<div class="om-page">
+
+    <!-- =====================================================
+         Page Header
+         ===================================================== -->
+
+    <header class="om-page-header">
+
+        <div class="om-page-header-content">
+
+            <h1 class="om-page-title">
+                Empty / Loading / Error States
+            </h1>
+
+            <p class="om-page-description">
+                Reusable feedback patterns for lists, dashboards,
+                forms, reports, and other EkaMod screens.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         Overview
+         ===================================================== -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Standard States
+                </h2>
+
+                <p class="om-page-section-description">
+                    Full-size states for primary content areas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-page-stack">
+
+            <!-- Empty -->
+            <div class="om-card">
+
+                <div class="om-card-header">
+
+                    <h3 class="om-card-title">
+                        Empty
+                    </h3>
+
+                </div>
+
+                <div class="om-card-body">
+
+                    <div class="om-state om-state-empty">
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <h3 class="om-state-title">
+                            No students found
+                        </h3>
+
+                        <p class="om-state-description">
+                            There are no students matching your
+                            current search or filters.
+                        </p>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-secondary"
+                            >
+                                Clear Filters
+                            </button>
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-primary"
+                            >
+                                <i
+                                    class="bi bi-plus-lg"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Add Student
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Loading -->
+            <div class="om-card">
+
+                <div class="om-card-header">
+
+                    <h3 class="om-card-title">
+                        Loading
+                    </h3>
+
+                </div>
+
+                <div class="om-card-body">
+
+                    <div
+                        class="om-state om-state-loading"
+                        role="status"
+                        aria-live="polite"
+                    >
+
+                        <div
+                            class="om-state-spinner"
+                            aria-hidden="true"
+                        ></div>
+
+                        <h3 class="om-state-title">
+                            Loading students...
+                        </h3>
+
+                        <p class="om-state-description">
+                            Please wait while the student list
+                            is being loaded.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Error -->
+            <div class="om-card">
+
+                <div class="om-card-header">
+
+                    <h3 class="om-card-title">
+                        Error
+                    </h3>
+
+                </div>
+
+                <div class="om-card-body">
+
+                    <div
+                        class="om-state om-state-error"
+                        role="alert"
+                    >
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+
+                        <h3 class="om-state-title">
+                            Unable to load students
+                        </h3>
+
+                        <p class="om-state-description">
+                            Something went wrong while retrieving
+                            the student list.
+                        </p>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-primary"
+                            >
+                                <i
+                                    class="bi bi-arrow-clockwise"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Retry
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Compact States
+         ===================================================== -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Compact States
+                </h2>
+
+                <p class="om-page-section-description">
+                    Smaller versions for cards, widgets, and
+                    secondary content areas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-page-grid">
+
+            <!-- Compact Empty -->
+            <div class="om-page-grid-third">
+
+                <div class="om-card">
+
+                    <div class="om-card-header">
+
+                        <h3 class="om-card-title">
+                            Empty
+                        </h3>
+
+                    </div>
+
+                    <div class="om-card-body">
+
+                        <div class="om-state om-state-empty om-state-compact">
+
+                            <div
+                                class="om-state-icon"
+                                aria-hidden="true"
+                            >
+                                <i class="bi bi-receipt"></i>
+                            </div>
+
+                            <h3 class="om-state-title">
+                                No payments
+                            </h3>
+
+                            <p class="om-state-description">
+                                No payments have been recorded
+                                yet.
+                            </p>
+
+                            <div class="om-state-actions">
+
+                                <button
+                                    type="button"
+                                    class="om-btn om-btn-sm om-btn-primary"
+                                >
+                                    Receive Payment
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Compact Loading -->
+            <div class="om-page-grid-third">
+
+                <div class="om-card">
+
+                    <div class="om-card-header">
+
+                        <h3 class="om-card-title">
+                            Loading
+                        </h3>
+
+                    </div>
+
+                    <div class="om-card-body">
+
+                        <div
+                            class="om-state om-state-loading om-state-compact"
+                            role="status"
+                            aria-live="polite"
+                        >
+
+                            <div
+                                class="om-state-spinner"
+                                aria-hidden="true"
+                            ></div>
+
+                            <h3 class="om-state-title">
+                                Loading...
+                            </h3>
+
+                            <p class="om-state-description">
+                                Retrieving collection data.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Compact Error -->
+            <div class="om-page-grid-third">
+
+                <div class="om-card">
+
+                    <div class="om-card-header">
+
+                        <h3 class="om-card-title">
+                            Error
+                        </h3>
+
+                    </div>
+
+                    <div class="om-card-body">
+
+                        <div
+                            class="om-state om-state-error om-state-compact"
+                            role="alert"
+                        >
+
+                            <div
+                                class="om-state-icon"
+                                aria-hidden="true"
+                            >
+                                <i class="bi bi-exclamation-circle"></i>
+                            </div>
+
+                            <h3 class="om-state-title">
+                                Unable to load
+                            </h3>
+
+                            <p class="om-state-description">
+                                Collection data could not be retrieved.
+                            </p>
+
+                            <div class="om-state-actions">
+
+                                <button
+                                    type="button"
+                                    class="om-btn om-btn-sm om-btn-primary"
+                                >
+                                    <i
+                                        class="bi bi-arrow-clockwise"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Retry
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Inline States
+         ===================================================== -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Inline States
+                </h2>
+
+                <p class="om-page-section-description">
+                    Horizontal states for toolbars, cards, filters,
+                    and smaller content regions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-page-stack">
+
+            <!-- Inline Empty -->
+            <div class="om-card">
+
+                <div class="om-card-body">
+
+                    <div class="om-state om-state-empty om-state-inline">
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-funnel"></i>
+                        </div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                No matching records
+                            </h3>
+
+                            <p class="om-state-description">
+                                Try changing your search or filters.
+                            </p>
+
+                        </div>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-sm om-btn-secondary"
+                            >
+                                Clear Filters
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Inline Loading -->
+            <div class="om-card">
+
+                <div class="om-card-body">
+
+                    <div
+                        class="om-state om-state-loading om-state-inline"
+                        role="status"
+                        aria-live="polite"
+                    >
+
+                        <div
+                            class="om-state-spinner"
+                            aria-hidden="true"
+                        ></div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Loading report
+                            </h3>
+
+                            <p class="om-state-description">
+                                Preparing the requested report data.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Inline Error -->
+            <div class="om-card">
+
+                <div class="om-card-body">
+
+                    <div
+                        class="om-state om-state-error om-state-inline"
+                        role="alert"
+                    >
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-wifi-off"></i>
+                        </div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Connection failed
+                            </h3>
+
+                            <p class="om-state-description">
+                                The server could not be reached.
+                                Please try again.
+                            </p>
+
+                        </div>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-sm om-btn-primary"
+                            >
+                                <i
+                                    class="bi bi-arrow-clockwise"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Retry
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Container State
+         ===================================================== -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Container State
+                </h2>
+
+                <p class="om-page-section-description">
+                    Useful when an entire content region needs
+                    a loading, empty, or error state.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-state-container">
+
+            <div
+                class="om-state om-state-empty"
+            >
+
+                <div
+                    class="om-state-icon"
+                    aria-hidden="true"
+                >
+                    <i class="bi bi-bar-chart"></i>
+                </div>
+
+                <h3 class="om-state-title">
+                    No collection data
+                </h3>
+
+                <p class="om-state-description">
+                    There is no collection data available
+                    for the selected period.
+                </p>
+
+                <div class="om-state-actions">
+
+                    <button
+                        type="button"
+                        class="om-btn om-btn-secondary"
+                    >
+                        Change Date Range
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         Practical EkaMod Examples
+         ===================================================== -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    EkaMod Usage Examples
+                </h2>
+
+                <p class="om-page-section-description">
+                    Recommended contexts for each state.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-card">
+
+            <div class="om-card-body">
+
+                <div class="om-page-stack">
+
+                    <!-- Students -->
+                    <div class="om-state om-state-inline om-state-empty">
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Student list
+                            </h3>
+
+                            <p class="om-state-description">
+                                No students match the current
+                                search criteria.
+                            </p>
+
+                        </div>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-sm om-btn-secondary"
+                            >
+                                Clear Search
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Cashiering -->
+                    <div class="om-state om-state-inline om-state-empty">
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-cash-stack"></i>
+                        </div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Daily collection
+                            </h3>
+
+                            <p class="om-state-description">
+                                No payments have been recorded
+                                for the selected date.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Reports -->
+                    <div class="om-state om-state-inline om-state-error">
+
+                        <div
+                            class="om-state-icon"
+                            aria-hidden="true"
+                        >
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                        </div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Report unavailable
+                            </h3>
+
+                            <p class="om-state-description">
+                                The report could not be generated.
+                            </p>
+
+                        </div>
+
+                        <div class="om-state-actions">
+
+                            <button
+                                type="button"
+                                class="om-btn om-btn-sm om-btn-primary"
+                            >
+                                Try Again
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Enrollment -->
+                    <div
+                        class="om-state om-state-inline om-state-loading"
+                        role="status"
+                        aria-live="polite"
+                    >
+
+                        <div
+                            class="om-state-spinner"
+                            aria-hidden="true"
+                        ></div>
+
+                        <div class="om-state-content">
+
+                            <h3 class="om-state-title">
+                                Loading enrollment
+                            </h3>
+
+                            <p class="om-state-description">
+                                Retrieving enrollment information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="../../src/js/theme.js"></script>
+
+</body>
+</html> 

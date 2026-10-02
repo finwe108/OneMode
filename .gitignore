@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# npm package artifacts
+*.tgz
+
+# Windows / WSL metadata
+*:Zone.Identifier
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

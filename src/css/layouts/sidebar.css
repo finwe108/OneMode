@@ -1,0 +1,227 @@
+/* =========================================================
+   OneMode — Sidebar
+   ========================================================= */
+
+.om-sidebar {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid var(--om-color-border);
+
+    background: var(--om-color-surface);
+
+    transition:
+        background-color var(--om-transition-normal),
+        border-color var(--om-transition-normal);
+}
+
+
+/* =========================================================
+   Brand
+   ========================================================= */
+
+.om-sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: var(--om-space-3);
+
+    min-height: 4rem;
+
+    padding: 0 var(--om-space-5);
+
+    border-bottom: 1px solid var(--om-color-border);
+
+    color: var(--om-color-text);
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-sidebar-brand:hover {
+    color: var(--om-color-text);
+}
+
+.om-sidebar-brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    flex-shrink: 0;
+
+    border-radius: var(--om-radius-md);
+
+    background: var(--om-color-primary);
+    color: var(--om-color-text-inverse);
+}
+
+.om-sidebar-brand-text {
+    min-width: 0;
+}
+
+.om-sidebar-brand-name {
+    display: block;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-md);
+    font-weight: var(--om-font-weight-bold);
+
+    line-height: var(--om-line-height-tight);
+}
+
+.om-sidebar-brand-description {
+    display: block;
+
+    margin-top: 0.125rem;
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+}
+
+
+/* =========================================================
+   Sidebar Navigation Area
+   ========================================================= */
+
+.om-sidebar-nav {
+    flex: 1;
+
+    padding:
+        var(--om-space-4)
+        var(--om-space-3);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   Sidebar Footer
+   ========================================================= */
+
+.om-sidebar-footer {
+    padding: var(--om-space-3);
+
+    border-top: 1px solid var(--om-color-border);
+}
+
+
+/* =========================================================
+   Desktop Collapsed State
+   ========================================================= */
+
+.om-sidebar-collapsed .om-sidebar-brand {
+    justify-content: center;
+
+    padding: 0;
+}
+
+.om-sidebar-collapsed .om-sidebar-brand-text {
+    display: none;
+}
+
+
+/*
+ * Navigation itself controls the
+ * collapsed navigation appearance.
+ */
+
+
+/* =========================================================
+   Mobile Sidebar
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /*
+     * Mobile sidebar is a normal full-height drawer.
+     */
+    .om-app-shell-sidebar .om-sidebar {
+        position: relative;
+
+        width: 16rem;
+        height: 100vh;
+
+        box-shadow: var(--om-shadow-lg);
+    }
+
+
+    /*
+     * Mobile always displays the complete navigation.
+     */
+    .om-app-shell.om-sidebar-collapsed
+    .om-sidebar-brand {
+        justify-content: flex-start;
+
+        padding:
+            0
+            var(--om-space-5);
+    }
+
+    .om-app-shell.om-sidebar-collapsed
+    .om-sidebar-brand-text {
+        display: block;
+    }
+}
+
+
+/* =========================================================
+   Mobile Overlay
+   ========================================================= */
+
+.om-sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background: var(--om-color-overlay);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity var(--om-transition-normal),
+        visibility var(--om-transition-normal);
+}
+
+
+/*
+ * Overlay becomes active when drawer opens.
+ */
+.om-app-shell.om-sidebar-mobile-open
+~ .om-sidebar-overlay,
+.om-app-shell.om-sidebar-mobile-open
+.om-sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .om-app-shell-sidebar,
+    .om-sidebar,
+    .om-sidebar-overlay {
+        transition: none;
+    }
+}

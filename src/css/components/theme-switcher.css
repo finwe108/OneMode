@@ -1,0 +1,100 @@
+/* =========================================================
+   OneMode — Theme Switcher
+   ========================================================= */
+
+.om-theme-switcher {
+    display: inline-flex;
+    align-items: center;
+
+    padding: var(--om-space-1);
+
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-md);
+
+    background: var(--om-color-surface);
+
+    box-shadow: var(--om-shadow-sm);
+}
+
+
+/* =========================================================
+   Label
+   ========================================================= */
+
+.om-theme-switcher-label {
+    margin-right: var(--om-space-2);
+    padding-left: var(--om-space-2);
+
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-medium);
+}
+
+
+/* =========================================================
+   Option
+   ========================================================= */
+
+.om-theme-option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 2rem;
+    padding: 0 var(--om-space-3);
+
+    border: 0;
+    border-radius: var(--om-radius-sm);
+
+    background: transparent;
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-xs);
+    font-weight: var(--om-font-weight-medium);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-theme-option:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-theme-option-active {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+
+/* =========================================================
+   Focus
+   ========================================================= */
+
+.om-theme-option:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .om-theme-switcher {
+        width: 100%;
+    }
+
+    .om-theme-option {
+        flex: 1;
+    }
+
+    .om-theme-switcher-label {
+        display: none;
+    }
+}

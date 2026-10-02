@@ -1,0 +1,141 @@
+/* =========================================================
+   OneMode — Hero
+   ========================================================= */
+
+.om-hero {
+    min-height: 210px;
+    padding: 42px 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--om-space-6);
+
+    border-radius: var(--om-radius-lg);
+
+    background: linear-gradient(
+        135deg,
+        var(--om-color-primary-active) 0%,
+        var(--om-color-primary) 100%
+    );
+
+    color: var(--om-color-text-inverse);
+}
+
+.om-hero-content {
+    min-width: 0;
+}
+
+.om-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-2);
+
+    margin-bottom: var(--om-space-3);
+
+    color: var(--om-color-text-inverse);
+
+    font-size: var(--om-font-size-sm);
+    font-weight: var(--om-font-weight-semibold);
+}
+
+.om-hero-title {
+    margin: 0;
+
+    color: var(--om-color-text-inverse);
+
+    font-size: var(--om-font-size-3xl);
+    font-weight: var(--om-font-weight-bold);
+    line-height: var(--om-line-height-tight);
+}
+
+.om-hero-description {
+    max-width: 680px;
+    margin: var(--om-space-3) 0 0;
+
+    color: var(--om-color-text-inverse);
+
+    font-size: var(--om-font-size-md);
+    line-height: var(--om-line-height-relaxed);
+    opacity: 0.9;
+}
+
+.om-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--om-space-3);
+
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Compact Hero
+   --------------------------------------------------------- */
+
+.om-hero-compact {
+    min-height: 160px;
+    padding: var(--om-space-8) var(--om-space-10);
+}
+
+.om-hero-compact .om-hero-title {
+    font-size: var(--om-font-size-2xl);
+}
+
+.om-hero-compact .om-hero-description {
+    font-size: var(--om-font-size-sm);
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-hero {
+        min-height: 0;
+        padding: var(--om-space-8) var(--om-space-6);
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .om-hero-title {
+        font-size: var(--om-font-size-2xl);
+    }
+
+    .om-hero-description {
+        max-width: none;
+    }
+
+    .om-hero-actions {
+        width: 100%;
+    }
+
+    .om-hero-actions .om-btn {
+        width: 100%;
+    }
+
+    .om-hero-compact {
+        min-height: 0;
+        padding: var(--om-space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .om-hero {
+        padding: var(--om-space-6);
+        border-radius: var(--om-radius-md);
+    }
+
+    .om-hero-eyebrow {
+        font-size: var(--om-font-size-xs);
+    }
+
+    .om-hero-title {
+        font-size: var(--om-font-size-xl);
+    }
+
+    .om-hero-description {
+        font-size: var(--om-font-size-sm);
+    }
+}

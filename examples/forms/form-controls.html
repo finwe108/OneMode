@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Form Controls</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+
+</head>
+
+<body>
+
+<main class="om-page">
+
+    <!-- =================================================
+         Page Header
+         ================================================= -->
+
+    <div class="om-page-header">
+
+        <div class="om-page-header-content">
+
+            <h1 class="om-page-title">
+                Form Controls
+            </h1>
+
+            <p class="om-page-description">
+                Reusable form controls and advanced form
+                layouts for OneMode applications.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         Basic Controls
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Basic Controls
+                </h2>
+
+                <p class="om-page-section-description">
+                    Common inputs used throughout EkaMod.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form class="om-form">
+
+            <div class="om-form-row">
+
+                <!-- Text -->
+
+                <div class="om-form-col-half">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="student-name"
+                        >
+                            Student Name
+
+                            <span
+                                class="om-form-label-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+
+                        </label>
+
+                        <input
+                            id="student-name"
+                            type="text"
+                            class="om-form-control om-form-input"
+                            placeholder="Enter student name"
+                        >
+
+                        <p class="om-form-help">
+                            Enter the student's complete name.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Username -->
+
+                <div class="om-form-col-half">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="username"
+                        >
+                            Username
+                        </label>
+
+                        <input
+                            id="username"
+                            type="text"
+                            class="om-form-control om-form-input"
+                            placeholder="student.username"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="om-form-col-half">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="email"
+                        >
+                            Email Address
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            class="om-form-control om-form-input"
+                            placeholder="name@example.com"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="om-form-col-half">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="birth-date"
+                        >
+                            Birth Date
+                        </label>
+
+                        <input
+                            id="birth-date"
+                            type="date"
+                            class="om-form-control om-form-input"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Select -->
+
+                <div class="om-form-col-half">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="grade-level"
+                        >
+                            Grade Level
+                        </label>
+
+                        <select
+                            id="grade-level"
+                            class="om-form-control om-form-select"
+                        >
+
+                            <option value="">
+                                Select grade level
+                            </option>
+
+                            <option>
+                                Kindergarten
+                            </option>
+
+                            <option>
+                                Grade 1
+                            </option>
+
+                            <option>
+                                Grade 2
+                            </option>
+
+                            <option>
+                                Grade 3
+                            </option>
+
+                            <option>
+                                Grade 4
+                            </option>
+
+                            <option>
+                                Grade 5
+                            </option>
+
+                            <option>
+                                Grade 6
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Textarea -->
+
+                <div class="om-form-col-full">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="remarks"
+                        >
+                            Remarks
+                        </label>
+
+                        <textarea
+                            id="remarks"
+                            class="om-form-control om-form-textarea"
+                            placeholder="Enter additional remarks"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- =================================================
+         Checkbox / Radio
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Checkbox and Radio
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-form-row">
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label class="om-form-label">
+                        Student Status
+                    </label>
+
+                    <div class="om-form-check-group">
+
+                        <label class="om-form-check">
+
+                            <input
+                                type="checkbox"
+                                class="om-form-check-input"
+                                checked
+                            >
+
+                            <span>
+                                <span class="om-form-check-label">
+                                    Active student
+                                </span>
+
+                                <span class="om-form-check-description">
+                                    Student is currently enrolled.
+                                </span>
+                            </span>
+
+                        </label>
+
+
+                        <label class="om-form-check">
+
+                            <input
+                                type="checkbox"
+                                class="om-form-check-input"
+                            >
+
+                            <span>
+                                <span class="om-form-check-label">
+                                    Scholarship recipient
+                                </span>
+
+                                <span class="om-form-check-description">
+                                    Student receives a discount or
+                                    scholarship.
+                                </span>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label class="om-form-label">
+                        Payment Method
+                    </label>
+
+                    <div class="om-form-check-group">
+
+                        <label class="om-form-check">
+
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                class="om-form-check-input"
+                                checked
+                            >
+
+                            <span class="om-form-check-label">
+                                Cash
+                            </span>
+
+                        </label>
+
+
+                        <label class="om-form-check">
+
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                class="om-form-check-input"
+                            >
+
+                            <span class="om-form-check-label">
+                                Bank Transfer
+                            </span>
+
+                        </label>
+
+
+                        <label class="om-form-check">
+
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                class="om-form-check-input"
+                            >
+
+                            <span class="om-form-check-label">
+                                Check
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Switch
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Switch
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-form-group">
+
+            <label class="om-form-switch">
+
+                <input
+                    type="checkbox"
+                    class="om-form-switch-input"
+                    checked
+                >
+
+                <span
+                    class="om-form-switch-control"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="om-form-switch-content">
+
+                    <span class="om-form-switch-label">
+                        Active account
+                    </span>
+
+                    <span class="om-form-switch-description">
+                        Allow this user to access the system.
+                    </span>
+
+                </span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Input Group
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Input Groups
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-form-row">
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="amount"
+                    >
+                        Amount
+                    </label>
+
+                    <div class="om-input-group">
+
+                        <span class="om-input-group-addon">
+                            ₱
+                        </span>
+
+                        <input
+                            id="amount"
+                            type="number"
+                            class="om-form-control"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="student-number"
+                    >
+                        Student Number
+                    </label>
+
+                    <div class="om-input-group">
+
+                        <span class="om-input-group-addon">
+                            MMCI
+                        </span>
+
+                        <input
+                            id="student-number"
+                            type="text"
+                            class="om-form-control"
+                            placeholder="2026-0001"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Search
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Search
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-search">
+
+            <i
+                class="bi bi-search om-search-icon"
+                aria-hidden="true"
+            ></i>
+
+            <input
+                type="search"
+                class="om-form-control"
+                placeholder="Search students..."
+                aria-label="Search students"
+            >
+
+            <button
+                type="button"
+                class="om-search-clear"
+                aria-label="Clear search"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Validation
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Validation States
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-form-row">
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="valid-input"
+                    >
+                        Student Number
+                    </label>
+
+                    <input
+                        id="valid-input"
+                        type="text"
+                        class="om-form-control is-valid"
+                        value="2026-0001"
+                    >
+
+                    <div
+                        class="om-form-feedback om-form-feedback-valid"
+                    >
+                        <i
+                            class="bi bi-check-circle-fill om-form-feedback-icon"
+                        ></i>
+
+                        Student number is available.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="om-form-col-half">
+
+                <div class="om-form-group">
+
+                    <label
+                        class="om-form-label"
+                        for="invalid-input"
+                    >
+                        Email Address
+                    </label>
+
+                    <input
+                        id="invalid-input"
+                        type="email"
+                        class="om-form-control is-invalid"
+                        value="invalid-email"
+                        aria-invalid="true"
+                        aria-describedby="email-error"
+                    >
+
+                    <div
+                        id="email-error"
+                        class="om-form-feedback om-form-feedback-invalid"
+                    >
+                        <i
+                            class="bi bi-x-circle-fill om-form-feedback-icon"
+                        ></i>
+
+                        Enter a valid email address.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         File Input
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    File Input
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="om-form-file">
+
+            <label
+                class="om-form-label"
+                for="student-photo"
+            >
+                Student Photo
+            </label>
+
+            <input
+                id="student-photo"
+                type="file"
+                class="om-form-file-input"
+                accept="image/*"
+            >
+
+            <p class="om-form-help">
+                JPG or PNG. Maximum file size: 2 MB.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Advanced Form
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Advanced Form
+                </h2>
+
+                <p class="om-page-section-description">
+                    A realistic OneMode form composed from
+                    the controls above.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form class="om-form">
+
+            <!-- Personal Information -->
+
+            <div class="om-form-section">
+
+                <div class="om-form-section-header">
+
+                    <h3 class="om-form-section-title">
+                        Personal Information
+                    </h3>
+
+                    <p class="om-form-section-description">
+                        Basic information about the student.
+                    </p>
+
+                </div>
+
+
+                <div class="om-form-row">
+
+                    <div class="om-form-col-half">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="first-name"
+                            >
+                                First Name
+                            </label>
+
+                            <input
+                                id="first-name"
+                                type="text"
+                                class="om-form-control"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="om-form-col-half">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="last-name"
+                            >
+                                Last Name
+                            </label>
+
+                            <input
+                                id="last-name"
+                                type="text"
+                                class="om-form-control"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="om-form-col-half">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="contact-number"
+                            >
+                                Contact Number
+                            </label>
+
+                            <input
+                                id="contact-number"
+                                type="tel"
+                                class="om-form-control"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="om-form-col-half">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="student-type"
+                            >
+                                Student Type
+                            </label>
+
+                            <select
+                                id="student-type"
+                                class="om-form-control om-form-select"
+                            >
+
+                                <option>
+                                    Regular
+                                </option>
+
+                                <option>
+                                    Transferee
+                                </option>
+
+                                <option>
+                                    Returning
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Enrollment -->
+
+            <div class="om-form-section">
+
+                <div class="om-form-section-header">
+
+                    <h3 class="om-form-section-title">
+                        Enrollment
+                    </h3>
+
+                    <p class="om-form-section-description">
+                        Academic information for the current
+                        school year.
+                    </p>
+
+                </div>
+
+
+                <div class="om-form-row">
+
+                    <div class="om-form-col-third">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="school-year"
+                            >
+                                School Year
+                            </label>
+
+                            <select
+                                id="school-year"
+                                class="om-form-control om-form-select"
+                            >
+
+                                <option>
+                                    2026–2027
+                                </option>
+
+                                <option>
+                                    2027–2028
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="om-form-col-third">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="enrollment-grade"
+                            >
+                                Grade Level
+                            </label>
+
+                            <select
+                                id="enrollment-grade"
+                                class="om-form-control om-form-select"
+                            >
+
+                                <option>
+                                    Grade 1
+                                </option>
+
+                                <option>
+                                    Grade 2
+                                </option>
+
+                                <option>
+                                    Grade 3
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="om-form-col-third">
+
+                        <div class="om-form-group">
+
+                            <label
+                                class="om-form-label"
+                                for="section"
+                            >
+                                Section
+                            </label>
+
+                            <select
+                                id="section"
+                                class="om-form-control om-form-select"
+                            >
+
+                                <option>
+                                    Section A
+                                </option>
+
+                                <option>
+                                    Section B
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="om-form-actions">
+
+                <button
+                    type="button"
+                    class="om-btn om-btn-secondary"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="om-btn om-btn-primary"
+                >
+                    <i
+                        class="bi bi-check-lg om-icon om-icon-sm"
+                    ></i>
+
+                    Save Student
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<script
+    type="module"
+    src="../../src/js/theme.js"
+></script>
+
+<script
+    type="module"
+    src="../../src/js/form.js"
+></script>
+
+</body>
+
+</html>

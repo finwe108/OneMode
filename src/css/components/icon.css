@@ -1,0 +1,265 @@
+/* =========================================================
+   OneMode — Icons
+   ========================================================= */
+
+/*
+ * OneMode does not provide its own icon glyphs.
+ * Bootstrap Icons remain the icon source used by EkaMod SES.
+ *
+ * OneMode standardizes:
+ * - sizing
+ * - alignment
+ * - semantic colors
+ * - icon containers
+ */
+
+
+/* ---------------------------------------------------------
+   Base
+   --------------------------------------------------------- */
+
+.om-icon {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 1em;
+    height: 1em;
+
+    font-size: 1rem;
+    line-height: 1;
+
+    vertical-align: -0.125em;
+
+    color: currentColor;
+}
+
+
+/* ---------------------------------------------------------
+   Sizes
+   --------------------------------------------------------- */
+
+.om-icon-sm {
+    font-size: var(--om-font-size-sm);
+}
+
+.om-icon-md {
+    font-size: var(--om-font-size-md);
+}
+
+.om-icon-lg {
+    font-size: var(--om-font-size-lg);
+}
+
+.om-icon-xl {
+    font-size: var(--om-font-size-xl);
+}
+
+.om-icon-2xl {
+    font-size: var(--om-font-size-2xl);
+}
+
+
+/* ---------------------------------------------------------
+   Semantic Colors
+   --------------------------------------------------------- */
+
+.om-icon-primary {
+    color: var(--om-color-primary);
+}
+
+.om-icon-success {
+    color: var(--om-color-success-text);
+}
+
+.om-icon-warning {
+    color: var(--om-color-warning-text);
+}
+
+.om-icon-danger {
+    color: var(--om-color-danger-text);
+}
+
+.om-icon-info {
+    color: var(--om-color-info-text);
+}
+
+.om-icon-muted {
+    color: var(--om-color-text-muted);
+}
+
+.om-icon-secondary {
+    color: var(--om-color-text-secondary);
+}
+
+.om-icon-disabled {
+    color: var(--om-color-text-disabled);
+}
+
+.om-icon-inverse {
+    color: var(--om-color-text-inverse);
+}
+
+
+/* ---------------------------------------------------------
+   Icon Alignment
+   --------------------------------------------------------- */
+
+.om-icon-leading {
+    margin-right: var(--om-space-2);
+}
+
+.om-icon-trailing {
+    margin-left: var(--om-space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Icon Action
+   --------------------------------------------------------- */
+
+.om-icon-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+    border-radius: var(--om-radius-md);
+
+    background: transparent;
+    color: var(--om-color-text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--om-transition-fast),
+        border-color var(--om-transition-fast),
+        color var(--om-transition-fast);
+}
+
+.om-icon-action:hover {
+    background: var(--om-color-surface-hover);
+    color: var(--om-color-text);
+}
+
+.om-icon-action:active {
+    background: var(--om-color-surface-active);
+}
+
+.om-icon-action:focus-visible {
+    outline: 2px solid var(--om-color-primary);
+    outline-offset: 2px;
+}
+
+.om-icon-action:disabled,
+.om-icon-action.om-icon-action-disabled {
+    color: var(--om-color-text-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   Icon Containers
+   --------------------------------------------------------- */
+
+.om-icon-circle,
+.om-icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    border: 1px solid transparent;
+}
+
+.om-icon-circle {
+    border-radius: var(--om-radius-full);
+}
+
+.om-icon-square {
+    border-radius: var(--om-radius-md);
+}
+
+
+/* ---------------------------------------------------------
+   Icon Container — Semantic Variants
+   --------------------------------------------------------- */
+
+.om-icon-circle.om-icon-primary,
+.om-icon-square.om-icon-primary {
+    background: var(--om-color-primary-soft);
+    border-color: var(--om-color-primary-border);
+    color: var(--om-color-primary-text);
+}
+
+.om-icon-circle.om-icon-success,
+.om-icon-square.om-icon-success {
+    background: var(--om-color-success-bg);
+    border-color: var(--om-color-success-border);
+    color: var(--om-color-success-text);
+}
+
+.om-icon-circle.om-icon-warning,
+.om-icon-square.om-icon-warning {
+    background: var(--om-color-warning-bg);
+    border-color: var(--om-color-warning-border);
+    color: var(--om-color-warning-text);
+}
+
+.om-icon-circle.om-icon-danger,
+.om-icon-square.om-icon-danger {
+    background: var(--om-color-danger-bg);
+    border-color: var(--om-color-danger-border);
+    color: var(--om-color-danger-text);
+}
+
+.om-icon-circle.om-icon-info,
+.om-icon-square.om-icon-info {
+    background: var(--om-color-info-bg);
+    border-color: var(--om-color-info-border);
+    color: var(--om-color-info-text);
+}
+
+
+/* ---------------------------------------------------------
+   Icon Container — Sizes
+   --------------------------------------------------------- */
+
+.om-icon-circle.om-icon-sm,
+.om-icon-square.om-icon-sm {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.om-icon-circle.om-icon-lg,
+.om-icon-square.om-icon-lg {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.om-icon-circle.om-icon-xl,
+.om-icon-square.om-icon-xl {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+    .om-icon-action {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

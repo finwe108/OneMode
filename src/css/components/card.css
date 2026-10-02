@@ -1,0 +1,37 @@
+.om-card {
+    background: var(--om-color-surface);
+    border: 1px solid var(--om-color-border);
+    border-radius: var(--om-radius-lg);
+    box-shadow: var(--om-shadow-sm);
+    overflow: hidden;
+}
+
+.om-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--om-space-4);
+
+    padding: var(--om-space-5) var(--om-space-6);
+
+    border-bottom: 1px solid var(--om-color-border);
+}
+
+.om-card-body {
+    padding: var(--om-space-6);
+}
+
+.om-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--om-space-2);
+
+    padding: var(--om-space-4) var(--om-space-6);
+
+    border-top: 1px solid var(--om-color-border);
+}
+
+.om-card-compact .om-card-body {
+    padding: var(--om-space-4);
+}

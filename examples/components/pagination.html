@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Pagination</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+
+</head>
+
+<body>
+
+<main class="om-page">
+
+    <!-- =================================================
+         Page Header
+         ================================================= -->
+
+    <div class="om-page-header">
+
+        <div class="om-page-header-content">
+
+            <h1 class="om-page-title">
+                Pagination
+            </h1>
+
+            <p class="om-page-description">
+                Navigation controls for large datasets
+                and paginated tables.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         Standard Pagination
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Standard Pagination
+                </h2>
+
+                <p class="om-page-section-description">
+                    Page numbers with previous and next
+                    navigation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="pagination-standard"
+            class="om-pagination"
+            data-om-pagination
+            data-om-current-page="4"
+            data-om-total-pages="20"
+            data-om-total-items="487"
+            data-om-page-size="25"
+            data-om-sibling-count="1"
+        >
+
+            <div
+                class="om-pagination-summary"
+                data-om-pagination-summary
+            ></div>
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Large Dataset
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Large Dataset
+                </h2>
+
+                <p class="om-page-section-description">
+                    Ellipsis is automatically inserted when
+                    there are many pages.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-pagination om-pagination-bordered"
+            data-om-pagination
+            data-om-current-page="25"
+            data-om-total-pages="100"
+            data-om-total-items="2500"
+            data-om-page-size="25"
+            data-om-sibling-count="1"
+        >
+
+            <div
+                class="om-pagination-summary"
+                data-om-pagination-summary
+            ></div>
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Page Size
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Pagination with Page Size
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-pagination"
+            data-om-pagination
+            data-om-current-page="2"
+            data-om-total-pages="12"
+            data-om-total-items="287"
+            data-om-page-size="25"
+        >
+
+            <div
+                class="om-pagination-page-size"
+            >
+
+                <label
+                    class="om-pagination-page-size-label"
+                    for="page-size"
+                >
+                    Rows per page
+                </label>
+
+                <select
+                    id="page-size"
+                    class="om-pagination-page-size-select"
+                >
+
+                    <option value="10">
+                        10
+                    </option>
+
+                    <option
+                        value="25"
+                        selected
+                    >
+                        25
+                    </option>
+
+                    <option value="50">
+                        50
+                    </option>
+
+                    <option value="100">
+                        100
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+
+            <div
+                class="om-pagination-summary"
+                data-om-pagination-summary
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Compact
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Compact
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-pagination om-pagination-compact"
+            data-om-pagination
+            data-om-current-page="3"
+            data-om-total-pages="8"
+        >
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Centered
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Centered
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="om-pagination om-pagination-centered"
+            data-om-pagination
+            data-om-current-page="2"
+            data-om-total-pages="6"
+        >
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         Event Example
+         ================================================= -->
+
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+
+            <div class="om-page-section-heading">
+
+                <h2 class="om-page-section-title">
+                    Page Change Event
+                </h2>
+
+                <p class="om-page-section-description">
+                    Pagination emits an
+                    <code>om:pagechange</code> event that
+                    application code can use to fetch data.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="event-pagination"
+            class="om-pagination"
+            data-om-pagination
+            data-om-current-page="1"
+            data-om-total-pages="10"
+        >
+
+            <nav
+                class="om-pagination-nav"
+                aria-label="Pagination"
+            >
+
+                <ul
+                    class="om-pagination-list"
+                    data-om-pagination-list
+                ></ul>
+
+            </nav>
+
+        </div>
+
+
+        <div
+            id="pagination-event-output"
+            class="om-alert om-alert-info"
+            style="margin-top: var(--om-space-4);"
+        >
+            Select a page to see the emitted event.
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    type="module"
+    src="../../src/js/theme.js"
+></script>
+
+<script
+    type="module"
+    src="../../src/js/pagination.js"
+></script>
+
+<script>
+    const pagination =
+        document.querySelector(
+            "#event-pagination"
+        );
+
+    const output =
+        document.querySelector(
+            "#pagination-event-output"
+        );
+
+    pagination.addEventListener(
+        "om:pagechange",
+        (event) => {
+            output.textContent =
+                `Current page: ${event.detail.page} ` +
+                `of ${event.detail.totalPages}`;
+        }
+    );
+</script>
+
+</body>
+
+</html>

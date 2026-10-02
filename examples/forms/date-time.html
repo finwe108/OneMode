@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneMode — Date & Time Controls</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../src/css/onemode.css"
+    >
+</head>
+
+<body>
+
+<div class="om-page">
+
+    <!-- Page Header -->
+    <header class="om-page-header">
+        <div class="om-page-header-content">
+            <h1 class="om-page-title">
+                Date & Time Controls
+            </h1>
+
+            <p class="om-page-description">
+                Native HTML date and time controls styled with
+                OneMode semantic tokens.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- Basic Controls -->
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+            <div class="om-page-section-heading">
+                <h2 class="om-page-section-title">
+                    Basic Date & Time
+                </h2>
+
+                <p class="om-page-section-description">
+                    Native browser controls for common
+                    date and time entry.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="om-card">
+            <div class="om-card-body">
+
+                <form class="om-form">
+
+                    <div class="om-form-row">
+
+                        <!-- Date -->
+                        <div class="om-form-group om-form-grid-half">
+
+                            <label
+                                class="om-form-label"
+                                for="basic-date"
+                            >
+                                Date
+                            </label>
+
+                            <input
+                                id="basic-date"
+                                name="date"
+                                type="date"
+                                class="om-form-control"
+                            >
+
+                            <p class="om-form-help">
+                                Select a calendar date.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Time -->
+                        <div class="om-form-group om-form-grid-half">
+
+                            <label
+                                class="om-form-label"
+                                for="basic-time"
+                            >
+                                Time
+                            </label>
+
+                            <input
+                                id="basic-time"
+                                name="time"
+                                type="time"
+                                class="om-form-control"
+                            >
+
+                            <p class="om-form-help">
+                                Select a time.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Date & Time -->
+                        <div class="om-form-group om-form-grid-half">
+
+                            <label
+                                class="om-form-label"
+                                for="basic-datetime"
+                            >
+                                Date & Time
+                            </label>
+
+                            <input
+                                id="basic-datetime"
+                                name="datetime"
+                                type="datetime-local"
+                                class="om-form-control"
+                            >
+
+                            <p class="om-form-help">
+                                Select both a date and time.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Month -->
+                        <div class="om-form-group om-form-grid-half">
+
+                            <label
+                                class="om-form-label"
+                                for="basic-month"
+                            >
+                                Month
+                            </label>
+
+                            <input
+                                id="basic-month"
+                                name="month"
+                                type="month"
+                                class="om-form-control"
+                            >
+
+                            <p class="om-form-help">
+                                Useful for month-based reports.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- EkaMod Examples -->
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+            <div class="om-page-section-heading">
+                <h2 class="om-page-section-title">
+                    EkaMod Examples
+                </h2>
+
+                <p class="om-page-section-description">
+                    Examples of how native date and time controls
+                    will be used throughout the school system.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="om-card">
+            <div class="om-card-body">
+
+                <form class="om-form">
+
+                    <!-- Payment -->
+                    <div class="om-form-section">
+
+                        <div class="om-form-section-header">
+                            <h3 class="om-form-section-title">
+                                Payment
+                            </h3>
+
+                            <p class="om-form-section-description">
+                                Date and time associated with
+                                receiving a student payment.
+                            </p>
+                        </div>
+
+
+                        <div class="om-date-time-group">
+
+                            <div class="om-form-group">
+
+                                <label
+                                    class="om-form-label"
+                                    for="payment-date"
+                                >
+                                    Payment Date
+                                </label>
+
+                                <input
+                                    id="payment-date"
+                                    name="payment_date"
+                                    type="date"
+                                    class="om-form-control"
+                                    required
+                                >
+
+                                <p class="om-form-help">
+                                    Date the payment was received.
+                                </p>
+
+                            </div>
+
+
+                            <div class="om-form-group">
+
+                                <label
+                                    class="om-form-label"
+                                    for="payment-time"
+                                >
+                                    Payment Time
+                                </label>
+
+                                <input
+                                    id="payment-time"
+                                    name="payment_time"
+                                    type="time"
+                                    class="om-form-control"
+                                >
+
+                                <p class="om-form-help">
+                                    Time the payment was received.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Enrollment -->
+                    <div class="om-form-section">
+
+                        <div class="om-form-section-header">
+                            <h3 class="om-form-section-title">
+                                Enrollment
+                            </h3>
+
+                            <p class="om-form-section-description">
+                                Enrollment-related dates.
+                            </p>
+                        </div>
+
+
+                        <div class="om-form-row">
+
+                            <div class="om-form-group om-form-grid-half">
+
+                                <label
+                                    class="om-form-label"
+                                    for="enrollment-date"
+                                >
+                                    Enrollment Date
+                                    <span class="om-form-label-required">
+                                        *
+                                    </span>
+                                </label>
+
+                                <input
+                                    id="enrollment-date"
+                                    name="enrollment_date"
+                                    type="date"
+                                    class="om-form-control"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="om-form-group om-form-grid-half">
+
+                                <label
+                                    class="om-form-label"
+                                    for="school-year"
+                                >
+                                    School Year
+                                </label>
+
+                                <select
+                                    id="school-year"
+                                    name="school_year"
+                                    class="om-form-select"
+                                >
+                                    <option value="">
+                                        Select school year
+                                    </option>
+
+                                    <option value="2026-2027">
+                                        2026–2027
+                                    </option>
+
+                                    <option value="2027-2028">
+                                        2027–2028
+                                    </option>
+
+                                    <option value="2028-2029">
+                                        2028–2029
+                                    </option>
+                                </select>
+
+                                <p class="om-form-help">
+                                    School year is a selection,
+                                    not a date picker.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Attendance -->
+                    <div class="om-form-section">
+
+                        <div class="om-form-section-header">
+                            <h3 class="om-form-section-title">
+                                Attendance
+                            </h3>
+
+                            <p class="om-form-section-description">
+                                Date used when recording attendance.
+                            </p>
+                        </div>
+
+
+                        <div class="om-form-group om-form-date-md">
+
+                            <label
+                                class="om-form-label"
+                                for="attendance-date"
+                            >
+                                Attendance Date
+                            </label>
+
+                            <input
+                                id="attendance-date"
+                                name="attendance_date"
+                                type="date"
+                                class="om-form-control"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Date Range -->
+                    <div class="om-form-section">
+
+                        <div class="om-form-section-header">
+                            <h3 class="om-form-section-title">
+                                Date Range
+                            </h3>
+
+                            <p class="om-form-section-description">
+                                Currently implemented using two
+                                native date controls. A custom
+                                range picker can be introduced later.
+                            </p>
+                        </div>
+
+
+                        <div class="om-date-range">
+
+                            <div class="om-form-group">
+
+                                <label
+                                    class="om-form-label"
+                                    for="date-from"
+                                >
+                                    From
+                                </label>
+
+                                <input
+                                    id="date-from"
+                                    name="date_from"
+                                    type="date"
+                                    class="om-form-control"
+                                >
+
+                            </div>
+
+
+                            <div class="om-form-group">
+
+                                <label
+                                    class="om-form-label"
+                                    for="date-to"
+                                >
+                                    To
+                                </label>
+
+                                <input
+                                    id="date-to"
+                                    name="date_to"
+                                    type="date"
+                                    class="om-form-control"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Actions -->
+                    <div class="om-form-actions om-form-actions-end">
+
+                        <button
+                            type="button"
+                            class="om-btn om-btn-secondary"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="om-btn om-btn-primary"
+                        >
+                            <i
+                                class="bi bi-check-lg"
+                                aria-hidden="true"
+                            ></i>
+
+                            Apply
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Size Examples -->
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+            <div class="om-page-section-heading">
+                <h2 class="om-page-section-title">
+                    Sizes
+                </h2>
+
+                <p class="om-page-section-description">
+                    Optional width and control-size variations.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="om-card">
+            <div class="om-card-body">
+
+                <div class="om-form">
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="date-sm"
+                        >
+                            Small
+                        </label>
+
+                        <input
+                            id="date-sm"
+                            type="date"
+                            class="om-form-control om-form-control-date-sm om-form-date-sm"
+                        >
+
+                    </div>
+
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="date-default"
+                        >
+                            Default
+                        </label>
+
+                        <input
+                            id="date-default"
+                            type="date"
+                            class="om-form-control om-form-date-md"
+                        >
+
+                    </div>
+
+
+                    <div class="om-form-group">
+
+                        <label
+                            class="om-form-label"
+                            for="date-lg"
+                        >
+                            Large
+                        </label>
+
+                        <input
+                            id="date-lg"
+                            type="date"
+                            class="om-form-control om-form-control-date-lg om-form-date-lg"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- States -->
+    <section class="om-page-section">
+
+        <div class="om-page-section-header">
+            <div class="om-page-section-heading">
+                <h2 class="om-page-section-title">
+                    States
+                </h2>
+
+                <p class="om-page-section-description">
+                    Native controls using OneMode validation
+                    and disabled states.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="om-card">
+            <div class="om-card-body">
+
+                <div class="om-form-row">
+
+                    <!-- Valid -->
+                    <div class="om-form-group om-form-grid-third">
+
+                        <label
+                            class="om-form-label"
+                            for="date-valid"
+                        >
+                            Valid
+                        </label>
+
+                        <input
+                            id="date-valid"
+                            type="date"
+                            class="om-form-control is-valid"
+                            value="2026-09-28"
+                        >
+
+                        <div class="om-form-feedback om-form-feedback-valid">
+                            Date is valid.
+                        </div>
+
+                    </div>
+
+
+                    <!-- Invalid -->
+                    <div class="om-form-group om-form-grid-third">
+
+                        <label
+                            class="om-form-label"
+                            for="date-invalid"
+                        >
+                            Invalid
+                        </label>
+
+                        <input
+                            id="date-invalid"
+                            type="date"
+                            class="om-form-control is-invalid"
+                            aria-invalid="true"
+                        >
+
+                        <div class="om-form-feedback om-form-feedback-invalid">
+                            Please select a date.
+                        </div>
+
+                    </div>
+
+
+                    <!-- Disabled -->
+                    <div class="om-form-group om-form-grid-third">
+
+                        <label
+                            class="om-form-label"
+                            for="date-disabled"
+                        >
+                            Disabled
+                        </label>
+
+                        <input
+                            id="date-disabled"
+                            type="date"
+                            class="om-form-control"
+                            value="2026-09-28"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="../../src/js/theme.js"></script>
+
+</body>
+</html>

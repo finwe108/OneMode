@@ -1,0 +1,345 @@
+/* =========================================================
+   OneMode — State
+   Empty / Loading / Error states
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Base State
+   --------------------------------------------------------- */
+
+.om-state {
+    width: 100%;
+    min-height: 16rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--om-space-8);
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   State Icon
+   --------------------------------------------------------- */
+
+.om-state-icon {
+    width: 3rem;
+    height: 3rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: var(--om-space-4);
+
+    border-radius: var(--om-radius-full);
+
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-muted);
+
+    font-size: var(--om-font-size-xl);
+}
+
+
+/* ---------------------------------------------------------
+   Semantic Icon Variants
+   --------------------------------------------------------- */
+
+.om-state-empty .om-state-icon {
+    background: var(--om-color-surface-muted);
+    color: var(--om-color-text-muted);
+}
+
+.om-state-loading .om-state-icon {
+    background: var(--om-color-primary-soft);
+    color: var(--om-color-primary-text);
+}
+
+.om-state-error .om-state-icon {
+    background: var(--om-color-danger-bg);
+    color: var(--om-color-danger-text);
+}
+
+
+/* ---------------------------------------------------------
+   State Title
+   --------------------------------------------------------- */
+
+.om-state-title {
+    margin: 0;
+
+    color: var(--om-color-text);
+
+    font-size: var(--om-font-size-lg);
+    font-weight: var(--om-font-weight-semibold);
+    line-height: var(--om-line-height-tight);
+}
+
+
+/* ---------------------------------------------------------
+   State Description
+   --------------------------------------------------------- */
+
+.om-state-description {
+    max-width: 32rem;
+
+    margin:
+        var(--om-space-2)
+        0
+        0;
+
+    color: var(--om-color-text-secondary);
+
+    font-size: var(--om-font-size-sm);
+    line-height: var(--om-line-height-relaxed);
+}
+
+
+/* ---------------------------------------------------------
+   State Actions
+   --------------------------------------------------------- */
+
+.om-state-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--om-space-3);
+
+    margin-top: var(--om-space-5);
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------------------------------------------------------
+   Compact State
+   --------------------------------------------------------- */
+
+.om-state-compact {
+    min-height: 10rem;
+    padding: var(--om-space-6);
+}
+
+.om-state-compact .om-state-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    margin-bottom: var(--om-space-3);
+
+    font-size: var(--om-font-size-lg);
+}
+
+.om-state-compact .om-state-title {
+    font-size: var(--om-font-size-md);
+}
+
+.om-state-compact .om-state-description {
+    max-width: 28rem;
+}
+
+
+/* ---------------------------------------------------------
+   Inline State
+   --------------------------------------------------------- */
+
+.om-state-inline {
+    min-height: auto;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: var(--om-space-3);
+
+    padding: var(--om-space-4);
+
+    text-align: left;
+}
+
+.om-state-inline .om-state-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    font-size: var(--om-font-size-lg);
+}
+
+.om-state-inline .om-state-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.om-state-inline .om-state-title {
+    font-size: var(--om-font-size-sm);
+}
+
+.om-state-inline .om-state-description {
+    margin-top: var(--om-space-1);
+}
+
+.om-state-inline .om-state-actions {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Loading State
+   --------------------------------------------------------- */
+
+.om-state-spinner {
+    width: 2rem;
+    height: 2rem;
+
+    margin-bottom: var(--om-space-4);
+
+    border:
+        3px solid
+        var(--om-color-border);
+
+    border-top-color:
+        var(--om-color-primary);
+
+    border-radius: var(--om-radius-full);
+
+    animation:
+        om-state-spin
+        0.8s linear infinite;
+}
+
+.om-state-compact .om-state-spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    margin-bottom: var(--om-space-3);
+
+    border-width: 2px;
+}
+
+.om-state-inline .om-state-spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    border-width: 2px;
+}
+
+@keyframes om-state-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Loading Content
+   --------------------------------------------------------- */
+
+.om-state-loading .om-state-description {
+    color: var(--om-color-text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   Error State
+   --------------------------------------------------------- */
+
+.om-state-error .om-state-title {
+    color: var(--om-color-text);
+}
+
+.om-state-error .om-state-description {
+    color: var(--om-color-text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   Full Container State
+   --------------------------------------------------------- */
+
+.om-state-container {
+    width: 100%;
+    min-height: 20rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--om-color-border);
+
+    border-radius: var(--om-radius-lg);
+
+    background: var(--om-color-surface);
+}
+
+
+/* ---------------------------------------------------------
+   Card State
+   --------------------------------------------------------- */
+
+.om-card .om-state {
+    min-height: 18rem;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .om-state {
+        min-height: 14rem;
+        padding: var(--om-space-6);
+    }
+
+    .om-state-container {
+        min-height: 16rem;
+    }
+
+    .om-state-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .om-state-actions .om-btn {
+        width: 100%;
+    }
+
+    .om-state-inline {
+        align-items: flex-start;
+    }
+
+    .om-state-inline .om-state-actions {
+        width: auto;
+        flex-direction: row;
+    }
+
+    .om-state-inline .om-btn {
+        width: auto;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced Motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .om-state-spinner {
+        animation: none;
+    }
+}

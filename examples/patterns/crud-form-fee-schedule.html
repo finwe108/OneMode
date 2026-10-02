@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMode — CRUD Form · Fee Schedule</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/css/onemode.css">
+</head>
+
+<body>
+<div class="om-app-shell">
+
+    <aside class="om-app-shell-sidebar">
+        <div class="om-sidebar">
+            <div class="om-sidebar-brand">
+                <div class="om-sidebar-brand-mark">O</div>
+                <div>
+                    <strong>OneMode</strong>
+                    <span>EkaMod SES</span>
+                </div>
+            </div>
+
+            <nav class="om-nav">
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Main</div>
+                    <ul class="om-nav-list">
+                        <li><a class="om-nav-link" href="#"><i class="bi bi-grid-3x3-gap om-nav-icon"></i><span class="om-nav-text">Dashboard</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Finance</div>
+                    <ul class="om-nav-list">
+                        <li><a class="om-nav-link is-active" href="#"><i class="bi bi-calendar2-check om-nav-icon"></i><span class="om-nav-text">Fee Schedules</span></a></li>
+                        <li><a class="om-nav-link" href="#"><i class="bi bi-receipt om-nav-icon"></i><span class="om-nav-text">Fees</span></a></li>
+                        <li><a class="om-nav-link" href="#"><i class="bi bi-credit-card om-nav-icon"></i><span class="om-nav-text">Payments</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="om-nav-group">
+                    <div class="om-nav-group-label">Administration</div>
+                    <ul class="om-nav-list">
+                        <li><a class="om-nav-link" href="#"><i class="bi bi-shield-lock om-nav-icon"></i><span class="om-nav-text">Administration</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="om-sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="om-app-shell-main">
+        <header class="om-app-header">
+            <div class="om-app-header-left">
+                <button class="om-btn om-btn-ghost om-sidebar-toggle" type="button" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+                <span class="om-app-header-context">Finance</span>
+            </div>
+            <div class="om-app-header-right">
+                <button class="om-icon-action" type="button" aria-label="Notifications">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <button class="om-icon-action" type="button" aria-label="Account">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="om-app-shell-content">
+            <div class="om-page">
+
+                <nav class="om-breadcrumb" aria-label="Breadcrumb">
+                    <ol class="om-breadcrumb-list">
+                        <li class="om-breadcrumb-item"><a href="#">Finance</a></li>
+                        <li class="om-breadcrumb-item"><a href="#">Fee Schedules</a></li>
+                        <li class="om-breadcrumb-item om-breadcrumb-current" aria-current="page">Add Fee Schedule</li>
+                    </ol>
+                </nav>
+
+                <header class="om-page-header">
+                    <div>
+                        <h1 class="om-page-title">Add Fee Schedule</h1>
+                        <p class="om-page-description">
+                            Define a standard fee for a school year and one or more grade levels.
+                        </p>
+                    </div>
+                </header>
+
+                <form class="om-form" novalidate>
+
+                    <section class="om-page-section">
+                        <div class="om-card">
+                            <div class="om-card-header">
+                                <div>
+                                    <h2 class="om-card-title">Fee Information</h2>
+                                    <p class="om-card-description">
+                                        Enter the basic information used to identify and apply this fee.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="om-card-body">
+                                <div class="om-form-grid om-form-grid-2">
+
+                                    <div class="om-form-group">
+                                        <label class="om-form-label" for="fee-name">
+                                            Fee Name <span class="om-form-required">*</span>
+                                        </label>
+                                        <input
+                                            id="fee-name"
+                                            name="name"
+                                            type="text"
+                                            class="om-form-control"
+                                            value="Tuition Fee"
+                                            placeholder="e.g. Tuition Fee"
+                                            required
+                                        >
+                                        <div class="om-form-help">
+                                            Use a clear name that cashiers and staff will recognize.
+                                        </div>
+                                    </div>
+
+                                    <div class="om-form-group">
+                                        <label class="om-form-label" for="fee-type">
+                                            Fee Type <span class="om-form-required">*</span>
+                                        </label>
+                                        <select id="fee-type" name="fee_type" class="om-form-control om-form-select" required>
+                                            <option value="">Select fee type</option>
+                                            <option selected>Tuition</option>
+                                            <option>Miscellaneous</option>
+                                            <option>Other Fee</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="om-form-group">
+                                        <label class="om-form-label" for="school-year">
+                                            School Year <span class="om-form-required">*</span>
+                                        </label>
+                                        <select id="school-year" name="school_year" class="om-form-control om-form-select" required>
+                                            <option value="">Select school year</option>
+                                            <option selected>2026–2027</option>
+                                            <option>2025–2026</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="om-form-group">
+                                        <label class="om-form-label" for="amount">
+                                            Amount <span class="om-form-required">*</span>
+                                        </label>
+                                        <div class="om-input-group">
+                                            <span class="om-input-group-prefix">₱</span>
+                                            <input
+                                                id="amount"
+                                                name="amount"
+                                                type="number"
+                                                class="om-form-control"
+                                                value="35000.00"
+                                                min="0"
+                                                step="0.01"
+                                                inputmode="decimal"
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-card">
+                            <div class="om-card-header">
+                                <div>
+                                    <h2 class="om-card-title">Applicability</h2>
+                                    <p class="om-card-description">
+                                        Choose where this fee should apply.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="om-card-body">
+                                <fieldset class="om-form-group">
+                                    <legend class="om-form-label">
+                                        Grade Levels <span class="om-form-required">*</span>
+                                    </legend>
+
+                                    <div class="om-form-check-grid">
+                                        <label class="om-form-check">
+                                            <input type="checkbox" checked>
+                                            <span>Grade 7</span>
+                                        </label>
+                                        <label class="om-form-check">
+                                            <input type="checkbox">
+                                            <span>Grade 8</span>
+                                        </label>
+                                        <label class="om-form-check">
+                                            <input type="checkbox">
+                                            <span>Grade 9</span>
+                                        </label>
+                                        <label class="om-form-check">
+                                            <input type="checkbox">
+                                            <span>Grade 10</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="om-form-help">
+                                        A reusable fee can be assigned to multiple grade levels.
+                                    </div>
+                                </fieldset>
+
+                                <div class="om-form-group">
+                                    <label class="om-form-label" for="status">Status</label>
+                                    <select id="status" name="status" class="om-form-control om-form-select">
+                                        <option selected>Draft</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="om-page-section">
+                        <div class="om-card">
+                            <div class="om-card-header">
+                                <div>
+                                    <h2 class="om-card-title">Description</h2>
+                                    <p class="om-card-description">
+                                        Optional notes for finance and cashiering staff.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="om-card-body">
+                                <div class="om-form-group">
+                                    <label class="om-form-label" for="description">Description</label>
+                                    <textarea
+                                        id="description"
+                                        name="description"
+                                        class="om-form-control"
+                                        rows="4"
+                                        placeholder="Add internal notes or payment guidance..."
+                                    >Standard tuition charge for the 2026–2027 school year.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="om-page-actions">
+                        <a href="#" class="om-btn om-btn-secondary">Cancel</a>
+                        <button type="submit" class="om-btn om-btn-primary">
+                            <i class="bi bi-check-lg om-icon-leading" aria-hidden="true"></i>
+                            Save Fee Schedule
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script type="module" src="/src/js/theme.js"></script>
+<script type="module" src="/src/js/app-shell.js"></script>
+</body>
+</html>
