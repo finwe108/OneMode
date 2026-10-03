@@ -2,6 +2,8 @@
    OneMode — Modal / Dialog
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 const OPEN_CLASS = "is-open";
 
 let activeModal = null;
@@ -122,100 +124,117 @@ function trapFocus(event) {
 
 
 /* =========================================================
-   Global Keyboard Handling
+   Browser Initialization
    ========================================================= */
 
-document.addEventListener("keydown", (event) => {
+if (isBrowser()) {
 
-    if (!activeModal) {
-        return;
-    }
+    /* =====================================================
+       Global Keyboard Handling
+       ===================================================== */
 
-    if (event.key === "Escape") {
-        const closeOnEscape =
-            activeModal.dataset.omModalEscape !== "false";
+    document.addEventListener("keydown", (event) => {
 
-        if (closeOnEscape) {
-            closeModal(activeModal);
+        if (!activeModal) {
+            return;
         }
 
-        return;
-    }
+        if (event.key === "Escape") {
+            const closeOnEscape =
+                activeModal.dataset.omModalEscape !== "false";
 
-    trapFocus(event);
-});
+            if (closeOnEscape) {
+                closeModal(activeModal);
+            }
 
+            return;
+        }
 
-/* =========================================================
-   Trigger Handling
-   ========================================================= */
-
-document.addEventListener("click", (event) => {
-
-    const openTrigger =
-        event.target.closest("[data-om-modal-open]");
-
-    if (openTrigger) {
-
-        const modalId =
-            openTrigger.getAttribute("data-om-modal-open");
-
-        const modal =
-            document.getElementById(modalId);
-
-        openModal(modal);
-
-        return;
-    }
+        trapFocus(event);
+    });
 
 
-    const closeTrigger =
-        event.target.closest("[data-om-modal-close]");
+    /* =====================================================
+       Trigger Handling
+       ===================================================== */
 
-    if (closeTrigger) {
+    document.addEventListener("click", (event) => {
 
-        const modal =
-            closeTrigger.closest(".om-modal");
+        const openTrigger =
+            event.target.closest("[data-om-modal-open]");
 
-        closeModal(modal);
+        if (openTrigger) {
 
-        return;
-    }
+            const modalId =
+                openTrigger.getAttribute("data-om-modal-open");
+
+            const modal =
+                document.getElementById(modalId);
+
+            openModal(modal);
+
+            return;
+        }
 
 
-    const backdrop =
-        event.target.closest(".om-modal-backdrop");
+        const closeTrigger =
+            event.target.closest("[data-om-modal-close]");
 
-    if (backdrop) {
+        if (closeTrigger) {
 
-        const modal =
-            backdrop.closest(".om-modal");
+            const modal =
+                closeTrigger.closest(".om-modal");
 
-        const closeOnBackdrop =
-            modal?.dataset.omModalBackdrop !== "false";
-
-        if (closeOnBackdrop) {
             closeModal(modal);
+
+            return;
         }
-    }
-});
 
 
-/* =========================================================
-   Initial State
-   ========================================================= */
+        const backdrop =
+            event.target.closest(".om-modal-backdrop");
 
-document.querySelectorAll(".om-modal").forEach((modal) => {
-    modal.setAttribute("aria-hidden", "true");
-});
+        if (backdrop) {
+
+            const modal =
+                backdrop.closest(".om-modal");
+
+            const closeOnBackdrop =
+                modal?.dataset.omModalBackdrop !== "false";
+
+            if (closeOnBackdrop) {
+                closeModal(modal);
+            }
+        }
+    });
+
+
+    /* =====================================================
+       Initial State
+       ===================================================== */
+
+    document
+        .querySelectorAll(".om-modal")
+        .forEach((modal) => {
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        });
+}
 
 
 /* =========================================================
    Public API
    ========================================================= */
 
-window.OneModeModal = {
-    open: openModal,
-    close: closeModal,
-    toggle: toggleModal
-};
+if (isBrowser()) {
+
+    window.OneModeModal = {
+        open: openModal,
+        close: closeModal,
+        toggle: toggleModal
+    };
+}

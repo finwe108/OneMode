@@ -2,6 +2,8 @@
    OneMode — Toast / Notification
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 const DEFAULT_DURATION = 5000;
 
 const TOAST_ICONS = {
@@ -337,10 +339,13 @@ function info(message, options = {}) {
    Public API
    ========================================================= */
 
-window.OneModeToast = {
-    show: createToast,
-    success,
-    warning,
-    danger,
-    info
-};
+if (isBrowser()) {
+
+    window.OneModeToast = {
+        show: createToast,
+        success,
+        warning,
+        danger,
+        info
+    };
+}

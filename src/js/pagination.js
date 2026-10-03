@@ -2,6 +2,8 @@
    OneMode — Pagination
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 (() => {
     const PAGINATION_SELECTOR = "[data-om-pagination]";
 
@@ -524,41 +526,45 @@
        Public API
        ----------------------------------------------------- */
 
-    window.OneModePagination = {
-        render: renderPagination,
+    if (isBrowser()) {
 
-        goToPage,
+        window.OneModePagination = {
+            render: renderPagination,
 
-        setTotalPages(
-            container,
-            totalPages
-        ) {
-            container.dataset.omTotalPages =
-                String(
-                    Math.max(
-                        1,
-                        Number(totalPages)
-                    )
-                );
+            goToPage,
 
-            renderPagination(container);
-        },
+            setTotalPages(
+                container,
+                totalPages
+            ) {
+                container.dataset.omTotalPages =
+                    String(
+                        Math.max(
+                            1,
+                            Number(totalPages)
+                        )
+                    );
 
-        setCurrentPage(
-            container,
-            currentPage
-        ) {
-            goToPage(
+                renderPagination(container);
+            },
+
+            setCurrentPage(
                 container,
                 currentPage
-            );
-        },
-    };
+            ) {
+                goToPage(
+                    container,
+                    currentPage
+                );
+            },
+        };
 
 
-    /* -----------------------------------------------------
-       Start
-       ----------------------------------------------------- */
+        /* -------------------------------------------------
+           Start
+           ------------------------------------------------- */
 
-    initializePagination();
+        initializePagination();
+    }
+
 })();

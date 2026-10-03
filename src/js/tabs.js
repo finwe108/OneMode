@@ -2,6 +2,8 @@
    OneMode — Tabs / Segmented Navigation
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 (() => {
     const TAB_CONTAINER_SELECTOR = "[data-om-tabs]";
     const TAB_SELECTOR = '[role="tab"]';
@@ -219,18 +221,22 @@
        Public API
        ----------------------------------------------------- */
 
-    window.OneModeTabs = {
-        activate: activateTab,
+    if (isBrowser()) {
 
-        getActive(container) {
-            return getActiveTab(container);
-        },
-    };
+        window.OneModeTabs = {
+            activate: activateTab,
+
+            getActive(container) {
+                return getActiveTab(container);
+            },
+        };
 
 
-    /* -----------------------------------------------------
-       Start
-       ----------------------------------------------------- */
+        /* -------------------------------------------------
+           Start
+           ------------------------------------------------- */
 
-    initializeTabs();
+        initializeTabs();
+    }
+
 })();

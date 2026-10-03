@@ -2,6 +2,8 @@
    OneMode — Application Shell
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 const MOBILE_BREAKPOINT = 768;
 const TABLET_BREAKPOINT = 1024;
 
@@ -10,17 +12,25 @@ const TABLET_BREAKPOINT = 1024;
    Elements
    ========================================================= */
 
-const shell = document.querySelector(".om-app-shell");
+const shell = isBrowser()
+    ? document.querySelector(".om-app-shell")
+    : null;
 
-const sidebarToggle = document.querySelector(".om-sidebar-toggle");
+const sidebarToggle = isBrowser()
+    ? document.querySelector(".om-sidebar-toggle")
+    : null;
 
-const pageTitle = document.querySelector("#om-page-title");
+const pageTitle = isBrowser()
+    ? document.querySelector("#om-page-title")
+    : null;
 
-const pageDescription = document.querySelector("#om-page-description");
+const pageDescription = isBrowser()
+    ? document.querySelector("#om-page-description")
+    : null;
 
-const breadcrumbCurrent = document.querySelector(
-    "#om-breadcrumb-current"
-);
+const breadcrumbCurrent = isBrowser()
+    ? document.querySelector("#om-breadcrumb-current")
+    : null;
 
 
 /* =========================================================
@@ -558,23 +568,26 @@ function initializeEscapeHandler() {
    Browser Navigation
    ========================================================= */
 
-window.addEventListener(
-    "popstate",
-    () => {
+if (isBrowser()) {
 
-        const navKey =
-            window.location.hash
-                .replace("#", "");
+    window.addEventListener(
+        "popstate",
+        () => {
 
-        if (navigationPages[navKey]) {
+            const navKey =
+                window.location.hash
+                    .replace("#", "");
 
-            navigateTo(
-                navKey,
-                false
-            );
+            if (navigationPages[navKey]) {
+
+                navigateTo(
+                    navKey,
+                    false
+                );
+            }
         }
-    }
-);
+    );
+}
 
 
 /* =========================================================
@@ -632,59 +645,65 @@ function applyResponsiveState() {
 
 let resizeTimer;
 
-window.addEventListener(
-    "resize",
-    () => {
+if (isBrowser()) {
 
-        clearTimeout(
-            resizeTimer
-        );
+    window.addEventListener(
+        "resize",
+        () => {
 
-        resizeTimer = setTimeout(
-            applyResponsiveState,
-            100
-        );
-    }
-);
+            clearTimeout(
+                resizeTimer
+            );
+
+            resizeTimer = setTimeout(
+                applyResponsiveState,
+                100
+            );
+        }
+    );
+}
 
 
 /* =========================================================
    Initialize
    ========================================================= */
 
-initializeSidebarToggle();
+if (isBrowser()) {
 
-initializeMobileOverlay();
+    initializeSidebarToggle();
 
-initializeEscapeHandler();
+    initializeMobileOverlay();
 
-initializeNavigation();
+    initializeEscapeHandler();
 
-initializeNavigationGroups();
+    initializeNavigation();
 
-
-/*
- * Determine initial page from URL.
- */
-const initialHash =
-    window.location.hash
-        .replace("#", "");
+    initializeNavigationGroups();
 
 
-/*
- * Default to Enrollment for
- * the current OneMode example.
- */
-const initialPage =
-    navigationPages[initialHash]
-        ? initialHash
-        : "enrollment";
+    /*
+     * Determine initial page from URL.
+     */
+    const initialHash =
+        window.location.hash
+            .replace("#", "");
 
 
-navigateTo(
-    initialPage,
-    false
-);
+    /*
+     * Default to Enrollment for
+     * the current OneMode example.
+     */
+    const initialPage =
+        navigationPages[initialHash]
+            ? initialHash
+            : "enrollment";
+
+
+    navigateTo(
+        initialPage,
+        false
+    );
+}
 
 
 applyResponsiveState();

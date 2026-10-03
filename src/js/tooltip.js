@@ -2,6 +2,8 @@
    OneMode — Tooltip / Popover
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 (() => {
     const TOOLTIP_TRIGGER_SELECTOR = "[data-om-tooltip]";
     const POPOVER_TRIGGER_SELECTOR = "[data-om-popover]";
@@ -390,109 +392,114 @@
     }
 
 
-    /* -----------------------------------------------------
-       Global events
-       ----------------------------------------------------- */
+    if (isBrowser()) {
 
-    document.addEventListener("click", (event) => {
-        if (!activePopover) {
-            return;
-        }
+        /* -----------------------------------------------------
+           Global events
+           ----------------------------------------------------- */
 
-        const {
-            trigger,
-            popover,
-        } = activePopover;
-
-        if (
-            trigger.contains(event.target) ||
-            popover.contains(event.target)
-        ) {
-            return;
-        }
-
-        closePopover();
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            hideTooltip();
-            closePopover();
-
-            if (activePopover?.trigger) {
-                activePopover.trigger.focus();
+        document.addEventListener("click", (event) => {
+            if (!activePopover) {
+                return;
             }
-        }
-    });
 
-    window.addEventListener("resize", () => {
-        if (activeTooltip) {
-            positionTooltip(
-                activeTooltip.trigger,
-                activeTooltip.tooltip,
-                activeTooltip.placement
+            const {
+                trigger,
+                popover,
+            } = activePopover;
+
+            if (
+                trigger.contains(event.target) ||
+                popover.contains(event.target)
+            ) {
+                return;
+            }
+
+            closePopover();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                hideTooltip();
+                closePopover();
+
+                if (activePopover?.trigger) {
+                    activePopover.trigger.focus();
+                }
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (activeTooltip) {
+                positionTooltip(
+                    activeTooltip.trigger,
+                    activeTooltip.tooltip,
+                    activeTooltip.placement
+                );
+            }
+
+            if (activePopover) {
+                positionPopover(
+                    activePopover.trigger,
+                    activePopover.popover,
+                    activePopover.placement
+                );
+            }
+        });
+
+        window.addEventListener("scroll", () => {
+            if (activeTooltip) {
+                positionTooltip(
+                    activeTooltip.trigger,
+                    activeTooltip.tooltip,
+                    activeTooltip.placement
+                );
+            }
+
+            if (activePopover) {
+                positionPopover(
+                    activePopover.trigger,
+                    activePopover.popover,
+                    activePopover.placement
+                );
+            }
+        }, true);
+
+        document.addEventListener("click", (event) => {
+            const closeButton = event.target.closest(
+                "[data-om-popover-close]"
             );
-        }
 
-        if (activePopover) {
-            positionPopover(
-                activePopover.trigger,
-                activePopover.popover,
-                activePopover.placement
-            );
-        }
-    });
+            if (!closeButton) {
+                return;
+            }
 
-    window.addEventListener("scroll", () => {
-        if (activeTooltip) {
-            positionTooltip(
-                activeTooltip.trigger,
-                activeTooltip.tooltip,
-                activeTooltip.placement
-            );
-        }
-
-        if (activePopover) {
-            positionPopover(
-                activePopover.trigger,
-                activePopover.popover,
-                activePopover.placement
-            );
-        }
-    }, true);
-
-    document.addEventListener("click", (event) => {
-        const closeButton = event.target.closest(
-            "[data-om-popover-close]"
-        );
-
-        if (!closeButton) {
-            return;
-        }
-
-        closePopover();
-    });
-
-    /* -----------------------------------------------------
-       Public API
-       ----------------------------------------------------- */
-
-    window.OneModeTooltip = {
-        show: showTooltip,
-        hide: hideTooltip,
-    };
-
-    window.OneModePopover = {
-        open: openPopover,
-        close: closePopover,
-        toggle: togglePopover,
-    };
+            closePopover();
+        });
 
 
-    /* -----------------------------------------------------
-       Start
-       ----------------------------------------------------- */
+        /* -----------------------------------------------------
+           Public API
+           ----------------------------------------------------- */
 
-    initializeTooltips();
-    initializePopovers();
+        window.OneModeTooltip = {
+            show: showTooltip,
+            hide: hideTooltip,
+        };
+
+        window.OneModePopover = {
+            open: openPopover,
+            close: closePopover,
+            toggle: togglePopover,
+        };
+
+
+        /* -----------------------------------------------------
+           Start
+           ----------------------------------------------------- */
+
+        initializeTooltips();
+        initializePopovers();
+    }
+
 })();

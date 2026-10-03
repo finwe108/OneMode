@@ -17,6 +17,8 @@
 |--------------------------------------------------------------------------
 */
 
+import { isBrowser } from "./environment.js";
+
 (() => {
     "use strict";
 
@@ -1110,36 +1112,39 @@
     }
 
 
-    /* ================================================================
+       /* ================================================================
        PUBLIC API
        ================================================================ */
 
-    window.OneModeTable = {
+    if (isBrowser()) {
 
-        filter: filterTable,
+        window.OneModeTable = {
 
-        setPage: setTablePage,
+            filter: filterTable,
 
-        refresh: initializeAllTables,
-    };
+            setPage: setTablePage,
+
+            refresh: initializeAllTables,
+        };
 
 
-    /* ================================================================
-       DOM READY
-       ================================================================ */
+        /* ============================================================
+           DOM READY
+           ============================================================ */
 
-    if (
-        document.readyState === "loading"
-    ) {
+        if (
+            document.readyState === "loading"
+        ) {
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            initializeAllTables
-        );
+            document.addEventListener(
+                "DOMContentLoaded",
+                initializeAllTables
+            );
 
-    } else {
+        } else {
 
-        initializeAllTables();
+            initializeAllTables();
+        }
     }
 
 })();

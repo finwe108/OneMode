@@ -2,11 +2,11 @@
    OneMode — Theme Manager
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 const STORAGE_KEY = "om-theme";
 
 const VALID_THEMES = ["light", "dark", "system"];
-
-const root = document.documentElement;
 
 
 /* =========================================================
@@ -14,6 +14,10 @@ const root = document.documentElement;
    ========================================================= */
 
 function getStoredTheme() {
+    if (!isBrowser()) {
+        return "system";
+    }
+
     const storedTheme = localStorage.getItem(STORAGE_KEY);
 
     if (VALID_THEMES.includes(storedTheme)) {
@@ -28,6 +32,12 @@ function applyTheme(theme) {
         theme = "system";
     }
 
+    if (!isBrowser()) {
+        return;
+    }
+
+    const root = document.documentElement;
+
     root.setAttribute("data-om-theme", theme);
 
     localStorage.setItem(STORAGE_KEY, theme);
@@ -36,6 +46,10 @@ function applyTheme(theme) {
 }
 
 function updateThemeControls(theme) {
+    if (!isBrowser()) {
+        return;
+    }
+
     const controls = document.querySelectorAll(
         "[data-om-theme-option]"
     );
@@ -69,9 +83,16 @@ function updateThemeControls(theme) {
    ========================================================= */
 
 function initializeTheme() {
+    if (!isBrowser()) {
+        return;
+    }
+
     const theme = getStoredTheme();
 
-    root.setAttribute("data-om-theme", theme);
+    document.documentElement.setAttribute(
+        "data-om-theme",
+        theme
+    );
 
     updateThemeControls(theme);
 }
@@ -81,37 +102,57 @@ function initializeTheme() {
    Controls
    ========================================================= */
 
-document.addEventListener("click", (event) => {
-    const control = event.target.closest(
-        "[data-om-theme-option]"
-    );
-
-    if (!control) {
+function initializeThemeControls() {
+    if (!isBrowser()) {
         return;
     }
 
-    const theme = control.dataset.omThemeOption;
+    document.addEventListener("click", (event) => {
+        const control = event.target.closest(
+            "[data-om-theme-option]"
+        );
 
-    applyTheme(theme);
-});
+        if (!control) {
+            return;
+        }
 
-document.addEventListener("change", (event) => {
-    const control = event.target.closest(
-        "[data-om-theme-option]"
-    );
+        const theme = control.dataset.omThemeOption;
 
-    if (!control) {
-        return;
-    }
+        applyTheme(theme);
+    });
 
-    const theme = control.dataset.omThemeOption;
+    document.addEventListener("change", (event) => {
+        const control = event.target.closest(
+            "[data-om-theme-option]"
+        );
 
-    applyTheme(theme);
-});
+        if (!control) {
+            return;
+        }
+
+        const theme = control.dataset.omThemeOption;
+
+        applyTheme(theme);
+    });
+}
+
+
+/* =========================================================
+   Public API
+   ========================================================= */
+
+if (isBrowser()) {
+    window.OneModeTheme = {
+        get: getStoredTheme,
+        set: applyTheme,
+        refresh: initializeTheme,
+    };
+}
 
 
 /* =========================================================
    Start
    ========================================================= */
 
+initializeThemeControls();
 initializeTheme();

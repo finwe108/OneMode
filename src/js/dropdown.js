@@ -2,6 +2,8 @@
    OneMode — Dropdown / Menu
    ========================================================= */
 
+import { isBrowser } from "./environment.js";
+
 const DROPDOWN_SELECTOR = ".om-dropdown";
 const TRIGGER_SELECTOR = "[data-om-dropdown-toggle]";
 const ITEM_SELECTOR =
@@ -236,142 +238,142 @@ function handleKeyboard(event, dropdown) {
    Click Handling
    ========================================================= */
 
-document.addEventListener("click", (event) => {
-
-    const trigger =
-        event.target.closest(
-            TRIGGER_SELECTOR
-        );
-
-
-    /* -----------------------------------------------------
-       Trigger
-       ----------------------------------------------------- */
-
-    if (trigger) {
-
-        const dropdown =
-            trigger.closest(DROPDOWN_SELECTOR);
-
-        toggleDropdown(dropdown);
-
-        return;
-    }
-
-
-    /* -----------------------------------------------------
-       Outside Click
-       ----------------------------------------------------- */
-
-    if (
-        !event.target.closest(
-            DROPDOWN_SELECTOR
-        )
-    ) {
-
-        closeAllDropdowns();
-
-        return;
-    }
-
-
-    /* -----------------------------------------------------
-       Menu Item
-       ----------------------------------------------------- */
-
-    const item =
-        event.target.closest(
-            ".om-dropdown-item"
-        );
-
-    if (item) {
-
-        const dropdown =
-            item.closest(DROPDOWN_SELECTOR);
-
-        closeDropdown(dropdown);
-    }
-
-});
-
-
 /* =========================================================
-   Keyboard Handling
+   Browser Initialization
    ========================================================= */
 
-document.addEventListener(
-    "keydown",
-    (event) => {
+if (isBrowser()) {
 
-        const dropdown =
+    /* =====================================================
+       Click Handling
+       ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        const trigger =
             event.target.closest(
-                DROPDOWN_SELECTOR
+                TRIGGER_SELECTOR
             );
 
-        if (!dropdown) {
+        if (trigger) {
+
+            const dropdown =
+                trigger.closest(DROPDOWN_SELECTOR);
+
+            toggleDropdown(dropdown);
+
             return;
         }
 
         if (
-            dropdown.classList.contains(
-                "is-open"
+            !event.target.closest(
+                DROPDOWN_SELECTOR
             )
         ) {
 
-            handleKeyboard(
-                event,
-                dropdown
-            );
-        }
+            closeAllDropdowns();
 
-    }
-);
-
-
-/* =========================================================
-   Escape / Global Close
-   ========================================================= */
-
-document.addEventListener(
-    "keydown",
-    (event) => {
-
-        if (event.key !== "Escape") {
             return;
         }
 
-        closeAllDropdowns();
+        const item =
+            event.target.closest(
+                ".om-dropdown-item"
+            );
 
-    }
-);
+        if (item) {
 
+            const dropdown =
+                item.closest(DROPDOWN_SELECTOR);
 
-/* =========================================================
-   Initial State
-   ========================================================= */
-
-document
-    .querySelectorAll(DROPDOWN_SELECTOR)
-    .forEach((dropdown) => {
-
-        const trigger =
-            getTrigger(dropdown);
-
-        trigger?.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+            closeDropdown(dropdown);
+        }
 
     });
+
+
+    /* =====================================================
+       Keyboard Handling
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            const dropdown =
+                event.target.closest(
+                    DROPDOWN_SELECTOR
+                );
+
+            if (!dropdown) {
+                return;
+            }
+
+            if (
+                dropdown.classList.contains(
+                    "is-open"
+                )
+            ) {
+
+                handleKeyboard(
+                    event,
+                    dropdown
+                );
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       Escape / Global Close
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            closeAllDropdowns();
+
+        }
+    );
+
+
+    /* =====================================================
+       Initial State
+       ===================================================== */
+
+    document
+        .querySelectorAll(DROPDOWN_SELECTOR)
+        .forEach((dropdown) => {
+
+            const trigger =
+                getTrigger(dropdown);
+
+            trigger?.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+}
+
 
 
 /* =========================================================
    Public API
    ========================================================= */
 
-window.OneModeDropdown = {
-    open: openDropdown,
-    close: closeDropdown,
-    toggle: toggleDropdown,
-    closeAll: closeAllDropdowns
-};
+if (isBrowser()) {
+
+    window.OneModeDropdown = {
+        open: openDropdown,
+        close: closeDropdown,
+        toggle: toggleDropdown,
+        closeAll: closeAllDropdowns
+    };
+}
